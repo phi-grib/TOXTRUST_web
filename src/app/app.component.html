@@ -1,7 +1,18 @@
 <div class="outer-container">
     <div class="container">
       <img src="assets/image.png" alt="image">
-      <app-define-endpoint></app-define-endpoint>
+      <mat-stepper id="matStepperContainer" [linear]="true" #stepper>
+        <mat-step >
+            1 step
+        </mat-step>
+        <mat-step >
+            2 step
+        </mat-step>
+        <mat-step>
+            3 step
+        </mat-step>
+      </mat-stepper>
+      <!-- <app-define-endpoint></app-define-endpoint> -->
     </div>
   </div>
   

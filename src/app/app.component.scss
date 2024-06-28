@@ -14,12 +14,17 @@
     width: 100%;
     max-width: 900px;
     height: auto;
-    border: 1px solid #000; 
+    border-radius: 0px 0px 20px 20px;
+    border: 1px solid black;
   }
 
   .container img {
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 10px 10px 0px 0px;
   }
   
+#matStepperContainer{
+    width: 100%;
+}  
