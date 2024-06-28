@@ -1,0 +1,25 @@
+
+.outer-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+    width: 100vw; 
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    border: 1px solid #000; 
+  }
+
+  .container img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
