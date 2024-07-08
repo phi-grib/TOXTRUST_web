@@ -5041,6 +5041,8 @@ export {
   AriaDescriber,
   ActiveDescendantKeyManager,
   FocusKeyManager,
+  InteractivityChecker,
+  FocusTrapFactory,
   LiveAnnouncer,
   FocusMonitor,
   A11yModule,
@@ -5059,4 +5061,4 @@ export {
   MatOptionModule,
   MatRippleLoader
 };
-//# sourceMappingURL=chunk-ISE4XZQS.js.map
+//# sourceMappingURL=chunk-GFYZBUK3.js.map
