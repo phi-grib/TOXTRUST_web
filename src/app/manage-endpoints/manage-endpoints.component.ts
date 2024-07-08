@@ -38,4 +38,8 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
+
+  selectProject(project:any){
+    alert("PROJECT: "+project)
+  }
 }

@@ -1,6 +1,6 @@
 <div  class="container">
   <img   src="assets/image.png" alt="image">
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
       <!-- Position Column -->
       <ng-container matColumnDef="position">
         <th mat-header-cell *matHeaderCellDef> No. </th>
@@ -13,9 +13,9 @@
       </ng-container>
   
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr mat-row (click)="selectProject(row)"  *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-  
-    <mat-paginator id="paginator" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    
+    <mat-paginator id="paginator" [hidePageSize]="true" [pageSizeOptions]="[5]" showFirstLastButtons></mat-paginator>
   </div>
   
