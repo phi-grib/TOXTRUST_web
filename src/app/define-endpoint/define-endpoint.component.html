@@ -1,18 +1,20 @@
 
-   <form class="example-form">
-        <mat-form-field class="example-full-width">
+   <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="example-form">
+        <mat-form-field appearance="outline" class="example-full-width">
           <mat-label>Endpoint</mat-label>
-          <input matInput>
+          <input required ngModel name="compound" matInput >
         </mat-form-field>
-        <mat-form-field class="example-full-width">
+        <mat-form-field appearance="outline" class="example-full-width">
             <mat-label>Chemical ID</mat-label>
-            <input matInput>
+            <input required name="id" ngModel matInput>
           </mat-form-field>
-          <mat-form-field class="example-full-width">
-            <mat-label>Structure(optional)</mat-label>
-            <input matInput>
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Structure (optional)</mat-label>
+            <input ngModel name="structure" matInput>
           </mat-form-field>
-          
-      
+          <div class="buttons-row">
+            <button [disabled]="form.invalid" class="pr-3" type="submit" mat-flat-button>Save</button>
+            <button mat-raised-button>Cancel</button>
+          </div>
     </form>
 

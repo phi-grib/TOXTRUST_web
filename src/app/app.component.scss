@@ -1,28 +1,32 @@
 
 .outer-container {
     display: flex;
-    justify-content: center; 
+    justify-content: space-around; 
     align-items: center; 
     height: 100vh;
+    
     width: 100vw; 
   }
   
-  .container {
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    width: 100%;
-    max-width: 850px;
-    height: auto;
-  }
 
-  .container img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px 10px 0px 0px;
-  }
-  
+
+
+
 #matStepperContainer{
     width: 100%;
 }  
+.imgcontainer1{
+  width: 500px !important;
+  border-radius: 10px 10px 0px 0px;
+
+
+}
+.titlemenu{
+  margin-top: 2px;
+  margin-left: 10px;
+}
+.buttonContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

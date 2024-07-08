@@ -1,22 +1,30 @@
+
 <div class="outer-container">
-    <div class="container">
-      <img src="assets/image.png" alt="image">
-      <mat-stepper id="matStepperContainer" [linear]="true" #stepper>
-        <mat-step >
-            <ng-template matStepLabel>Define Endpoint</ng-template>
-      <app-define-endpoint></app-define-endpoint> 
-        </mat-step>
-        <mat-step >
-            <ng-template matStepLabel>Add Evidence</ng-template>
+    <mat-accordion>
+      <mat-expansion-panel  hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="menu"></mat-icon> <span class="titlemenu">TOXTRUST</span>  </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-expansion-panel-header>
+          <div class="containerLogos">
+            <img width="120px" src="assets/upf.png" alt="">
+            <img width="90px" src="assets/aspis.png" alt="">
+            <img width="80px" src="assets/riskhunter.png" alt="">
+            </div>
+        </mat-expansion-panel-header>
 
-            2 step
-        </mat-step>
-        <mat-step>
-            <ng-template matStepLabel>Visualise Evidence</ng-template>
+          <div class="buttonContainer">
+            <button mat-raised-button (click)="openNewProject()">New Project</button>
+            <button mat-raised-button (click)="openManageEndpoints()">Existing Projects</button>
+            <button mat-raised-button>Documentation</button>
+            <button mat-raised-button>Code</button>
+            <button mat-raised-button>Literature</button>
+          </div>
+      </mat-expansion-panel>
 
-            3 step
-        </mat-step>
-      </mat-stepper>
-    </div>
+    </mat-accordion>
+    <app-new-endpoint-form  *ngIf="displayNewProject"></app-new-endpoint-form> 
+
+    <app-manage-endpoints *ngIf="displayManageEndpoints"></app-manage-endpoints> 
   </div>
   

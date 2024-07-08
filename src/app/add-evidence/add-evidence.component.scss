@@ -1,0 +1,18 @@
+.margin {
+    margin: 5px;
+}
+.full-width {
+    width: 100%;
+}
+
+.buttons-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+
+  .buttons-row .mat-mdc-button-base {
+    margin: 10px 10px 10px 0;
+  }
+
+
+

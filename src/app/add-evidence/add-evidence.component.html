@@ -1,0 +1,39 @@
+<p>A new single evidence piece item is created using the method ID together with the method format.</p>
+
+<form class="example-form">
+    <mat-form-field appearance="outline" class="margin">
+      <mat-label>Evidence ID</mat-label>
+      <input required ngModel name="id" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="margin">
+        <mat-label>Evidence type</mat-label>
+        <input name="type" ngModel required matInput>
+      </mat-form-field>
+      <p>The single evidence piece can be saved once the result and the reliability score of the method are provided</p>
+      <mat-form-field appearance="outline" class="margin">
+        <mat-label>Result</mat-label>
+        <input name="result" ngModel required matInput>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="margin">
+          <mat-label>Reliability</mat-label>
+          <input name="reliability" ngModel required matInput>
+        </mat-form-field>
+        <p>Single evidence pieces can be further graded by defining its relevance and weight with respect to the endpoint</p>
+        <mat-form-field appearance="outline" class="margin">
+            <mat-label>Relevance</mat-label>
+            <input name="relevance" ngModel required matInput>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="margin">
+              <mat-label>Weight</mat-label>
+              <input name="weight" ngModel required matInput>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="margin full-width">
+                <mat-label>Comments (optional)</mat-label>
+                <textarea ngModel name="comments" matInput placeholder="Important remarks regarding the method or the result can be described there."></textarea>
+              </mat-form-field>
+              <div class="buttons-row">
+                <button class="pr-3" mat-flat-button>Save</button>
+                <button mat-raised-button>Cancel</button>
+              </div>
+</form>
+

@@ -1,13 +1,20 @@
-.container-form-define-endpoint{
-    display: flex !important;
-    flex-direction: column !important;
-}
 .example-form {
+  margin-top: 5px;
     min-width: 150px;
     max-width: 500px;
     width: 100%;
+    min-height: 530px;
   }
   
   .example-full-width {
     width: 100%;
+  }
+
+  .buttons-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+
+  .buttons-row .mat-mdc-button-base {
+    margin: 10px 10px 10px 0;
   }
