@@ -1,0 +1,18 @@
+<!-- modal add new project -->
+
+<h2 mat-dialog-title>Create new Project</h2>
+<mat-dialog-content>
+  <form (ngSubmit)="onSubmit(form.value.name)" #form="ngForm" class="example-form">
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Project name</mat-label>
+      <input required ngModel name="name" matInput >
+    </mat-form-field>
+      <div class="buttons-row">
+        <button [disabled]="form.invalid" class="pr-3" type="submit" mat-flat-button>Create</button>
+      </div>
+</form>
+  
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button id="closeBtn" mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

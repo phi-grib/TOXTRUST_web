@@ -16,6 +16,11 @@ export class FlaskService {
     return this.http.get<string[]>(url);
   }
 
+  createEndpoint(name:string){
+    const url: string = environment.baseUrl + "new/" +name
+    return this.http.post(url,{})
+  }
+
   defineEndpoint(data:any){
     console.log("data:")
     console.log(data)

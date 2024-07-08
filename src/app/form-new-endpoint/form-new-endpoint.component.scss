@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    width: 100%;
+    max-width: 900px;
+    min-height: 900px;
+
+  }
+
+  .container img {
+    width: 879px;
+    height: 300px !important;
+    display: block;
+    border-radius: 10px 10px 0px 0px;
+    
+  }
+  
+  .example-form {
+      width: 100%;
+      background-color: white;
+    }
+
+    .form-field{
+      width: 70vh;
+      text-align: center;
+      padding: 20px;
+    }
+    .buttons-row{
+      padding: 20px;
+    }

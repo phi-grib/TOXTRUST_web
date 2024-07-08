@@ -23,7 +23,7 @@
       </mat-expansion-panel>
 
     </mat-accordion>
-    <app-new-endpoint-form  *ngIf="displayNewProject"></app-new-endpoint-form> 
+    <app-new-endpoint-form *ngIf="this.endpoint.name"></app-new-endpoint-form>
 
     <app-manage-endpoints *ngIf="displayManageEndpoints"></app-manage-endpoints> 
   </div>

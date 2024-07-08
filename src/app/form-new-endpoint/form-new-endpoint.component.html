@@ -1,0 +1,12 @@
+<div  class="container">
+    <img   src="assets/image.png" alt="image">
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="example-form">
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Endpoint Name</mat-label>
+          <input required ngModel name="name" matInput >
+        </mat-form-field>
+          <div class="buttons-row">
+            <button [disabled]="form.invalid" class="pr-3" type="submit" mat-flat-button>Create</button>
+          </div>
+    </form>
+</div>

@@ -6,6 +6,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { Endpoint } from '../globals';
 
 @Component({
   selector: 'app-manage-endpoints',
@@ -15,19 +16,18 @@ import { MatInputModule } from '@angular/material/input';
   styleUrls: ['./manage-endpoints.component.scss']
 })
 export class ManageEndpointsComponent implements OnInit, AfterViewInit {
-  endpoints: string[] = [];
   displayedColumns: string[] = ['position', 'name'];
   dataSource = new MatTableDataSource<string>();
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private flaskService: FlaskService) {}
+  constructor(private flaskService: FlaskService,private endpoint:Endpoint) {}
 
   ngOnInit(): void {
     this.flaskService.getListEndpoints().subscribe(
       (result: string[]) => {
-        this.endpoints = result;
-        this.dataSource.data = this.endpoints; // Actualiza dataSource después de recibir los datos
+        this.endpoint.listEndpoints = result;
+        this.dataSource.data = this.endpoint.listEndpoints; // Actualiza dataSource después de recibir los datos
       },
       (error: any) => {
         console.error('Error fetching endpoints:', error);

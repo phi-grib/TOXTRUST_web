@@ -4,5 +4,5 @@ import { Injectable } from '@angular/core';
 export class Endpoint {
     name: string = "";
     id: string  = "";
-  }
-  
+    listEndpoints : string[] = []
+}
