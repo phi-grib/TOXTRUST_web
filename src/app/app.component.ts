@@ -12,7 +12,7 @@ import {
   MatDialog,
 } from '@angular/material/dialog';
 import { ModalCreateProjectComponent } from './modal-create-project/modal-create-project.component';
-import { Endpoint } from './globals';
+import { ControlInterface, Endpoint } from './globals';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -23,7 +23,7 @@ import { Endpoint } from './globals';
 })
 export class AppComponent implements OnInit {
   readonly dialog = inject(MatDialog);
-  constructor(public endpoint: Endpoint){
+  constructor(public endpoint: Endpoint, public controlInterface: ControlInterface){
   }
   displayNewProject: boolean = false;
   displayManageEndpoints: boolean = false;
@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
   }
   openNewProject() {
     this.endpoint.name = ""
-    this.displayManageEndpoints = false;
+    this.controlInterface.displayManageEndpoints = false;
     this.dialog.open(ModalCreateProjectComponent, {
       height: '400px',
       width: '600px',
@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
   // <button mat-button (click)="openDialog()">Launch dialog</button>
   openManageEndpoints(){
     this.endpoint.name = ""
-    this.displayManageEndpoints = true;
+    this.controlInterface.displayManageEndpoints = true;
   }
 
   title = 'toxtrust_web';

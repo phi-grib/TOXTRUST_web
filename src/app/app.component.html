@@ -25,6 +25,6 @@
     </mat-accordion>
     <app-new-endpoint-form *ngIf="this.endpoint.name"></app-new-endpoint-form>
 
-    <app-manage-endpoints *ngIf="displayManageEndpoints"></app-manage-endpoints> 
+    <app-manage-endpoints *ngIf="this.controlInterface.displayManageEndpoints"></app-manage-endpoints> 
   </div>
   
