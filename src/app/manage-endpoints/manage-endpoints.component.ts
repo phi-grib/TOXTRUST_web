@@ -6,7 +6,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { Endpoint } from '../globals';
+import { ControlInterface, Endpoint } from '../globals';
 
 @Component({
   selector: 'app-manage-endpoints',
@@ -21,7 +21,7 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private flaskService: FlaskService,private endpoint:Endpoint) {}
+  constructor(private flaskService: FlaskService,private endpoint:Endpoint,private controlInterface:ControlInterface) {}
 
   ngOnInit(): void {
     this.flaskService.getListEndpoints().subscribe(
@@ -39,7 +39,19 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  selectProject(project:any){
-    alert("PROJECT: "+project)
+  selectEndpoint(endpoint_name:any){
+     this.flaskService.getEndpoint(endpoint_name).subscribe(
+      (result:any) => {
+        if(result["success"]){
+          this.endpoint.name = endpoint_name
+          console.log("getInformationAboutEndpoint")
+          console.log(result["data"])
+          this.controlInterface.displayManageEndpoints = false;
+        }
+      },
+      (error:any)=> {
+        console.error(error)
+      }
+     )
   }
 }

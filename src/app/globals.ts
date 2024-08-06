@@ -6,3 +6,8 @@ export class Endpoint {
     id: string  = "";
     listEndpoints : string[] = []
 }
+
+export class ControlInterface {
+    displayManageEndpoints = false;
+
+}
