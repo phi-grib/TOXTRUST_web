@@ -4,6 +4,10 @@ import { Injectable } from '@angular/core';
 export class Endpoint {
     name: string = "";
     id: string  = "";
+    compound: string = ""
+    confidentiality: string = "";
+    description: string = "";
+    framework: string = "";
     listEndpoints : string[] = []
 }
 

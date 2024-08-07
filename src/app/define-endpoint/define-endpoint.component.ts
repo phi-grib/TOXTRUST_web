@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { FlaskService } from '../flask.service';
 import { ToastrService } from 'ngx-toastr';
+import { Endpoint } from '../globals';
 
 @Component({
   selector: 'app-define-endpoint',
@@ -14,11 +15,10 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './define-endpoint.component.scss'
 })
 export class DefineEndpointComponent {
-  constructor(private flaskService: FlaskService, private toastr: ToastrService) {
+  constructor(public endpoint:Endpoint,private flaskService: FlaskService, private toastr: ToastrService) {
 
   }
   onSubmit(form: any) {
-    console.log("aqui")
     this.flaskService.defineEndpoint(form.value).subscribe(
 
       (result: any) => {

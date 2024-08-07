@@ -2,19 +2,19 @@
    <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="example-form">
         <mat-form-field appearance="outline" class="example-full-width">
           <mat-label>Description</mat-label>
-          <input required ngModel name="description" matInput >
+          <input required  [(ngModel)]="endpoint.description" name="description" matInput >
         </mat-form-field>
         <mat-form-field appearance="outline" class="example-full-width">
             <mat-label>Framework</mat-label>
-            <input required name="framework" ngModel matInput>
+            <input required name="framework" [(ngModel)]="endpoint.framework" matInput>
           </mat-form-field>
           <mat-form-field appearance="outline" class="example-full-width">
             <mat-label>Compound</mat-label>
-            <input required name="compound" ngModel matInput>
+            <input required [(ngModel)]="endpoint.compound" name="compound"  matInput>
           </mat-form-field>
           <mat-form-field appearance="outline" class="example-full-width">
             <mat-label>Confidentiality</mat-label>
-            <input required name="confidentiality" ngModel matInput>
+            <input required [(ngModel)]="endpoint.confidentiality" name="confidentiality"  matInput>
           </mat-form-field>
           <div class="buttons-row">
             <button [disabled]="form.invalid" class="pr-3" type="submit" mat-flat-button>Save</button>

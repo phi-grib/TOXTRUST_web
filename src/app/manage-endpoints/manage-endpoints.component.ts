@@ -39,13 +39,19 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
     this.dataSource.paginator = this.paginator;
   }
 
+  mapEndpointData(data:any){
+    this.endpoint.compound = data.compound;
+    this.endpoint.confidentiality = data.confidentiality;
+    this.endpoint.description = data.description;
+    this.endpoint.framework = data.framework;
+  }
   selectEndpoint(endpoint_name:any){
      this.flaskService.getEndpoint(endpoint_name).subscribe(
       (result:any) => {
         if(result["success"]){
           this.endpoint.name = endpoint_name
           console.log("getInformationAboutEndpoint")
-          console.log(result["data"])
+          this.mapEndpointData(result["data"]["endpoint"]);
           this.controlInterface.displayManageEndpoints = false;
         }
       },
