@@ -1,31 +1,53 @@
-<p>A new single evidence piece item is created using the method ID together with the method format.</p>
 
 <form class="example-form">
     <mat-form-field appearance="outline" class="margin">
-      <mat-label>Evidence ID</mat-label>
-      <input required ngModel name="id" matInput>
+      <mat-label>Name</mat-label>
+      <input required ngModel name="name" matInput>
     </mat-form-field>
     <mat-form-field appearance="outline" class="margin">
-        <mat-label>Evidence type</mat-label>
-        <input name="type" ngModel required matInput>
+        <mat-label>Source</mat-label>
+        <mat-select required ngModel name="source">
+          <mat-option value="qsar">QSAR</mat-option>
+          <mat-option value="expert">Expert</mat-option>
+          <mat-option value="in vitro">in vitro</mat-option>
+          <mat-option value="positive alert">Positive alert</mat-option>
+          <mat-option value="negative alert">Negative alert</mat-option>
+        </mat-select>
       </mat-form-field>
-      <p>The single evidence piece can be saved once the result and the reliability score of the method are provided</p>
+      <br>
       <mat-form-field appearance="outline" class="margin">
         <mat-label>Result</mat-label>
-        <input name="result" ngModel required matInput>
+        <mat-select required ngModel name="result">
+          <mat-option value="negative">Negative</mat-option>
+          <mat-option value="positive">Positive</mat-option>
+          <mat-option value="both">Both</mat-option>
+        </mat-select>
       </mat-form-field>
+      <mat-form-field appearance="outline" class="margin">
+        <mat-label>result numeric</mat-label>
+        <input type="number" required ngModel name="result_numeric" matInput>
+      </mat-form-field>
+      <br>
       <mat-form-field appearance="outline" class="margin">
           <mat-label>Reliability</mat-label>
           <input name="reliability" ngModel required matInput>
         </mat-form-field>
-        <p>Single evidence pieces can be further graded by defining its relevance and weight with respect to the endpoint</p>
         <mat-form-field appearance="outline" class="margin">
-            <mat-label>Relevance</mat-label>
-            <input name="relevance" ngModel required matInput>
-          </mat-form-field>
+          <mat-label>Relevance</mat-label>
+          <mat-select required ngModel name="relevance">
+            <mat-option value="certain">Certain</mat-option>
+            <mat-option value="probable">Probable</mat-option>
+            <mat-option value="plausible">Plausible</mat-option>
+            <mat-option value="equivocal">Equivocal</mat-option>
+            <mat-option value="doubted">Doubted</mat-option>
+            <mat-option value="improbable">Improbable</mat-option>
+            <mat-option value="impossible">Impossible</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
           <mat-form-field appearance="outline" class="margin">
               <mat-label>Weight</mat-label>
-              <input name="weight" ngModel required matInput>
+              <input name="weight" type="number" ngModel required matInput>
             </mat-form-field>
             <mat-form-field appearance="outline" class="margin full-width">
                 <mat-label>Comments (optional)</mat-label>
@@ -36,4 +58,3 @@
                 <button mat-raised-button>Cancel</button>
               </div>
 </form>
-
