@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { FlaskService } from '../flask.service';
@@ -21,7 +21,7 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private flaskService: FlaskService,private endpoint:Endpoint,private controlInterface:ControlInterface) {}
+  constructor(private changeDetectorRef: ChangeDetectorRef,private flaskService: FlaskService,private endpoint:Endpoint,private controlInterface:ControlInterface) {}
 
   ngOnInit(): void {
     this.flaskService.getListEndpoints().subscribe(
@@ -48,11 +48,13 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
   selectEndpoint(endpoint_name:any){
      this.flaskService.getEndpoint(endpoint_name).subscribe(
       (result:any) => {
+        console.log("se activa?")
         if(result["success"]){
-          this.endpoint.name = endpoint_name
-          console.log("getInformationAboutEndpoint")
-          this.mapEndpointData(result["data"]["endpoint"]);
           this.controlInterface.displayManageEndpoints = false;
+          this.endpoint.name = endpoint_name
+          this.mapEndpointData(result["data"]["endpoint"]);
+          console.log(this.endpoint.name)
+          console.log(this.controlInterface.displayManageEndpoints)
         }
       },
       (error:any)=> {

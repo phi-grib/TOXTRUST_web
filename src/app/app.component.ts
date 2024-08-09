@@ -17,7 +17,7 @@ import { ControlInterface, Endpoint } from './globals';
   selector: 'app-root',
   standalone: true,
   imports: [ModalCreateProjectComponent,NewEndpointFormComponent,MatIconModule,MatExpansionModule,CommonModule,MatInputModule,MatFormFieldModule,MatButtonModule,ManageEndpointsComponent],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
