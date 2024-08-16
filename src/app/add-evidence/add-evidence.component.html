@@ -1,5 +1,5 @@
 
-<form class="example-form">
+<form (ngSubmit)="onSubmit(form)" #form="ngForm" class="example-form">
     <mat-form-field appearance="outline" class="margin">
       <mat-label>Name</mat-label>
       <input required ngModel name="name" matInput>
@@ -15,17 +15,16 @@
         </mat-select>
       </mat-form-field>
       <br>
+        <section class="example-section">
+          <mat-checkbox style="margin-right: 130px;" ngModel (change)="displayFieldPositive(form)" name="positive" class="example-margin">Positive</mat-checkbox>
+          <mat-checkbox ngModel name="negative" (change)="displayFieldNegative(form)" class="example-margin">Negative</mat-checkbox>
+        </section>        
+      <br>
       <mat-form-field appearance="outline" class="margin">
-        <mat-label>Result</mat-label>
-        <mat-select required ngModel name="result">
-          <mat-option value="negative">Negative</mat-option>
-          <mat-option value="positive">Positive</mat-option>
-          <mat-option value="both">Both</mat-option>
-        </mat-select>
+        <input required [disabled]="!form.value.positive" class="small-field" type="number"  ngModel name="positive_value" matInput>
       </mat-form-field>
       <mat-form-field appearance="outline" class="margin">
-        <mat-label>result numeric</mat-label>
-        <input type="number" required ngModel name="result_numeric" matInput>
+        <input [disabled]="!form.value.negative"  ngModel type="number" name="negative_value" matInput>
       </mat-form-field>
       <br>
       <mat-form-field appearance="outline" class="margin">
@@ -47,14 +46,10 @@
         <br>
           <mat-form-field appearance="outline" class="margin">
               <mat-label>Weight</mat-label>
-              <input name="weight" type="number" ngModel required matInput>
+              <input min="0" max="5" name="weight" type="number" placeholder="0-5" ngModel required matInput>
             </mat-form-field>
-            <mat-form-field appearance="outline" class="margin full-width">
-                <mat-label>Comments (optional)</mat-label>
-                <textarea ngModel name="comments" matInput placeholder="Important remarks regarding the method or the result can be described there."></textarea>
-              </mat-form-field>
               <div class="buttons-row">
-                <button class="pr-3" mat-flat-button>Save</button>
+            <button [disabled]="form.invalid" class="pr-3" type="submit" mat-flat-button>Save</button>
                 <button mat-raised-button>Cancel</button>
               </div>
 </form>
