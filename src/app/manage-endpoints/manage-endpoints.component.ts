@@ -48,7 +48,6 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
   selectEndpoint(endpoint_name:any){
      this.flaskService.getEndpoint(endpoint_name).subscribe(
       (result:any) => {
-        console.log("se activa?")
         if(result["success"]){
           this.controlInterface.displayManageEndpoints = false;
           this.endpoint.name = endpoint_name

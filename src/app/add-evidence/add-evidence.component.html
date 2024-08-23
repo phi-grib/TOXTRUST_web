@@ -1,6 +1,6 @@
 
 <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="example-form">
-    <mat-form-field appearance="outline" class="margin">
+    <mat-form-field style="margin-right: 50px;" appearance="outline" class="margin">
       <mat-label>Name</mat-label>
       <input required ngModel name="name" matInput>
     </mat-form-field>
@@ -15,39 +15,54 @@
         </mat-select>
       </mat-form-field>
       <br>
+      <mat-form-field style="margin-right: 50px;" appearance="outline" class="margin">
+        <mat-label>Relevance</mat-label>
+        <mat-select required ngModel name="relevance">
+          <mat-option value="certain">Certain</mat-option>
+          <mat-option value="probable">Probable</mat-option>
+          <mat-option value="plausible">Plausible</mat-option>
+          <mat-option value="equivocal">Equivocal</mat-option>
+          <mat-option value="doubted">Doubted</mat-option>
+          <mat-option value="improbable">Improbable</mat-option>
+          <mat-option value="impossible">Impossible</mat-option>
+        </mat-select>
+      </mat-form-field>
+        <mat-form-field appearance="outline" class="margin">
+            <mat-label>Weight</mat-label>
+            <input min="1" max="5" name="weight" type="number" placeholder="1-5" ngModel required matInput>
+          </mat-form-field>
+      <br>
         <section class="example-section">
-          <mat-checkbox style="margin-right: 130px;" ngModel (change)="displayFieldPositive(form)" name="positive" class="example-margin">Positive</mat-checkbox>
+          <mat-checkbox style="margin-right: 180px;" ngModel (change)="displayFieldPositive(form)" name="positive" class="example-margin">Positive</mat-checkbox>
           <mat-checkbox ngModel name="negative" (change)="displayFieldNegative(form)" class="example-margin">Negative</mat-checkbox>
         </section>        
       <br>
-      <mat-form-field appearance="outline" class="margin">
-        <input required [disabled]="!form.value.positive" class="small-field" type="number"  ngModel name="positive_value" matInput>
+      <mat-form-field style="margin-right: 50px;" appearance="outline" class="margin">
+        <mat-label>Probability</mat-label>
+        <input required [disabled]="!form.value.positive" placeholder="0-1" min="0" max="1" class="small-field" type="number"  ngModel name="positive_value" matInput>
       </mat-form-field>
       <mat-form-field appearance="outline" class="margin">
-        <input [disabled]="!form.value.negative"  ngModel type="number" name="negative_value" matInput>
+        <mat-label>Probability</mat-label>
+        <input [disabled]="!form.value.negative" placeholder="0-1" min="0" max="1"  ngModel type="number" name="negative_value" matInput>
       </mat-form-field>
       <br>
-      <mat-form-field appearance="outline" class="margin">
-          <mat-label>Reliability</mat-label>
-          <input name="reliability" ngModel required matInput>
+      <mat-form-field  style="margin-right: 50px;"  appearance="outline" class="margin">
+          <mat-label>Reliability metric</mat-label>
+          <input [disabled]="!form.value.positive" name="reliability_positive" ngModel required matInput>
         </mat-form-field>
-        <mat-form-field appearance="outline" class="margin">
-          <mat-label>Relevance</mat-label>
-          <mat-select required ngModel name="relevance">
-            <mat-option value="certain">Certain</mat-option>
-            <mat-option value="probable">Probable</mat-option>
-            <mat-option value="plausible">Plausible</mat-option>
-            <mat-option value="equivocal">Equivocal</mat-option>
-            <mat-option value="doubted">Doubted</mat-option>
-            <mat-option value="improbable">Improbable</mat-option>
-            <mat-option value="impossible">Impossible</mat-option>
-          </mat-select>
+        <mat-form-field  appearance="outline" class="margin">
+          <mat-label>Reliability metric</mat-label>
+          <input [disabled]="!form.value.negative" name="reliability_negative" ngModel required matInput>
         </mat-form-field>
         <br>
-          <mat-form-field appearance="outline" class="margin">
-              <mat-label>Weight</mat-label>
-              <input min="0" max="5" name="weight" type="number" placeholder="0-5" ngModel required matInput>
-            </mat-form-field>
+        <mat-form-field  style="margin-right: 50px;"  appearance="outline" class="margin">
+          <mat-label>Reliability score</mat-label>
+          <input [disabled]="!form.value.positive" min="0" max="1" name="reliability_score_positive" type="number" ngModel required matInput>
+        </mat-form-field>
+        <mat-form-field  appearance="outline" class="margin">
+          <mat-label>Reliability score</mat-label>
+          <input type="number" min="0" max="1" [disabled]="!form.value.negative" name="reliability_score_negative" ngModel required matInput>
+        </mat-form-field>
               <div class="buttons-row">
             <button [disabled]="form.invalid" class="pr-3" type="submit" mat-flat-button>Save</button>
                 <button mat-raised-button>Cancel</button>

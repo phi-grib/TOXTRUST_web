@@ -3,13 +3,12 @@
     flex-direction: column; 
     align-items: center; 
     width: 100%;
-    max-width: 900px;
     min-height: 900px;
 
   }
 
-  .container img {
-    width: 879px;
+  img {
+    width: 1400px !important;
     height: 300px !important;
     display: block;
     border-radius: 10px 10px 0px 0px;
