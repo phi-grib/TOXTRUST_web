@@ -1,70 +1,168 @@
+<h2 mat-dialog-title>Add Evidence</h2>
 
-<form (ngSubmit)="onSubmit(form)" #form="ngForm" class="example-form">
-    <mat-form-field style="margin-right: 50px;" appearance="outline" class="margin">
+<mat-dialog-content>
+  <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="example-form">
+    <mat-form-field
+      appearance="outline"
+      class="margin"
+    >
       <mat-label>Name</mat-label>
-      <input required ngModel name="name" matInput>
+      <input required ngModel name="name" matInput />
     </mat-form-field>
     <mat-form-field appearance="outline" class="margin">
-        <mat-label>Source</mat-label>
-        <mat-select required ngModel name="source">
-          <mat-option value="qsar">QSAR</mat-option>
-          <mat-option value="expert">Expert</mat-option>
-          <mat-option value="in vitro">in vitro</mat-option>
-          <mat-option value="positive alert">Positive alert</mat-option>
-          <mat-option value="negative alert">Negative alert</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <br>
-      <mat-form-field style="margin-right: 50px;" appearance="outline" class="margin">
-        <mat-label>Relevance</mat-label>
-        <mat-select required ngModel name="relevance">
-          <mat-option value="certain">Certain</mat-option>
-          <mat-option value="probable">Probable</mat-option>
-          <mat-option value="plausible">Plausible</mat-option>
-          <mat-option value="equivocal">Equivocal</mat-option>
-          <mat-option value="doubted">Doubted</mat-option>
-          <mat-option value="improbable">Improbable</mat-option>
-          <mat-option value="impossible">Impossible</mat-option>
-        </mat-select>
-      </mat-form-field>
-        <mat-form-field appearance="outline" class="margin">
-            <mat-label>Weight</mat-label>
-            <input min="1" max="5" name="weight" type="number" placeholder="1-5" ngModel required matInput>
-          </mat-form-field>
-      <br>
-        <section class="example-section">
-          <mat-checkbox style="margin-right: 180px;" ngModel (change)="displayFieldPositive(form)" name="positive" class="example-margin">Positive</mat-checkbox>
-          <mat-checkbox ngModel name="negative" (change)="displayFieldNegative(form)" class="example-margin">Negative</mat-checkbox>
-        </section>        
-      <br>
-      <mat-form-field style="margin-right: 50px;" appearance="outline" class="margin">
+      <mat-label>Source</mat-label>
+      <mat-select required ngModel name="source">
+        <mat-option value="qsar">QSAR</mat-option>
+        <mat-option value="expert">Expert</mat-option>
+        <mat-option value="in vitro">in vitro</mat-option>
+        <mat-option value="positive alert">Positive alert</mat-option>
+        <mat-option value="negative alert">Negative alert</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br />
+    <mat-form-field
+      appearance="outline"
+      class="margin"
+    >
+      <mat-label>Relevance</mat-label>
+      <mat-select required ngModel name="relevance">
+        <mat-option value="certain">Certain</mat-option>
+        <mat-option value="probable">Probable</mat-option>
+        <mat-option value="plausible">Plausible</mat-option>
+        <mat-option value="equivocal">Equivocal</mat-option>
+        <mat-option value="doubted">Doubted</mat-option>
+        <mat-option value="improbable">Improbable</mat-option>
+        <mat-option value="impossible">Impossible</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="margin">
+      <mat-label>Weight</mat-label>
+      <input
+        min="1"
+        max="5"
+        name="weight"
+        type="number"
+        placeholder="1-5"
+        ngModel
+        required
+        matInput
+      />
+    </mat-form-field>
+    <br />
+    <br />
+    <div class="containerNegativePositive">
+    <div class="positiveContainer">
+      <mat-checkbox
+      style="margin-right: 180px"
+      ngModel
+      (change)="displayFieldPositive(form)"
+      name="positive"
+      id="posCheckbox"
+      class="example-margin"
+      >Positive</mat-checkbox
+    >
+      <mat-form-field
+        appearance="outline"
+        class="margin"
+      >
         <mat-label>Probability</mat-label>
-        <input required [disabled]="!form.value.positive" placeholder="0-1" min="0" max="1" class="small-field" type="number"  ngModel name="positive_value" matInput>
+        <input
+          required
+          [disabled]="!form.value.positive"
+          placeholder="0-1"
+          min="0"
+          max="1"
+          class="small-field"
+          type="number"
+          ngModel
+          name="positive_value"
+          matInput
+        />
       </mat-form-field>
       <mat-form-field appearance="outline" class="margin">
-        <mat-label>Probability</mat-label>
-        <input [disabled]="!form.value.negative" placeholder="0-1" min="0" max="1"  ngModel type="number" name="negative_value" matInput>
+        <mat-label>Reliability metric</mat-label>
+        <input
+          [disabled]="!form.value.positive"
+          name="reliability_positive"
+          ngModel
+          required
+          matInput
+        />
       </mat-form-field>
-      <br>
-      <mat-form-field  style="margin-right: 50px;"  appearance="outline" class="margin">
-          <mat-label>Reliability metric</mat-label>
-          <input [disabled]="!form.value.positive" name="reliability_positive" ngModel required matInput>
-        </mat-form-field>
-        <mat-form-field  appearance="outline" class="margin">
-          <mat-label>Reliability metric</mat-label>
-          <input [disabled]="!form.value.negative" name="reliability_negative" ngModel required matInput>
-        </mat-form-field>
-        <br>
-        <mat-form-field  style="margin-right: 50px;"  appearance="outline" class="margin">
-          <mat-label>Reliability score</mat-label>
-          <input [disabled]="!form.value.positive" min="0" max="1" name="reliability_score_positive" type="number" ngModel required matInput>
-        </mat-form-field>
-        <mat-form-field  appearance="outline" class="margin">
-          <mat-label>Reliability score</mat-label>
-          <input type="number" min="0" max="1" [disabled]="!form.value.negative" name="reliability_score_negative" ngModel required matInput>
-        </mat-form-field>
-              <div class="buttons-row">
-            <button [disabled]="form.invalid" class="pr-3" type="submit" mat-flat-button>Save</button>
-                <button mat-raised-button>Cancel</button>
-              </div>
-</form>
+      <mat-form-field appearance="outline" class="margin">
+        <mat-label>Reliability score</mat-label>
+        <input
+          [disabled]="!form.value.positive"
+          min="0"
+          max="1"
+          name="reliability_score_positive"
+          type="number"
+          ngModel
+          required
+          matInput
+        />
+      </mat-form-field>
+    </div>
+    <div class="negativeContainer">
+      <mat-checkbox
+      ngModel
+      name="negative"
+      id="negCheckbox"
+      (change)="displayFieldNegative(form)"
+      class="example-margin"
+      >Negative</mat-checkbox
+    >
+      <mat-form-field appearance="outline" class="margin">
+        <mat-label>Probability</mat-label>
+        <input
+          [disabled]="!form.value.negative"
+          placeholder="0-1"
+          min="0"
+          max="1"
+          ngModel
+          type="number"
+          name="negative_value"
+          matInput
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="margin">
+        <mat-label>Reliability metric</mat-label>
+        <input
+          [disabled]="!form.value.negative"
+          name="reliability_negative"
+          ngModel
+          required
+          matInput
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="margin">
+        <mat-label>Reliability score</mat-label>
+        <input
+          type="number"
+          min="0"
+          max="1"
+          [disabled]="!form.value.negative"
+          name="reliability_score_negative"
+          ngModel
+          required
+          matInput
+        />
+      </mat-form-field>
+    </div>
+  </div>
+    <div class="buttons-row">
+      <button
+        [disabled]="form.invalid"
+        class="pr-3"
+        type="submit"
+        mat-flat-button
+      >
+        Save
+      </button>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button id="closeBtn" mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>
+

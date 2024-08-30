@@ -21,11 +21,21 @@ export class FlaskService {
     return this.http.get(url)
 
   }
+  getEvidences(name:string){
+    const url = environment.baseUrl +"evidences/"+name;
+    return this.http.get(url);
+  }
 
   createEndpoint(name:string){
     const url: string = environment.baseUrl + "new/" +name
     return this.http.post(url,{})
   }
+
+  getEvidenceResult(endpoint_name:string,evidence_name:string){
+    const url: string = environment.baseUrl + "evidence_result/"+endpoint_name+"/"+evidence_name;
+    return this.http.get(url)
+  }
+
   evidenceInput(name:string,data:any){
     const url: string = environment.baseUrl + "call_evidence_input/"+name;
     return this.http.post(url, data, {
