@@ -55,4 +55,9 @@ export class FlaskService {
     const url: string = environment.baseUrl + "delete_endpoint/" +endpoint_name
     return this.http.delete(url);
   }
+
+  deleteEvidence(endpoint_name:string,evidence_name:string){
+    const url: string = environment.baseUrl + "delete_evidence/" +endpoint_name+"/"+evidence_name
+    return this.http.delete(url);
+  }
 }

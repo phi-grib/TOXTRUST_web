@@ -42,8 +42,6 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
 
   deleteEndpoint(name:any,event: MouseEvent){
     event.stopPropagation();
-    console.log("delete Endpoint")
-    console.log(name)
     this.flaskService.deleteEndpoint(name).subscribe((result:any) => {
        if(result['success']){
         this.toastr.success(result['data'],'')
@@ -77,8 +75,6 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
           this.controlInterface.displayManageEndpoints = false;
           this.endpoint.name = endpoint_name
           this.mapEndpointData(result["data"]["endpoint"]);
-          console.log(this.endpoint.name)
-          console.log(this.controlInterface.displayManageEndpoints)
         }
       },
       (error:any)=> {

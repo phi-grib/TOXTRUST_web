@@ -13,10 +13,10 @@
       </ng-container>
          <!-- Delete Button Column -->
     <ng-container matColumnDef="delete">
-      <th mat-header-cell *matHeaderCellDef> Delete </th>
+      <th mat-header-cell *matHeaderCellDef>  </th>
       <td mat-cell *matCellDef="let element">
         <button mat-icon-button color="warn" (click)="deleteEndpoint(element,$event)">
-          <mat-icon>delete</mat-icon>
+          <mat-icon class="red-icon">delete</mat-icon>
         </button>
       </td>
     </ng-container>
