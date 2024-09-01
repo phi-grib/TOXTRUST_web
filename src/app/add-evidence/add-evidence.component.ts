@@ -72,8 +72,6 @@ ngOnInit(): void {
       this.data['reliability']['value'].push(form.value.reliability_score_negative)
 
     }
-    console.log(this.endpoint.name)
-    console.log(this.data)
     this.flaskService.evidenceInput(this.endpoint.name,this.data).subscribe((result: any) => {
       console.log(result)
       if(result['success']){
