@@ -7,6 +7,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ControlInterface, Endpoint } from '../globals';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-manage-endpoints',
@@ -16,18 +17,18 @@ import { ControlInterface, Endpoint } from '../globals';
   styleUrls: ['./manage-endpoints.component.scss']
 })
 export class ManageEndpointsComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['position', 'name'];
+  displayedColumns: string[] = ['position', 'name','delete'];
   dataSource = new MatTableDataSource<string>();
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef,private flaskService: FlaskService,private endpoint:Endpoint,private controlInterface:ControlInterface) {}
+  constructor(private toastr:ToastrService,private changeDetectorRef: ChangeDetectorRef,private flaskService: FlaskService,private endpoint:Endpoint,private controlInterface:ControlInterface) {}
 
   ngOnInit(): void {
     this.flaskService.getListEndpoints().subscribe(
       (result: string[]) => {
         this.endpoint.listEndpoints = result;
-        this.dataSource.data = this.endpoint.listEndpoints; // Actualiza dataSource después de recibir los datos
+        this.dataSource.data = this.endpoint.listEndpoints; 
       },
       (error: any) => {
         console.error('Error fetching endpoints:', error);
@@ -37,6 +38,30 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
+  }
+
+  deleteEndpoint(name:any,event: MouseEvent){
+    event.stopPropagation();
+    console.log("delete Endpoint")
+    console.log(name)
+    this.flaskService.deleteEndpoint(name).subscribe((result:any) => {
+       if(result['success']){
+        this.toastr.success(result['data'],'')
+           this.flaskService.getListEndpoints().subscribe(
+      (result: string[]) => {
+        this.endpoint.listEndpoints = result;
+        this.dataSource.data = this.endpoint.listEndpoints; 
+      },
+      (error: any) => {
+        console.error('Error fetching endpoints:', error);
+      }
+    );
+
+       }else{
+        this.toastr.error(result['data'],'')
+
+       }
+    })
   }
 
   mapEndpointData(data:any){
