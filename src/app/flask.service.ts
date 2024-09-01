@@ -50,4 +50,9 @@ export class FlaskService {
     headers: { 'Content-Type': 'application/json' }
   });
   }
+
+  deleteEndpoint(endpoint_name:string){
+    const url: string = environment.baseUrl + "delete_endpoint/" +endpoint_name
+    return this.http.delete(url);
+  }
 }
