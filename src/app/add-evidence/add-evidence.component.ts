@@ -75,7 +75,9 @@ ngOnInit(): void {
     this.flaskService.evidenceInput(this.endpoint.name,this.data).subscribe((result: any) => {
       console.log(result)
       if(result['success']){
+        this.flaskService.UpdateEvidenceList();
         this.toastr.success(result['message'],'')
+
       }else{
         this.toastr.error(result['message'],'')
       }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from "../environments/environment";
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Endpoint } from './globals';
 
@@ -60,4 +60,13 @@ export class FlaskService {
     const url: string = environment.baseUrl + "delete_evidence/" +endpoint_name+"/"+evidence_name
     return this.http.delete(url);
   }
+
+  private updateEvidenceList = new Subject<any>();
+  updateEvidenceList$ = this.updateEvidenceList.asObservable()
+  UpdateEvidenceList(){
+        this.updateEvidenceList.next('')
+  }
+  
+
+
 }

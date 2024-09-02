@@ -28,6 +28,13 @@ export class ListEvidencesComponent  implements OnInit {
   listEvidences:any[] = []; 
 
   ngOnInit(): void {
+      this.getEvidences();
+      this.flaskService.updateEvidenceList$.subscribe(result =>{
+       this.getEvidences();
+      })
+  }
+  getEvidences(){
+    this.listEvidences = [];
     this.flaskService.getEvidences(this.endpoint.name).subscribe((result:any) => {
       if(result['success']){
         Object.keys(result['data']).forEach(key => {
@@ -40,6 +47,7 @@ export class ListEvidencesComponent  implements OnInit {
       }
     })
   }
+
   selectEvidence(evidence:any){
      this.dialog.open(ResultevidenceComponent, {
        height: '700px',
