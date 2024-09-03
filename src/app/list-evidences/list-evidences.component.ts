@@ -62,9 +62,11 @@ export class ListEvidencesComponent  implements OnInit {
     event.stopPropagation();
     this.flaskService.deleteEvidence(this.endpoint.name,evidence.name).subscribe((result:any)=>{
       if(result['success']){
-        this.toastr.success(result['data'],'')
+       this.getEvidences();
+        this.toastr.success(result['data'],'');
+
        }else{
-        this.toastr.error(result['data'],'')
+        this.toastr.error(result['data'],'');
 
        }
     })
