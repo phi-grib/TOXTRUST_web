@@ -1,7 +1,46 @@
 <h2 mat-dialog-title>Result Evidence</h2>
 
 <mat-dialog-content>
-    <pre>{{ evidenceResult | json }}</pre>
+  <h6>Computed Probabilities</h6>
+  <table  ><thead>
+    <tr>
+      <th>Parameter / Result</th>
+      <th>Negative</th>
+      <th>Uncertain</th>
+      <th>Positive</th>
+    </tr></thead>
+  <tbody>
+    <tr>
+      <td>Belief</td>
+      <td>{{this.evidenceResult['probabilities']?.negative}}</td>
+      <td>{{this.evidenceResult['probabilities']?.uncertain}}</td>
+      <td>{{this.evidenceResult['probabilities']?.positive}}</td>
+    </tr>
+  </tbody>
+  </table>
+
+  <h6 style="margin-top: 5px;">Probability bonds</h6>
+
+  <table  ><thead>
+    <tr>
+      <th>Parameter / Result</th>
+      <th>Negative</th>
+      <th>Positive</th>
+    </tr></thead>
+  <tbody>
+    <tr>
+      <td>Belief</td>
+      <td>{{this.evidenceResult['belief']?.negative}}</td>
+      <td>{{this.evidenceResult['belief']?.positive}}</td>
+    </tr>
+    <tr>
+      <td>Plausibility</td>
+      <td>{{this.evidenceResult['plausibility']?.negative}}</td>
+      <td>{{this.evidenceResult['plausibility']?.positive}}</td>
+    </tr>
+  </tbody>
+  </table>
+  
 
 </mat-dialog-content>
 

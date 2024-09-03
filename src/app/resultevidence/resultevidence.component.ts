@@ -9,30 +9,29 @@ import {
 } from '@angular/material/dialog';
 import { Endpoint } from '../globals';
 import { FlaskService } from '../flask.service';
-import { JsonPipe } from '@angular/common';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 @Component({
   selector: 'app-resultevidence',
   standalone: true,
   imports: [  MatDialogActions,
   MatDialogClose,
   MatDialogContent,
-  MatDialogTitle,MatButtonModule,JsonPipe],
+  MatDialogTitle,MatButtonModule,MatTableModule],
   templateUrl: './resultevidence.component.html',
   styleUrl: './resultevidence.component.scss'
 })
 export class ResultevidenceComponent implements OnInit {
   evidence_name:string = "";
-  evidenceResult = undefined
+  evidenceResult:any
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,private endpoint:Endpoint,private flaskService:FlaskService){
     this.evidence_name = data.name;
   }
   ngOnInit(): void {
     this.flaskService.getEvidenceResult(this.endpoint.name,this.evidence_name).subscribe((result:any) => {
       if(result['success']){
+        console.log(result['data'])
         this.evidenceResult = result['data'];
-        console.log(this.evidenceResult)
       }
     })
   }
-
 }

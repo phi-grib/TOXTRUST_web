@@ -64,10 +64,8 @@ export class ListEvidencesComponent  implements OnInit {
       if(result['success']){
        this.getEvidences();
         this.toastr.success(result['data'],'');
-
        }else{
         this.toastr.error(result['data'],'');
-
        }
     })
   }
