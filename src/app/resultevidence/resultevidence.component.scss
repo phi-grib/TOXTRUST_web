@@ -1,9 +1,18 @@
-table, td, th {
-    border: 1px solid;
-    text-align: center;
-  }
-  
+
+
+
+th{
+  background-color: purple;
+  color: white;
+  border: 1px solid;
+}
   table {
     width: 100%;
     border-collapse: collapse;
+    text-align: center;
+
+  }
+
+  image {
+    background-color: red !important;
   }

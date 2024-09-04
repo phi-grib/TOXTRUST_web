@@ -23,6 +23,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 export class ResultevidenceComponent implements OnInit {
   evidence_name:string = "";
   evidenceResult:any
+  image:any;
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,private endpoint:Endpoint,private flaskService:FlaskService){
     this.evidence_name = data.name;
   }
@@ -33,5 +34,16 @@ export class ResultevidenceComponent implements OnInit {
         this.evidenceResult = result['data'];
       }
     })
+    this.flaskService.getEvidenceImagePath(this.endpoint.name,this.evidence_name).subscribe((result:any)=>{
+        const blob = new Blob([result], { type: 'application/octet-stream' });
+        const reader = new FileReader();
+        reader.readAsDataURL(blob);
+        reader.onloadend = () => {
+          this.image = reader.result as string;
+        }; 
+
+      
+    })
+
   }
 }

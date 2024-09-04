@@ -1,7 +1,7 @@
 <h2 mat-dialog-title>Result Evidence</h2>
 
 <mat-dialog-content>
-  <h6>Computed Probabilities</h6>
+  <h6 style="margin-top: 10px;">Computed Probabilities</h6>
   <table  ><thead>
     <tr>
       <th>Parameter / Result</th>
@@ -19,7 +19,7 @@
   </tbody>
   </table>
 
-  <h6 style="margin-top: 5px;">Probability bonds</h6>
+  <h6 style="padding-top: 10px;">Probability bonds</h6>
 
   <table  ><thead>
     <tr>
@@ -41,7 +41,9 @@
   </tbody>
   </table>
   
-
+  <div style="display: flex; justify-content: center; margin-top: 15px;">
+    <img [src]="this.image" width="288" height="288" alt="">
+  </div>
 </mat-dialog-content>
 
 <mat-dialog-actions>
