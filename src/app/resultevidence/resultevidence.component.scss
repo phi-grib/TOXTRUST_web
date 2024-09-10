@@ -7,12 +7,23 @@ th{
   border: 1px solid;
 }
   table {
+    margin-top: 10px;
+    margin-bottom: 5px;
     width: 100%;
     border-collapse: collapse;
     text-align: center;
+    background-color: white !important;
 
   }
 
-  image {
-    background-color: red !important;
+
+  .mat-mdc-dialog-content, .mdc-dialog__content,.mat-mdc-dialog-surface,.mdc-dialog__surface,.mat-mdc-dialog-actions, .mdc-dialog__actions{
+    background-color: white !important;
+  }
+  .title-table {
+    font-size: 18px;
+  }
+
+  .containerImage {
+    background-color: white !important;
   }
