@@ -2,7 +2,6 @@
     width: 400px !important;
     margin-bottom: 20px;
   }
-
   .mat-mdc-row .mat-mdc-cell {
     border-bottom: 1px solid transparent;
     border-top: 1px solid transparent;
@@ -12,6 +11,6 @@
   .mat-mdc-row:hover .mat-mdc-cell {
     border-color: currentColor;
   }
-  .red-icon {
-    color: #f44336; /* rojo material design */
+  .delete-icon {
+    color: purple; /* rojo material design */
   }
