@@ -2,21 +2,20 @@ import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@ang
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
-import { FlaskService } from './flask.service';
 import { ManageEndpointsComponent } from './manage-endpoints/manage-endpoints.component';
 import { CommonModule } from '@angular/common';
-import {MatExpansionModule} from '@angular/material/expansion';
 import {MatIconModule} from '@angular/material/icon';
 import { NewEndpointFormComponent } from './new-endpoint-form/new-endpoint-form.component';
 import {
   MatDialog,
 } from '@angular/material/dialog';
+import {MatCardModule} from '@angular/material/card';
 import { ModalCreateProjectComponent } from './modal-create-project/modal-create-project.component';
 import { ControlInterface, Endpoint } from './globals';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ModalCreateProjectComponent,NewEndpointFormComponent,MatIconModule,MatExpansionModule,CommonModule,MatInputModule,MatFormFieldModule,MatButtonModule,ManageEndpointsComponent],
+  imports: [MatCardModule,ModalCreateProjectComponent,NewEndpointFormComponent,MatIconModule,CommonModule,MatInputModule,MatFormFieldModule,MatButtonModule,ManageEndpointsComponent],
   changeDetection: ChangeDetectionStrategy.Default,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
