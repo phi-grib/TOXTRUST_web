@@ -1,23 +1,43 @@
 
-   <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="example-form">
-        <mat-form-field appearance="outline" class="example-full-width">
-          <mat-label>Description</mat-label>
-          <input required  [(ngModel)]="endpoint.description" name="description" matInput >
-        </mat-form-field>
-        <mat-form-field appearance="outline" class="example-full-width">
-            <mat-label>Framework</mat-label>
-            <input required name="framework" [(ngModel)]="endpoint.framework" matInput>
-          </mat-form-field>
-          <mat-form-field appearance="outline" class="example-full-width">
-            <mat-label>Compound</mat-label>
-            <input required [(ngModel)]="endpoint.compound" name="compound"  matInput>
-          </mat-form-field>
-          <mat-form-field appearance="outline" class="example-full-width">
-            <mat-label>Confidentiality</mat-label>
-            <input required [(ngModel)]="endpoint.confidentiality" name="confidentiality"  matInput>
-          </mat-form-field>
-          <div class="buttons-row">
-            <button [disabled]="form.invalid" class="pr-3" type="submit" mat-flat-button>Save</button>
-          </div>
-    </form>
-
+<div class="container">
+  <div class="containerGeneralInformationForm">
+    <h1 class="title-form">General Information</h1>
+    <form (ngSubmit)="onSubmit(generalForm)" #generalForm="ngForm" class="example-form">
+         <mat-form-field appearance="outline" class="example-full-width">
+           <mat-label>Description</mat-label>
+           <input required  [(ngModel)]="endpoint.description" name="description" matInput >
+         </mat-form-field>
+         <mat-form-field appearance="outline" class="example-full-width">
+             <mat-label>Framework</mat-label>
+             <input required name="framework" [(ngModel)]="endpoint.framework" matInput>
+           </mat-form-field>
+           <mat-form-field appearance="outline" class="example-full-width">
+             <mat-label>Compound</mat-label>
+             <input required [(ngModel)]="endpoint.compound" name="compound"  matInput>
+           </mat-form-field>
+           <mat-form-field appearance="outline" class="example-full-width">
+             <mat-label>Confidentiality</mat-label>
+             <input required [(ngModel)]="endpoint.confidentiality" name="confidentiality"  matInput>
+           </mat-form-field>
+           <div class="buttons-row">
+             <button [disabled]="generalForm.invalid" class="pr-3" type="submit" mat-flat-button>Save</button>
+           </div>
+     </form>
+  </div>
+<div class="containerDecisionForm">
+  <h1 class="title-form">Decision settings</h1>
+  <form (ngSubmit)="onSubmitDecision(decisionForm)" #decisionForm="ngForm" class="example-form">
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>maxUncertainty</mat-label>
+      <input ngModel type="number"  name="maxUncertainty" matInput >
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>minBelief</mat-label>
+        <input ngModel  name="minBelief" type="number" matInput>
+      </mat-form-field>
+      <div class="buttons-row">
+        <button [disabled]="decisionForm.invalid" class="pr-3" type="submit" mat-flat-button>Save</button>
+      </div>
+  </form>
+</div>
+</div>

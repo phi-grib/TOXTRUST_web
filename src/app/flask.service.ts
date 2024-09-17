@@ -73,5 +73,12 @@ export class FlaskService {
         this.updateEvidenceList.next('')
   }
 
+  callDecisionInput(data:any){
+    const url: string = environment.baseUrl + "call_decision_input/"+this.endpoint.name
+    return this.http.post(url, data, {
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+
 
 }
