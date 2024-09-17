@@ -1,0 +1,14 @@
+
+    <form (ngSubmit)="onSubmitDecision(decisionForm)" #decisionForm="ngForm" class="example-form">
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Maximum uncertainty</mat-label>
+        <input ngModel type="number"  name="maxUncertainty" matInput >
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Minimum belief</mat-label>
+          <input ngModel  name="minBelief" type="number" matInput>
+        </mat-form-field>
+        <div class="buttons-row">
+          <button [disabled]="decisionForm.invalid" class="pr-3" type="submit" mat-flat-button>Save</button>
+        </div>
+    </form>

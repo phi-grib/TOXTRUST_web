@@ -32,17 +32,4 @@ export class DefineEndpointComponent {
         console.log(error)
       })
   }
-  onSubmitDecision(decisionForm:any){
-    this.flaskService.callDecisionInput(decisionForm.value).subscribe((result:any)=>{
-      if(result['success']){
-        this.toastr.success(result['message'],'')
-      }else {
-        this.toastr.error(result['message'],'')
-      }
-    },
-  (error)=> {
-    console.log(error)
-  })
-  }
-
 }

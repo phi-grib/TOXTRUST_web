@@ -1,7 +1,4 @@
 
-<div class="container">
-  <div class="containerGeneralInformationForm">
-    <h1 class="title-form">General Information</h1>
     <form (ngSubmit)="onSubmit(generalForm)" #generalForm="ngForm" class="example-form">
          <mat-form-field appearance="outline" class="example-full-width">
            <mat-label>Description</mat-label>
@@ -23,21 +20,3 @@
              <button [disabled]="generalForm.invalid" class="pr-3" type="submit" mat-flat-button>Save</button>
            </div>
      </form>
-  </div>
-<div class="containerDecisionForm">
-  <h1 class="title-form">Decision settings</h1>
-  <form (ngSubmit)="onSubmitDecision(decisionForm)" #decisionForm="ngForm" class="example-form">
-    <mat-form-field appearance="outline" class="example-full-width">
-      <mat-label>maxUncertainty</mat-label>
-      <input ngModel type="number"  name="maxUncertainty" matInput >
-    </mat-form-field>
-    <mat-form-field appearance="outline" class="example-full-width">
-        <mat-label>minBelief</mat-label>
-        <input ngModel  name="minBelief" type="number" matInput>
-      </mat-form-field>
-      <div class="buttons-row">
-        <button [disabled]="decisionForm.invalid" class="pr-3" type="submit" mat-flat-button>Save</button>
-      </div>
-  </form>
-</div>
-</div>

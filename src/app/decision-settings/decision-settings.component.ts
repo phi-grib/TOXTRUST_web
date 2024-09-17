@@ -1,0 +1,33 @@
+import { Component } from '@angular/core';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { FlaskService } from '../flask.service';
+import { ToastrService } from 'ngx-toastr';
+@Component({
+  selector: 'app-decision-settings',
+  standalone: true,
+  imports: [MatInputModule,MatFormFieldModule,FormsModule,MatButtonModule],
+  templateUrl: './decision-settings.component.html',
+  styleUrl: './decision-settings.component.scss'
+})
+export class DecisionSettingsComponent {
+
+  constructor(private flaskService:FlaskService,private toastr:ToastrService){
+
+  }
+
+  onSubmitDecision(decisionForm:any){
+    this.flaskService.callDecisionInput(decisionForm.value).subscribe((result:any)=>{
+      if(result['success']){
+        this.toastr.success(result['message'],'')
+      }else {
+        this.toastr.error(result['message'],'')
+      }
+    },
+  (error)=> {
+    console.log(error)
+  })
+  }
+}

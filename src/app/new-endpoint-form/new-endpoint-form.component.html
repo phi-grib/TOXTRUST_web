@@ -7,6 +7,11 @@
   <app-define-endpoint></app-define-endpoint> 
     </mat-step>
     <mat-step >
+        <ng-template matStepLabel>Settings</ng-template>
+  <!-- <app-define-endpoint></app-define-endpoint>  -->
+  <app-decision-settings></app-decision-settings>
+    </mat-step>
+    <mat-step >
         <ng-template matStepLabel>Evidence</ng-template>
         <app-list-evidences></app-list-evidences>
         <!-- <app-add-evidence></app-add-evidence> -->
