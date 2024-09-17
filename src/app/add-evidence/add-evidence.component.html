@@ -51,7 +51,56 @@
     <br />
     <br />
     <div class="containerNegativePositive">
+
     <div class="positiveContainer">
+      <mat-checkbox
+      ngModel
+      name="negative"
+      id="negCheckbox"
+      (change)="displayFieldNegative(form)"
+      class="example-margin"
+      >Negative</mat-checkbox
+    >
+      <mat-form-field appearance="outline" class="margin">
+        <mat-label>Probability</mat-label>
+        <input
+          [disabled]="!form.value.negative"
+          placeholder="0-1"
+          min="0"
+          max="1"
+          ngModel
+          type="number"
+          name="negative_value"
+          matInput
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="margin">
+        <mat-label>Reliability metric</mat-label>
+        <input
+          [disabled]="!form.value.negative"
+          name="reliability_negative"
+          ngModel
+          required
+          matInput
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="margin">
+        <mat-label>Reliability score</mat-label>
+        <input
+          type="number"
+          min="0"
+          max="1"
+          [disabled]="!form.value.negative"
+          name="reliability_score_negative"
+          ngModel
+          required
+          matInput
+        />
+      </mat-form-field>
+    </div>
+
+    
+    <div class="negativeContainer">
       <mat-checkbox
       style="margin-right: 180px"
       ngModel
@@ -97,52 +146,6 @@
           max="1"
           name="reliability_score_positive"
           type="number"
-          ngModel
-          required
-          matInput
-        />
-      </mat-form-field>
-    </div>
-    <div class="negativeContainer">
-      <mat-checkbox
-      ngModel
-      name="negative"
-      id="negCheckbox"
-      (change)="displayFieldNegative(form)"
-      class="example-margin"
-      >Negative</mat-checkbox
-    >
-      <mat-form-field appearance="outline" class="margin">
-        <mat-label>Probability</mat-label>
-        <input
-          [disabled]="!form.value.negative"
-          placeholder="0-1"
-          min="0"
-          max="1"
-          ngModel
-          type="number"
-          name="negative_value"
-          matInput
-        />
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="margin">
-        <mat-label>Reliability metric</mat-label>
-        <input
-          [disabled]="!form.value.negative"
-          name="reliability_negative"
-          ngModel
-          required
-          matInput
-        />
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="margin">
-        <mat-label>Reliability score</mat-label>
-        <input
-          type="number"
-          min="0"
-          max="1"
-          [disabled]="!form.value.negative"
-          name="reliability_score_negative"
           ngModel
           required
           matInput
