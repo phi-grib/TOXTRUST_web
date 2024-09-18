@@ -3,8 +3,8 @@
   display: flex;
   flex-direction: column; 
   align-items: center; 
-  width: 100%;
-  min-height: 900px;
+  width: 90vh !important;
+  height: 80vh !important;
 
 }
 
@@ -14,8 +14,7 @@
 
 img {
   width: 100%;
-  min-width: 1200px !important;
-  height: 400px !important;
+  height: 30vh !important;
   display: block;
   border-radius: 10px 10px 0px 0px !important;
   

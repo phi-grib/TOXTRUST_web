@@ -2,25 +2,23 @@
     display: flex;
     flex-direction: column; 
     align-items: center; 
-    min-height: 900px;
+    height: 80vh;
+    width: 90vh;
+
   }
 
   .container img {
-    width: 1200px !important;
-    height: 400px !important;
+    width: 100%;
+    height: 30vh !important;
     display: block;
-    border-radius: 10px 10px 0px 0px;
-    
+    border-radius: 10px 10px 0px 0px !important;
   }
 
   #matStepperContainer{
-    width: 1200px !important;
-    height: 700px !important;
-
+    width: 90vh !important;
   }
 
   .containerEvidence {
     display: flex;
     flex-direction: row;
-    
   }
