@@ -10,8 +10,9 @@
         <button mat-raised-button (click)="openNewProject()">New Project</button>
         <button mat-raised-button (click)="openManageEndpoints()">Existing Projects</button>
         <button mat-raised-button>Documentation</button>
-        <button mat-raised-button>Code</button>
+        <button  mat-raised-button (click)="openLink()">Code</button>
         <button mat-raised-button>Literature</button>
+        <button mat-raised-button>Configuration</button>
       </div>
       <div class="containerLogos">
         <img width="120px" src="assets/upf.png" alt="">
@@ -23,3 +24,4 @@
   <app-new-endpoint-form *ngIf="this.endpoint.name"></app-new-endpoint-form>
   <app-manage-endpoints *ngIf="this.controlInterface.displayManageEndpoints"></app-manage-endpoints>
 </div>
+

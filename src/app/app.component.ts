@@ -31,6 +31,9 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
 
   }
+  openLink(){
+    window.open('https://github.com/phi-grib/toxtrust')
+  }
   openNewProject() {
     this.endpoint.name = ""
     this.controlInterface.displayManageEndpoints = false;
