@@ -42,6 +42,8 @@ export class ListEvidencesComponent  implements OnInit {
           this.listEvidences.push(evidence);
         });
         this.dataSource.data = this.listEvidences;
+        console.log("Evidenceees")
+        console.log(this.dataSource.data)
       }else{
         console.log("Failed");
       }
