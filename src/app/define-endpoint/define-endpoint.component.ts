@@ -24,6 +24,8 @@ export class DefineEndpointComponent {
       (result: any) => {
         if (result["success"]) {
           this.toastr.success(result["message"], '');
+         var nextStep = document.getElementsByTagName("mat-step-header")[1] as HTMLElement
+         nextStep.click();
         } else {
           this.toastr.error(result["message"], '');
         }
