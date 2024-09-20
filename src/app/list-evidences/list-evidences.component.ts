@@ -8,12 +8,13 @@ import { AddEvidenceComponent } from '../add-evidence/add-evidence.component';
 import {
   MatDialog,
 } from '@angular/material/dialog';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ResultevidenceComponent } from '../resultevidence/resultevidence.component';
 import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-list-evidences',
   standalone: true,
-  imports: [MatTableModule,MatButtonModule,AddEvidenceComponent,MatIconModule],
+  imports: [MatTableModule,MatButtonModule,AddEvidenceComponent,MatIconModule,MatCheckboxModule],
   templateUrl: './list-evidences.component.html',
   styleUrl: './list-evidences.component.scss'
 })
@@ -23,7 +24,7 @@ export class ListEvidencesComponent  implements OnInit {
   constructor(private toastr:ToastrService,private flaskService:FlaskService,private endpoint:Endpoint){
 
   }
-  displayedColumns: string[] = ['position', 'name','delete'];
+  displayedColumns: string[] = ['position', 'name','type','weight','relevance','visualize','combine','delete'];
   dataSource = new MatTableDataSource<string>();
   listEvidences:any[] = []; 
 
