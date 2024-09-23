@@ -51,6 +51,13 @@ export class FlaskService {
   });
   }
 
+  selectRule(data:any){
+    const url: string = environment.baseUrl + "select_rule/"+this.endpoint.name;
+    return this.http.post(url, data, {
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+
   deleteEndpoint(endpoint_name:string){
     const url: string = environment.baseUrl + "delete_endpoint/" +endpoint_name
     return this.http.delete(url);

@@ -1,0 +1,26 @@
+
+<form (ngSubmit)="onSubmit(form)" #form="ngForm" class="example-form">
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Rule</mat-label>
+      <mat-select required ngModel name="rule">
+        <mat-option value="Dempster">Dempster</mat-option>
+        <mat-option value="Yager">Yager</mat-option>
+        <mat-option value="Inagaki">Inagaki</mat-option>
+        <mat-option value="auto">auto</mat-option>
+      </mat-select> 
+
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Factor</mat-label>
+      <mat-select required ngModel name="factor">
+        <mat-option value="fullDecision">Full decision</mat-option>
+        <mat-option value="fullUncertainty">Full Uncertainty</mat-option>
+        <mat-option value="partialDecision">Partial decision</mat-option>
+        <mat-option value="partialUncertainty">Partial Uncertainty</mat-option>
+      </mat-select> 
+
+      </mat-form-field>
+      <div class="buttons-row">
+        <button [disabled]="form.invalid" class="pr-3" type="submit" mat-flat-button>Save</button>
+      </div>
+  </form>

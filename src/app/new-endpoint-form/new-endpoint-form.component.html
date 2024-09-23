@@ -1,7 +1,7 @@
 
 <div  class="container">
 <img   src="assets/image.png" alt="image">
-<mat-stepper id="matStepperContainer" [linear]="true" #stepper>
+<mat-stepper id="matStepperContainer"  #stepper>
     <mat-step >
         <ng-template matStepLabel>Endpoint</ng-template>
   <app-define-endpoint></app-define-endpoint> 
@@ -18,7 +18,7 @@
     </mat-step>
     <mat-step>
         <ng-template matStepLabel>Combination</ng-template>
-        3 step
+        <app-select-rule></app-select-rule>
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Report</ng-template>

@@ -5,10 +5,11 @@ import { AddEvidenceComponent } from '../add-evidence/add-evidence.component';
 import { ListEvidencesComponent } from '../list-evidences/list-evidences.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { DecisionSettingsComponent } from '../decision-settings/decision-settings.component';
+import { SelectRuleComponent } from '../select-rule/select-rule.component';
 @Component({
   selector: 'app-new-endpoint-form',
   standalone: true,
-  imports: [AddEvidenceComponent,DefineEndpointComponent,MatStepperModule,ListEvidencesComponent,MatGridListModule,DecisionSettingsComponent],
+  imports: [AddEvidenceComponent,DefineEndpointComponent,MatStepperModule,ListEvidencesComponent,MatGridListModule,DecisionSettingsComponent,SelectRuleComponent],
   templateUrl: './new-endpoint-form.component.html',
   styleUrl: './new-endpoint-form.component.scss'
 })
