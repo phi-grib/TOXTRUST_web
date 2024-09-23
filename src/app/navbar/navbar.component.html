@@ -1,0 +1,19 @@
+<mat-toolbar class="navbar">
+    <button (click)="menu_options = !menu_options" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="title-navbar">TOXTRUST</span>
+    <span class="example-spacer"></span>
+    <img width="120px" src="assets/upf.png" alt="">
+    <img width="90px" src="assets/aspis.png" alt="">
+    <img width="80px" src="assets/riskhunter.png" alt="">
+  </mat-toolbar>
+
+  <div [hidden]="menu_options" class="MenuOptions">
+    <button mat-raised-button (click)="openNewProject()">New Project</button>
+<button mat-raised-button (click)="openManageEndpoints()">Existing Projects</button>
+<button mat-raised-button>Documentation</button>
+<button  mat-raised-button (click)="openLink()">Code</button>
+<button mat-raised-button>Literature</button>
+<button mat-raised-button>Configuration</button>
+  </div>

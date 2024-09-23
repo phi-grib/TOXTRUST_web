@@ -1,27 +1,6 @@
-<div class="outer-container">
-  <mat-card class="left-accordion">
-    <mat-card-header class="cardHeader">
-      <!-- <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="menu"></mat-icon> -->
-      <span class="titlemenu">TOXTRUST</span>
-    </mat-card-header>
-    <mat-card-content class="card-content">
-      <span class="info">TOXTRUST is a Dempster-Shafer Theory (DST) based python tool, designed for processing individual toxicological evidence pieces, combining them to a single result, and estimating their uncertainties.</span>
-      <div class="buttonContainer">
-        <button mat-raised-button (click)="openNewProject()">New Project</button>
-        <button mat-raised-button (click)="openManageEndpoints()">Existing Projects</button>
-        <button mat-raised-button>Documentation</button>
-        <button  mat-raised-button (click)="openLink()">Code</button>
-        <button mat-raised-button>Literature</button>
-        <button mat-raised-button>Configuration</button>
-      </div>
-      <div class="containerLogos">
-        <img width="120px" src="assets/upf.png" alt="">
-        <img width="90px" src="assets/aspis.png" alt="">
-        <img width="80px" src="assets/riskhunter.png" alt="">
-      </div>
-    </mat-card-content>
-  </mat-card>
+
+<app-navbar></app-navbar>
+<div class="container">
   <app-new-endpoint-form *ngIf="this.endpoint.name"></app-new-endpoint-form>
   <app-manage-endpoints *ngIf="this.controlInterface.displayManageEndpoints"></app-manage-endpoints>
 </div>
-

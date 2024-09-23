@@ -1,55 +1,14 @@
-.outer-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center; 
-  height: 100vh;
-  width: 100vw;
-  padding: 0; 
-  margin: 0;
-}
 .info{
   text-align: justify;
   color: gray;
 }
-.left-accordion {
-  margin-right: 40vh; 
-  margin-left: 30px;
-  height: 80vh;
-  width: 350px;
-}
-.imgcontainer1 {
-  width: 500px !important;
-  border-radius: 10px 10px 0px 0px;
-}
 .titlemenu {
   font-size: 25px;
 }
-.cardHeader{
-  border-bottom: 5px solid purple;
-  display: block;
-  text-align: center !important;
-}
 
-.buttonContainer {
-  margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-.card-content {
-  display: flex;
-  flex-direction: column; 
-  height: 100%; 
-  padding: 16px; 
-  box-sizing: border-box; 
-}
-.buttonContainer {
-  margin-bottom: auto; 
-}
 
-.containerLogos {
-  margin-top: auto; 
+.container {
   display: flex;
-  justify-content: center; 
-  gap: 10px; 
+  justify-content: center;
+  align-items: center;
 }
