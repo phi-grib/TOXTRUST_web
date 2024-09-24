@@ -1,26 +1,50 @@
 
 <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="example-form">
-    <mat-form-field appearance="outline" class="example-full-width">
-      <mat-label>Rule</mat-label>
-      <mat-select required ngModel name="rule">
-        <mat-option value="Dempster">Dempster</mat-option>
-        <mat-option value="Yager">Yager</mat-option>
-        <mat-option value="Inagaki">Inagaki</mat-option>
-        <mat-option value="auto">auto</mat-option>
-      </mat-select> 
+  <div class="container-flex">
+    <div class="container-row">
+      <span class="title-row">Combination settings</span>
+      <mat-checkbox
+      ngModel
+      name="auto"
+      id="auto"
+      (change)="AutoRuleSelection(form)"
+      class="example-margin"
+      >Auto rule selection</mat-checkbox
+    >
+    </div>
 
-    </mat-form-field>
+    <div class="container-row">
+      <span class="title-row">Manual selection</span>
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Rule</mat-label>
+        <mat-select (selectionChange)="selectRule($event)" [disabled]="ruleDisabled" ngModel name="rule">
+          <mat-option value="Dempster">Dempster</mat-option>
+          <mat-option value="Yager">Yager</mat-option>
+          <mat-option value="Inagaki">Inagaki</mat-option>
+        </mat-select> 
+      </mat-form-field>
+    </div>
+    <div class="container-row">
+      <span class="title-row">Inagaki factor scaling</span>
     <mat-form-field appearance="outline" class="example-full-width">
       <mat-label>Factor</mat-label>
-      <mat-select required ngModel name="factor">
+      <mat-select [disabled]="ruleDisabled || inagakiSelected" ngModel name="factor">
         <mat-option value="fullDecision">Full decision</mat-option>
         <mat-option value="fullUncertainty">Full Uncertainty</mat-option>
         <mat-option value="partialDecision">Partial decision</mat-option>
         <mat-option value="partialUncertainty">Partial Uncertainty</mat-option>
       </mat-select> 
-
       </mat-form-field>
+    </div>
+  </div>
+  <mat-checkbox
+  ngModel
+  name="weightofevidence"
+  id="weightofevidence"
+  class="example-margin"
+  >Weight of Evidence</mat-checkbox
+>
       <div class="buttons-row">
-        <button [disabled]="form.invalid" class="pr-3" type="submit" mat-flat-button>Save</button>
+        <button [disabled]="form.invalid" class="pr-3" type="submit" mat-flat-button>Combination</button>
       </div>
   </form>
