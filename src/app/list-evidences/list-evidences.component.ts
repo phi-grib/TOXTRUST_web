@@ -24,10 +24,10 @@ export class ListEvidencesComponent  implements OnInit {
   constructor(private toastr:ToastrService,private flaskService:FlaskService,private endpoint:Endpoint){
 
   }
-  displayedColumns: string[] = ['position', 'name','type','weight','relevance','visualize','combine','delete'];
+  displayedColumns: string[] = ['position', 'name','type','weight','relevance','visualize','runCombine','combine','delete'];
   dataSource = new MatTableDataSource<string>();
-  listEvidences:any[] = []; 
-
+  listEvidences:any[] = [];
+  listCombineEvidences:any[] = [];
   ngOnInit(): void {
       this.getEvidences();
       this.flaskService.updateEvidenceList$.subscribe(result =>{
@@ -59,7 +59,7 @@ export class ListEvidencesComponent  implements OnInit {
         name: evidence.name
        }
      })
-    
+
   }
   deleteEvidence(evidence:any,event: MouseEvent){
     event.stopPropagation();
@@ -77,6 +77,29 @@ export class ListEvidencesComponent  implements OnInit {
       height: '700px',
       width: '1000px',
     });
+  }
+
+  runCombine(){
+    this.flaskService.shouldCombine(this.listCombineEvidences).subscribe((result:any)=>{
+      if(result['success']){
+        this.toastr.success(result['message'],'');
+      }else{
+        this.toastr.error(result['message'],'');
+      }
+    }, (error)=>{
+      console.log(error)
+    })
+  }
+
+  includeEvidence(event:any,row:any){
+    console.log(event.checked)
+    if(event.checked){
+      this.listCombineEvidences.push(this.listEvidences[row].name)
+    }else{
+      this.listCombineEvidences = this.listCombineEvidences.filter(
+        (evidence) => evidence !== this.listEvidences[row].name
+      );
+    }
   }
 
 }

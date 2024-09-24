@@ -87,5 +87,12 @@ export class FlaskService {
     });
   }
 
+  shouldCombine(data:any){
+    const url: string = environment.baseUrl + "should_combine/"+this.endpoint.name
+    return this.http.post(url, data, {
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+
 
 }
