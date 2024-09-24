@@ -29,10 +29,10 @@
     <mat-form-field appearance="outline" class="example-full-width">
       <mat-label>Factor</mat-label>
       <mat-select [disabled]="ruleDisabled || inagakiSelected" ngModel name="factor">
-        <mat-option value="fullDecision">Full decision</mat-option>
-        <mat-option value="fullUncertainty">Full Uncertainty</mat-option>
-        <mat-option value="partialDecision">Partial decision</mat-option>
-        <mat-option value="partialUncertainty">Partial Uncertainty</mat-option>
+        <mat-option value="fullDecision">Full decision (1)</mat-option>
+        <mat-option value="fullUncertainty">Full Uncertainty (0)</mat-option>
+        <mat-option value="partialDecision">Partial decision (0.75)</mat-option>
+        <mat-option value="partialUncertainty">Partial Uncertainty (0.25)</mat-option>
       </mat-select> 
       </mat-form-field>
     </div>
