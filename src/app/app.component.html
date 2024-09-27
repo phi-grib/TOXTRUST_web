@@ -1,6 +1,7 @@
 
 <app-navbar></app-navbar>
 <div class="container">
-  <app-new-endpoint-form *ngIf="this.endpoint.name"></app-new-endpoint-form>
-  <app-manage-endpoints *ngIf="this.controlInterface.displayManageEndpoints"></app-manage-endpoints>
+      <app-main-page *ngIf="!this.endpoint.name && !this.controlInterface.displayManageEndpoints"></app-main-page>
+      <app-new-endpoint-form *ngIf="this.endpoint.name"></app-new-endpoint-form>
+      <app-manage-endpoints *ngIf="this.controlInterface.displayManageEndpoints"></app-manage-endpoints>
 </div>

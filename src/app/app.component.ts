@@ -10,10 +10,11 @@ import {MatCardModule} from '@angular/material/card';
 import { ModalCreateProjectComponent } from './modal-create-project/modal-create-project.component';
 import { ControlInterface, Endpoint } from './globals';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MainPageComponent } from './main-page/main-page.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MatCardModule,ModalCreateProjectComponent,NewEndpointFormComponent,MatIconModule,CommonModule,MatInputModule,MatFormFieldModule,MatButtonModule,ManageEndpointsComponent,NavbarComponent],
+  imports: [MatCardModule,ModalCreateProjectComponent,NewEndpointFormComponent,MatIconModule,CommonModule,MatInputModule,MatFormFieldModule,MatButtonModule,MainPageComponent,ManageEndpointsComponent,NavbarComponent],
   changeDetection: ChangeDetectionStrategy.Default,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
