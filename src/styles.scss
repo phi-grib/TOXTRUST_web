@@ -2,10 +2,7 @@
 
 
 html, body { height: 100%;
-    
-    background: linear-gradient(to bottom, rgb(0, 85, 128), purple) !important;
-
-
+    background: linear-gradient(to bottom, #EE7ABE, #5C5FF2) !important;
 }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 @import "../node_modules/ngx-toastr/toastr.css"

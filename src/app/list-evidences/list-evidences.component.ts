@@ -24,7 +24,7 @@ export class ListEvidencesComponent  implements OnInit {
   constructor(private toastr:ToastrService,private flaskService:FlaskService,private endpoint:Endpoint){
 
   }
-  displayedColumns: string[] = ['position', 'name','type','weight','relevance','visualize','runCombine','combine','delete'];
+  displayedColumns: string[] = ['position', 'name','type','weight','relevance','negative','positive','uncertain','visualize','runCombine','combine','delete'];
   dataSource = new MatTableDataSource<string>();
   listEvidences:any[] = [];
   listCombineEvidences:any[] = [];
@@ -43,8 +43,6 @@ export class ListEvidencesComponent  implements OnInit {
           this.listEvidences.push(evidence);
         });
         this.dataSource.data = this.listEvidences;
-        console.log("Evidenceees")
-        console.log(this.dataSource.data)
       }else{
         console.log("Failed");
       }
