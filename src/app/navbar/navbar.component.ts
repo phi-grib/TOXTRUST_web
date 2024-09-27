@@ -24,7 +24,6 @@ export class NavbarComponent {
   displayNewProject: boolean = false;
   displayManageEndpoints: boolean = false;
   readonly panelOpenState = signal(false);
-  display = true;
   menu_options = true;
 
   openNewProject() {

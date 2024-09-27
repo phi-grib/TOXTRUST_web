@@ -1,5 +1,5 @@
 <mat-toolbar class="navbar">
-    <button  mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <button (click)="this.menu_options = !this.menu_options"  mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
       <mat-icon>menu</mat-icon>
     </button>
     <span class="title-navbar">TOXTRUST</span>
@@ -9,7 +9,7 @@
     <img width="80px" src="assets/riskhunter.png" alt="">
   </mat-toolbar>
 
-  <div class="MenuOptions">
+  <div [hidden]="menu_options" class="MenuOptions">
     <button mat-raised-button (click)="openNewProject()">New Project</button>
 <button mat-raised-button (click)="openManageEndpoints()">Existing Projects</button>
 <button mat-raised-button>Documentation</button>
