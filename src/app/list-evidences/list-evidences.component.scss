@@ -6,20 +6,14 @@
 .demo-table {
     margin-bottom: 20px;
     box-shadow: none !important;
-    border-bottom: 1px solid gray;
+
   }
 
 
 
-.mat-mdc-cell {
-    border-bottom: 1px solid gray;
-    border-right: 1px solid gray;
-    text-align: center;
-  }
-  
- .mat-mdc-cell:first-child {
-  border-left: 1px solid gray;
-  }
+.mat-mdc-cell{
+  text-align: center;
+}
 
 
   .delete-icon {
@@ -32,13 +26,6 @@
 
 .mat-mdc-header-cell {
     background-color: whitesmoke  !important;
-    border-right: 0.5px solid gray;
     border-bottom: 0.5px solid gray;
     text-align: center;
-    border-top: 0.5px solid gray ;
-}
-
-.mat-mdc-header-cell:first-child {
-  border-left: 0.5px solid gray;
-
 }

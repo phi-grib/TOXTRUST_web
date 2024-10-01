@@ -9,11 +9,17 @@
     <img width="80px" src="assets/riskhunter.png" alt="">
   </mat-toolbar>
 
-  <div [hidden]="menu_options" class="MenuOptions">
-    <button mat-raised-button (click)="openNewProject()">New Project</button>
+  <div [ngClass]="{
+    'slide-down-enter': !menu_options,
+    'slide-down-leave': menu_options,
+    'slide-down-enter-active': !menu_options && !hidden,
+    'slide-down-leave-active': menu_options && !hidden
+  }" class="MenuOptions">
+<button mat-raised-button (click)="openNewProject()">New Project</button>
 <button mat-raised-button (click)="openManageEndpoints()">Existing Projects</button>
 <button mat-raised-button>Documentation</button>
-<button  mat-raised-button (click)="openLink()">Code</button>
+<button mat-raised-button (click)="openLink()">Code</button>
 <button mat-raised-button>Literature</button>
 <button mat-raised-button>Configuration</button>
-  </div>
+</div>
+

@@ -1,20 +1,44 @@
 .navbar{
-    background-color: #2B244D !important;
+    background-color: whitesmoke !important;
+    height: 44px !important;
 }
 .mat-icon {
-    color: white;
+    color: black;
 }
 .example-spacer {
     flex: 1 1 auto;
   }
 
   .title-navbar{
-    color: white;
+    color: black;
     margin-left: 10px;
   }
 
   button{
     border-radius: 0px !important;
-    background-color: #2B244D !important;
-    color: white !important;
+    background-color: whitesmoke !important;
+    color: black !important;
   }
+
+  .MenuOptions {
+    background-color: whitesmoke;
+  }
+.slide-down-enter {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+}
+
+.slide-down-enter-active {
+  height: 40px;
+}
+
+.slide-down-leave {
+  height: 200px; 
+  overflow: hidden;
+  transition: height 0.3s ease-in;
+}
+
+.slide-down-leave-active {
+  height: 0;
+}

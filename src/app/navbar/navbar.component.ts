@@ -5,6 +5,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { ControlInterface, Endpoint } from '../globals';
+import { CommonModule } from '@angular/common';
 import {
   MatDialog,
 } from '@angular/material/dialog';
@@ -12,7 +13,7 @@ import { ModalCreateProjectComponent } from '../modal-create-project/modal-creat
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [MatToolbarModule, MatButtonModule, MatIconModule,MatSidenavModule,MatExpansionModule,ModalCreateProjectComponent],
+  imports: [CommonModule,MatToolbarModule, MatButtonModule, MatIconModule,MatSidenavModule,MatExpansionModule,ModalCreateProjectComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
@@ -25,6 +26,17 @@ export class NavbarComponent {
   displayManageEndpoints: boolean = false;
   readonly panelOpenState = signal(false);
   menu_options = true;
+  hidden = false;
+  toggleMenu() {
+    this.menu_options = !this.menu_options;
+    if (!this.menu_options) {
+      setTimeout(() => {
+        this.hidden = true;
+      }, 300); // 
+    } else {
+      this.hidden = false;
+    }
+  }
 
   openNewProject() {
     this.endpoint.name = ""
