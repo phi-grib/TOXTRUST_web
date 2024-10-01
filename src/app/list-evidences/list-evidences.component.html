@@ -1,7 +1,7 @@
 <div class="container">
 <button style="margin-bottom: 10px;" class="btnAddEvidence" (click)="openNewEvidence()" mat-flat-button>Add Evidence</button>
 
-      <table *ngIf="this.listEvidences.length > 0" mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+      <table [hidden]="this.listEvidences.length <= 0" mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
         <!-- Position Column -->
         <ng-container matColumnDef="position">
           <th mat-header-cell *matHeaderCellDef> No. </th>
