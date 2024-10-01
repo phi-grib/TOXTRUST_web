@@ -3,7 +3,9 @@
     flex-direction: column; 
     align-items: center; 
     height: 80vh;
-    width: 90vh;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0px 0px 10px 10px !important;
   }
 
   .container img {
@@ -14,11 +16,10 @@
   }
 
   #matStepperContainer{
-    width: 90vh !important;
+    width: 100% !important;
     border-radius: 0px 0px 10px 10px !important;
   }
 
-  .containerEvidence {
-    display: flex;
-    flex-direction: row;
+  .mat-mdc-card {
+    box-shadow: none;
   }
