@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectChange, MatSelectModule } from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { FlaskService } from '../flask.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-select-rule',
@@ -15,20 +17,37 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 })
 
 export class SelectRuleComponent {
+  constructor (private flaskService:FlaskService,private toastr:ToastrService){
+
+  }
   ruleDisabled: boolean = false;
   inagakiSelected: boolean = true;
 onSubmit(form:any){
-  console.log("select rule")
   console.log(form.value)
+  if(form.value.auto){
+    form.value.rule = 'auto'
+    form.value.factor = 'balance'
+  }
+  this.flaskService.selectRule(form.value).subscribe((result:any)=>{
+    if(result['success']){
+       this.toastr.success(result['message'],'');
+      }else{
+       this.toastr.error(result['message'],'');
+      }
+  })
 }
-
 AutoRuleSelection(form:any){
   this.ruleDisabled = form.value.auto;
 }
 selectRule(event:MatSelectChange){
   if(event.value == "Inagaki"){
     this.inagakiSelected = false;
+  }else {
+    this.inagakiSelected = true;
+
   }
 }
+
+
 
 }
