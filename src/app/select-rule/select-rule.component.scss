@@ -22,6 +22,7 @@
   flex-direction: row;
   gap: 70px;
 
+  
 }
 .container-row{
   display: flex;
@@ -30,6 +31,23 @@
 
 .title-row{
   text-align: center;
-  font-size: 20px;
+  font-size: 14px;
   margin-bottom: 15px;
 }
+.title {
+  font-size: 18px ;
+}
+  
+.container-checkboxes {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.container-flex > *:first-child {
+  margin-right: 110px; 
+}
+
+// .container-flex > *:nth-child(2) {
+//   margin-right: 50px; /* Aplica un margen diferente al segundo elemento */
+// }

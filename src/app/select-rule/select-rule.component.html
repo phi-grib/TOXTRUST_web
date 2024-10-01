@@ -3,29 +3,6 @@
   <span class="title">Combination settings</span>
   <div class="container-flex">
     <div class="container-row">
-      <span class="title-row">Manual selection</span>
-      <mat-form-field appearance="outline" class="example-full-width">
-        <mat-label>Rule</mat-label>
-        <mat-select (selectionChange)="selectRule($event)" [disabled]="ruleDisabled" ngModel name="rule">
-          <mat-option value="Dempster">Dempster rule</mat-option>
-          <mat-option value="Yager">Yager rule</mat-option>
-          <mat-option value="Inagaki">Inagaki rule</mat-option>
-        </mat-select> 
-      </mat-form-field>
-    </div>
-    <div class="container-row">
-      <span class="title-row">Inagaki factor scaling</span>
-    <mat-form-field appearance="outline" class="example-full-width">
-      <mat-label>Factor</mat-label>
-      <mat-select [disabled]="ruleDisabled || inagakiSelected" ngModel name="factor">
-        <mat-option value="fullDecision">Full decision (1)</mat-option>
-        <mat-option value="fullUncertainty">Full Uncertainty (0)</mat-option>
-        <mat-option value="partialDecision">Partial decision (0.75)</mat-option>
-        <mat-option value="partialUncertainty">Partial Uncertainty (0.25)</mat-option>
-      </mat-select> 
-      </mat-form-field>
-    </div>
-    <div class="container-row">
       <div class="container-checkboxes">
         <mat-checkbox
         ngModel
@@ -49,6 +26,29 @@
 
     </div>
 
+    <div class="container-row">
+      <span class="title-row">Manual selection</span>
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Rule</mat-label>
+        <mat-select (selectionChange)="selectRule($event)" [disabled]="ruleDisabled" ngModel name="rule">
+          <mat-option value="Dempster">Dempster rule</mat-option>
+          <mat-option value="Yager">Yager rule</mat-option>
+          <mat-option value="Inagaki">Inagaki rule</mat-option>
+        </mat-select> 
+      </mat-form-field>
+    </div>
+    <div class="container-row">
+      <span class="title-row">Inagaki factor scaling</span>
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Factor</mat-label>
+      <mat-select [disabled]="ruleDisabled || inagakiSelected" ngModel name="factor">
+        <mat-option value="fullDecision">Full decision (1)</mat-option>
+        <mat-option value="fullUncertainty">Full Uncertainty (0)</mat-option>
+        <mat-option value="partialDecision">Partial decision (0.75)</mat-option>
+        <mat-option value="partialUncertainty">Partial Uncertainty (0.25)</mat-option>
+      </mat-select> 
+      </mat-form-field>
+    </div>
   </div>
 
   </form>

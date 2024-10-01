@@ -3,6 +3,9 @@
 
   <div class="container-flex">
     <div class="container-row">
+      <button [disabled]="decisionForm.invalid" type="submit" mat-flat-button>Save</button>
+    </div>
+    <div class="container-row">
       <mat-form-field appearance="outline" class="example-full-width">
         <mat-label>Maximum uncertainty</mat-label>
         <input ngModel type="number" name="maxUncertainty" matInput>
@@ -14,7 +17,6 @@
         <input ngModel name="minBelief" type="number" matInput>
       </mat-form-field>
     </div>
-    <button [disabled]="decisionForm.invalid" type="submit" mat-flat-button>Save</button>
 
   </div>
 </form>
