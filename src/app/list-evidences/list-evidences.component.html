@@ -1,5 +1,7 @@
 <div class="container">
-      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+<button style="margin-bottom: 10px;" class="btnAddEvidence" (click)="openNewEvidence()" mat-flat-button>Add Evidence</button>
+
+      <table *ngIf="this.listEvidences.length > 0" mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
         <!-- Position Column -->
         <ng-container matColumnDef="position">
           <th mat-header-cell *matHeaderCellDef> No. </th>
@@ -92,6 +94,5 @@
         <tr><button>Delete</button>
         </tr>
       </table>
-<button class="btnAddEvidence" (click)="openNewEvidence()" mat-flat-button>Add Evidence</button>
 </div>
       <!-- <mat-paginator id="paginator" [hidePageSize]="true" [pageSizeOptions]="[5]" showFirstLastButtons></mat-paginator> -->
