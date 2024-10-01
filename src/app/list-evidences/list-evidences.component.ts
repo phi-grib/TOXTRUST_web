@@ -81,6 +81,8 @@ export class ListEvidencesComponent  implements OnInit {
     this.flaskService.shouldCombine(this.listCombineEvidences).subscribe((result:any)=>{
       if(result['success']){
         this.toastr.success(result['message'],'');
+        var nextStep = document.getElementsByTagName("mat-step-header")[3] as HTMLElement
+        nextStep.click();
       }else{
         this.toastr.error(result['message'],'');
       }
