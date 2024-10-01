@@ -1,18 +1,7 @@
 
 <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="example-form">
+  <span class="title">Combination settings</span>
   <div class="container-flex">
-    <div class="container-row">
-      <span class="title-row">Combination settings</span>
-      <mat-checkbox
-      ngModel
-      name="auto"
-      id="auto"
-      (change)="AutoRuleSelection(form)"
-      class="example-margin"
-      >Auto rule selection</mat-checkbox
-    >
-    </div>
-
     <div class="container-row">
       <span class="title-row">Manual selection</span>
       <mat-form-field appearance="outline" class="example-full-width">
@@ -36,15 +25,30 @@
       </mat-select> 
       </mat-form-field>
     </div>
-  </div>
-  <mat-checkbox
-  ngModel
-  name="weightofevidence"
-  id="weightofevidence"
-  class="example-margin"
-  >Weight of Evidence</mat-checkbox
->
+    <div class="container-row">
+      <div class="container-checkboxes">
+        <mat-checkbox
+        ngModel
+        name="auto"
+        id="auto"
+        (change)="AutoRuleSelection(form)"
+        class="example-margin"
+        >Auto rule selection</mat-checkbox
+      >
+        <mat-checkbox
+        ngModel
+        name="weightofevidence"
+        id="weightofevidence"
+        class="example-margin"
+        >Weight of Evidence</mat-checkbox
+      >
       <div class="buttons-row">
-        <button [disabled]="form.invalid" class="pr-3" type="submit" mat-flat-button>Combine</button>
+        <button [disabled]="form.invalid" class="pr-3" type="submit" mat-flat-button>Save</button>
       </div>
+      </div>
+
+    </div>
+
+  </div>
+
   </form>
