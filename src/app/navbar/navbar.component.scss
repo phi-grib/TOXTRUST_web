@@ -21,7 +21,13 @@
   }
 
   .MenuOptions {
+    position: absolute;
+    top: 44px;
+    left: 0; 
+    display: flex;
+    flex-direction: column;
     background-color: white;
+    width: 175px;
   }
 .slide-down-enter {
   height: 0;
@@ -30,7 +36,7 @@
 }
 
 .slide-down-enter-active {
-  height: 40px;
+  height: 240px;
 }
 
 .slide-down-leave {
