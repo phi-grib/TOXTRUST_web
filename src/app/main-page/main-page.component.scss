@@ -5,6 +5,7 @@
     align-items: center; 
     height: 80vh;
     width: 90vh;
+ 
 
 }
 .container img {
@@ -15,6 +16,8 @@
   }
 
   .text-container {
+    border-radius: 0px 0px 10px 10px;
+
     background-color: white !important;
     height: 40vh;
     div{
