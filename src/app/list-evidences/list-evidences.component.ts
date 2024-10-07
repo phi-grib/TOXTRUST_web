@@ -77,12 +77,30 @@ export class ListEvidencesComponent  implements OnInit {
     });
   }
 
+
   runCombine(){
     this.flaskService.shouldCombine(this.listCombineEvidences).subscribe((result:any)=>{
       if(result['success']){
         this.toastr.success(result['message'],'');
-        var nextStep = document.getElementsByTagName("mat-step-header")[3] as HTMLElement
-        nextStep.click();
+
+        this.flaskService.runCombine().subscribe((result:any)=>{
+          if(result['success']){
+        this.toastr.success(result['message'],'');
+
+            this.flaskService.getCombinationImagePath().subscribe((result:any)=>{
+              const blob = new Blob([result], { type: 'application/octet-stream' });
+              const reader = new FileReader();
+              reader.readAsDataURL(blob);
+              reader.onloadend = () => {
+                this.endpoint.combinationPath = reader.result as string;
+              }; 
+          })
+          }else{
+            console.log("Es aqui el error")
+            this.toastr.error(result['message'],'');
+          }
+        })
+ 
       }else{
         this.toastr.error(result['message'],'');
       }

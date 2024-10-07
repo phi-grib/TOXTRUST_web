@@ -74,6 +74,12 @@ export class FlaskService {
     return this.http.get(url,{ responseType: 'blob' })
   }
 
+  getCombinationImagePath(){
+    const url: string = environment.baseUrl + "combination_image_path/"+this.endpoint.name
+    return this.http.get(url,{ responseType: 'blob' })
+  }
+
+
   private updateEvidenceList = new Subject<any>();
   updateEvidenceList$ = this.updateEvidenceList.asObservable()
   UpdateEvidenceList(){
@@ -92,6 +98,11 @@ export class FlaskService {
     return this.http.post(url, data, {
       headers: { 'Content-Type': 'application/json' }
     });
+  }
+
+  runCombine(){
+    const url: string = environment.baseUrl + "run_combine/"+this.endpoint.name;
+    return this.http.get(url)
   }
 
 

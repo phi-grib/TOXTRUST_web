@@ -11,6 +11,7 @@ export class Endpoint {
     listEndpoints : string[] = []
     maxUncertainty: number = 0;
     minBelief: number = 0;
+    combinationPath: any;
 }
 
 export class ControlInterface {
