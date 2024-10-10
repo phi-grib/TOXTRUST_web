@@ -105,5 +105,10 @@ export class FlaskService {
     return this.http.get(url)
   }
 
+  shouldWoeInput(WoE:any){
+    const url: string = environment.baseUrl + "WoEinput/"+this.endpoint.name+"/"+WoE;
+    return this.http.get(url)
+  }
+
 
 }

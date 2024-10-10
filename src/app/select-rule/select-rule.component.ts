@@ -36,6 +36,15 @@ onSubmit(form:any){
       }
   })
 }
+setValueWoE(form:any){
+  this.flaskService.shouldWoeInput(form.value.WoE).subscribe((result:any)=>{
+    if(result['success']){
+      this.toastr.success(result['message'],'');
+    }else{
+      this.toastr.error(result['message'],'');
+    }
+  })
+}
 AutoRuleSelection(form:any){
   this.ruleDisabled = form.value.auto;
 }

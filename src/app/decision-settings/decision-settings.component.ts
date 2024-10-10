@@ -20,13 +20,9 @@ export class DecisionSettingsComponent {
   }
 
   onSubmitDecision(decisionForm:any){
-    console.log("ENDPOINT")
-    console.log(this.endpoint)
     this.flaskService.callDecisionInput(decisionForm.value).subscribe((result:any)=>{
       if(result['success']){
         this.toastr.success(result['message'],'')
-        var nextStep = document.getElementsByTagName("mat-step-header")[2] as HTMLElement
-        nextStep.click();
       }else {
         this.toastr.error(result['message'],'')
       }
