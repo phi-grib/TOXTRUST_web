@@ -1,17 +1,14 @@
-<form (ngSubmit)="onSubmitDecision(decisionForm)" #decisionForm="ngForm" class="example-form">
+<form (ngSubmit)="onSubmit(decisionForm)" #decisionForm="ngForm" class="example-form">
   <span class="title">Decision settings</span>
 
   <div class="container-flex">
-    <div class="container-row">
-      <button [disabled]="decisionForm.invalid" type="submit" mat-flat-button>Save</button>
-    </div>
-    <div class="container-row">
+    <div >
       <mat-form-field appearance="outline" class="example-full-width">
         <mat-label>Maximum uncertainty</mat-label>
         <input ngModel type="number" name="maxUncertainty" matInput>
       </mat-form-field>
     </div>
-    <div class="container-row">
+    <div>
       <mat-form-field appearance="outline" class="example-full-width">
         <mat-label>Minimum belief</mat-label>
         <input ngModel name="minBelief" type="number" matInput>
@@ -19,4 +16,57 @@
     </div>
 
   </div>
+  <span  class="title">Combination settings</span>
+  <div class="container-flex-combination">
+    <div class="container-row-combination">
+      <div class="container-checkboxes">
+        <mat-checkbox
+        ngModel
+        name="auto"
+        id="auto"
+        (change)="AutoRuleSelection(decisionForm)"
+        class="example-margin"
+        >Auto rule selection</mat-checkbox
+      >
+        <mat-checkbox
+        ngModel
+        name="WoE"
+        id="WoE"
+        class="example-margin"
+        (change)="setValueWoE(decisionForm)"
+        >Weight of Evidence</mat-checkbox
+      >
+      <div style="margin-top: 30px;" class="buttons-row">
+        <button  [disabled]="decisionForm.invalid" class="pr-3" type="submit" mat-flat-button>Save</button>
+      </div>
+      </div>
+
+    </div>
+
+    <div class="container-row-combination">
+      <span class="title-row">Manual selection</span>
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Rule</mat-label>
+        <mat-select (selectionChange)="selectRule($event)" [disabled]="ruleDisabled" ngModel name="rule">
+          <mat-option value="Dempster">Dempster rule</mat-option>
+          <mat-option value="Yager">Yager rule</mat-option>
+          <mat-option value="Inagaki">Inagaki rule</mat-option>
+        </mat-select> 
+      </mat-form-field>
+    </div>
+    <div class="container-row-combination">
+      <span class="title-row">Inagaki factor scaling</span>
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Factor</mat-label>
+      <mat-select [disabled]="ruleDisabled || inagakiSelected" ngModel name="factor">
+        <mat-option value="fullDecision">Full decision (1)</mat-option>
+        <mat-option value="fullUncertainty">Full Uncertainty (0)</mat-option>
+        <mat-option value="partialDecision">Partial decision (0.75)</mat-option>
+        <mat-option value="partialUncertainty">Partial Uncertainty (0.25)</mat-option>
+      </mat-select> 
+      </mat-form-field>
+    </div>
+  </div>
 </form>
+
+
