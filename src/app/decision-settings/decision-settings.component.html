@@ -5,13 +5,13 @@
     <div >
       <mat-form-field appearance="outline" class="example-full-width">
         <mat-label>Maximum uncertainty</mat-label>
-        <input ngModel type="number" name="maxUncertainty" matInput>
+        <input  [(ngModel)]="maxUncertainty" type="number" name="maxUncertainty" matInput>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field appearance="outline" class="example-full-width">
         <mat-label>Minimum belief</mat-label>
-        <input ngModel name="minBelief" type="number" matInput>
+        <input [(ngModel)]="minBelief" name="minBelief" type="number" matInput>
       </mat-form-field>
     </div>
 
