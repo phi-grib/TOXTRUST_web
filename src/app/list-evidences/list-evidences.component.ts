@@ -72,7 +72,7 @@ export class ListEvidencesComponent  implements OnInit {
   }
   openNewEvidence() {
     this.dialog.open(AddEvidenceComponent, {
-      height: '700px',
+      maxHeight:"80vh",
       width: '1000px',
     });
   }

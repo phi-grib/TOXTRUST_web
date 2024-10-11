@@ -4,7 +4,7 @@
   <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="example-form">
     <mat-form-field
       appearance="outline"
-      class="margin"
+      class="margin space"
     >
       <mat-label>Name</mat-label>
       <input required ngModel name="name" matInput />
@@ -22,10 +22,10 @@
     <br />
     <mat-form-field
       appearance="outline"
-      class="margin"
+      class="margin space"
     >
       <mat-label>Relevance</mat-label>
-      <mat-select required ngModel name="relevance">
+      <mat-select  ngModel name="relevance">
         <mat-option value="certain">Certain</mat-option>
         <mat-option value="probable">Probable</mat-option>
         <mat-option value="plausible">Plausible</mat-option>
@@ -44,7 +44,6 @@
         type="number"
         placeholder="1-5"
         ngModel
-        required
         matInput
       />
     </mat-form-field>
