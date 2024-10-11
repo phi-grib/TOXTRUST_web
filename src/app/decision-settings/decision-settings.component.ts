@@ -23,8 +23,7 @@ export class DecisionSettingsComponent {
   ruleDisabled: boolean = false;
   inagakiSelected: boolean = true;
   onSubmit(form:any){
-    console.log("on submit")
-    console.log(form.value)
+
     if(form.value.auto){
       form.value.rule = 'auto'
       form.value.factor = 'balance'
@@ -36,9 +35,10 @@ export class DecisionSettingsComponent {
          this.toastr.error(result['message'],'');
         }
     })
+    var DecisionForm = {}
+    DecisionForm  = {'maxUncertainty':form.value.maxUncertainty,'minBelief':form.value.minBelief }
 
-    
-    this.flaskService.callDecisionInput(form.value).subscribe((result:any)=>{
+    this.flaskService.callDecisionInput(DecisionForm).subscribe((result:any)=>{
       if(result['success']){
         this.toastr.success(result['message'],'')
       }else {
