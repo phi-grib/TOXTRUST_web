@@ -25,3 +25,20 @@ th{
   .containerImage {
     background-color: white !important;
   }
+  td {
+padding: 10px !important;
+  }
+
+  th {
+    background-color: whitesmoke  !important;
+    border-bottom: 0.5px solid gray;
+    padding: 10px;
+    text-align: center;
+
+  }
+
+  tr:nth-child(1) {
+    border-bottom: 0.3px solid rgb(214, 214, 214);
+
+
+  }

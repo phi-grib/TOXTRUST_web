@@ -2,20 +2,17 @@
   <table style="margin-top: 30px;"  ><thead>
     <tr>
       <th>Parameter / Result</th>
-      <th>Uncertain</th>
       <th>Negative</th>
       <th>Positive</th>
     </tr></thead>
   <tbody>
     <tr>
       <td>Belief</td>
-      <td>{{this.evidenceResult['probabilities']?.uncertain}}</td>
       <td>{{this.evidenceResult['belief']?.negative}}</td>
       <td>{{this.evidenceResult['belief']?.positive}}</td>
     </tr>
     <tr>
       <td>Plausibility</td>
-      <td></td>
       <td>{{this.evidenceResult['plausibility']?.negative}}</td>
       <td>{{this.evidenceResult['plausibility']?.positive}}</td>
     </tr>
