@@ -53,11 +53,10 @@ img {
 
 }
 
-.mat-mdc-row .mat-mdc-cell {
-  border-bottom: 1px solid transparent;
-  border-top: 1px solid transparent;
-  cursor: pointer;
+.mat-mdc-cell{
+  text-align: center;
 }
+
 
 .mat-mdc-row:hover .mat-mdc-cell {
   border-color: purple;
@@ -65,4 +64,10 @@ img {
 
 .demo-row-is-clicked {
   font-weight: bold;
+}
+
+.mat-mdc-header-cell {
+  background-color: whitesmoke  !important;
+  border-bottom: 0.5px solid gray;
+  text-align: center;
 }
