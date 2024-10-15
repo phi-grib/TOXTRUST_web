@@ -4,32 +4,39 @@
   }
   
   .example-full-width {
-    width: 100%;
+   width: 505px;
   }
 
   .buttons-row {
     display: table-cell;
     max-width: 600px;
   }
-
   .buttons-row .mat-mdc-button-base {
     margin: 10px 10px 10px 0;
   }
   .title {
     font-size: 15px ;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 .container-1-flex {
-  width: 100%;
-  padding-top: 5px;
+  padding-top: 25px;
   display: flex;
-  align-items: center;
-  gap: 70px;
+  gap: 40px;
+
+}
+.container-flex {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+
 }
 
 .container-options{
   display: flex;
   flex-direction: column;
+  gap: -10px !important;
 }
-.radio-buttons{
-  margin-left: 20px !important;
+.mat-mdc-radio-button {
+  height: 30px !important;
 }

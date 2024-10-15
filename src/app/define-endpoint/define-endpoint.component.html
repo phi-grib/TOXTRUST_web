@@ -1,5 +1,5 @@
 <form (ngSubmit)="onSubmit(generalForm)" #generalForm="ngForm" class="example-form">
-  <span class="title">Here, you can provide or review some general information regarding the compound and the assessment framework.</span>
+  <span class="title">Provide a description of your endpoint, specifying the compound's name, the assessment framework, and the confidentiality status of the data used.</span>
   <div class="container-1-flex">
     <mat-form-field appearance="outline" class="example-full-width">
       <mat-label>Compound</mat-label>
@@ -11,10 +11,6 @@
         <input required name="framework" [(ngModel)]="endpoint.framework" matInput>
       </mat-form-field>
   </div>
-
-<span class="title">
-  Elaborate on the scientific background of your project and provide its confidentiality status below
-</span>
 <div class="container-1-flex">
   <mat-form-field class="example-full-width" appearance="outline">
     <mat-label>Description</mat-label>
@@ -26,8 +22,8 @@
     <!-- <label for="">Confidentiality status</label> -->
     <div class="container-options">
       <mat-radio-button value="public">Public</mat-radio-button>
-      <mat-radio-button value="in house">in house</mat-radio-button>
-      <mat-radio-button value="confidential">confidential</mat-radio-button>
+      <mat-radio-button value="in house">In house</mat-radio-button>
+      <mat-radio-button value="confidential">Confidential</mat-radio-button>
 
     </div>
   </mat-radio-group> 
