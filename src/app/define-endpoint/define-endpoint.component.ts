@@ -6,11 +6,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { FlaskService } from '../flask.service';
 import { ToastrService } from 'ngx-toastr';
 import { Endpoint } from '../globals';
-
+import {MatRadioModule} from '@angular/material/radio';
 @Component({
   selector: 'app-define-endpoint',
   standalone: true,
-  imports: [FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule],
+  imports: [FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule,MatRadioModule],
   templateUrl: './define-endpoint.component.html',
   styleUrl: './define-endpoint.component.scss'
 })
@@ -19,6 +19,8 @@ export class DefineEndpointComponent {
 
   }
   onSubmit(generalForm: any) {
+  console.info("General form")
+  console.info(generalForm.value)
     this.flaskService.defineEndpoint(generalForm.value).subscribe(
 
       (result: any) => {

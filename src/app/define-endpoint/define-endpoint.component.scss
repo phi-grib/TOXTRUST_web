@@ -1,6 +1,5 @@
 .example-form {
   margin-top: 5px;
-    width: 40vh;
     height: 40vh;
   }
   
@@ -16,3 +15,21 @@
   .buttons-row .mat-mdc-button-base {
     margin: 10px 10px 10px 0;
   }
+  .title {
+    font-size: 15px ;
+  }
+.container-1-flex {
+  width: 100%;
+  padding-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 70px;
+}
+
+.container-options{
+  display: flex;
+  flex-direction: column;
+}
+.radio-buttons{
+  margin-left: 20px !important;
+}

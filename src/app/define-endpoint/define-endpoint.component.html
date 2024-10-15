@@ -1,21 +1,43 @@
+<form (ngSubmit)="onSubmit(generalForm)" #generalForm="ngForm" class="example-form">
+  <span class="title">Here, you can provide or review some general information regarding the compound and the assessment framework.</span>
+  <div class="container-1-flex">
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Compound</mat-label>
+      <input required [(ngModel)]="endpoint.compound" name="compound"  matInput>
+    </mat-form-field>
 
-    <form (ngSubmit)="onSubmit(generalForm)" #generalForm="ngForm" class="example-form">
-         <mat-form-field appearance="outline" class="example-full-width">
-           <mat-label>Description</mat-label>
-           <input required  [(ngModel)]="endpoint.description" name="description" matInput >
-         </mat-form-field>
-         <mat-form-field appearance="outline" class="example-full-width">
-             <mat-label>Framework</mat-label>
-             <input required name="framework" [(ngModel)]="endpoint.framework" matInput>
-           </mat-form-field>
-           <mat-form-field appearance="outline" class="example-full-width">
-             <mat-label>Compound</mat-label>
-             <input required [(ngModel)]="endpoint.compound" name="compound"  matInput>
-           </mat-form-field>
+    <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Framework</mat-label>
+        <input required name="framework" [(ngModel)]="endpoint.framework" matInput>
+      </mat-form-field>
+  </div>
+
+<span class="title">
+  Elaborate on the scientific background of your project and provide its confidentiality status below
+</span>
+<div class="container-1-flex">
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Description</mat-label>
+    <textarea rows="5" required  [(ngModel)]="endpoint.description" name="description" matInput ></textarea>
+  </mat-form-field>
+
+  <mat-radio-group matInput  name="confidentiality"  [(ngModel)]="endpoint.confidentiality" class="example-full-width radio-buttons" aria-label="Select an option">
+    <label id="example-radio-group-label">Project permissions</label>
+    <!-- <label for="">Confidentiality status</label> -->
+    <div class="container-options">
+      <mat-radio-button value="public">Public</mat-radio-button>
+      <mat-radio-button value="in house">in house</mat-radio-button>
+      <mat-radio-button value="confidential">confidential</mat-radio-button>
+
+    </div>
+  </mat-radio-group> 
+<!-- 
            <mat-form-field appearance="outline" class="example-full-width">
              <mat-label>Confidentiality</mat-label>
              <input required [(ngModel)]="endpoint.confidentiality" name="confidentiality"  matInput>
-           </mat-form-field>
+           </mat-form-field> -->
+</div>
+
            <div class="buttons-row">
              <button  [disabled]="generalForm.invalid" class="pr-3" type="submit" mat-flat-button>Save</button>
            </div>
