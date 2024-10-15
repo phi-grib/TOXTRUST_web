@@ -1,4 +1,4 @@
-import { Component,signal,inject } from '@angular/core';
+import { Component,signal,inject,ElementRef,HostListener } from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -19,7 +19,7 @@ import { ModalCreateProjectComponent } from '../modal-create-project/modal-creat
 })
 export class NavbarComponent {
   readonly dialog = inject(MatDialog);
-  constructor(public endpoint: Endpoint,public controlInterface: ControlInterface){
+  constructor(private eRef: ElementRef,public endpoint: Endpoint,public controlInterface: ControlInterface){
 
   }
   displayNewProject: boolean = false;
@@ -37,6 +37,12 @@ export class NavbarComponent {
       this.hidden = false;
     }
   }
+    @HostListener('document:click', ['$event'])
+    clickOut(event: Event) {
+      if (!this.eRef.nativeElement.contains(event.target)) {
+        this.menu_options = true;
+      }
+    }
 
   openNewProject() {
     this.endpoint.name = ""
