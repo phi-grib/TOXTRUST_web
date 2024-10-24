@@ -24,7 +24,18 @@
     </div>
 
   </div>
-  <span  class="title">Combination settings</span>
+  <span   class="title">Combination settings</span>
+  <br>
+
+  <div class="text-container">
+    <span>
+      Combination
+      rules are a special type of aggregation methods for data obtained from
+      independent sources of information of different quality. Choose the one that
+      best fits your data or select on “Auto” to automatise this process. To consider
+      individual weights of added evidence, select “Weight of evidence".
+   </span> 
+  </div> 
   <div class="container-flex-combination">
     <div class="container-row-combination">
       <div class="container-checkboxes">
@@ -44,7 +55,7 @@
         (change)="setValueWoE(decisionForm)"
         >Weight of evidence</mat-checkbox
       >
-      <div style="margin-top: 30px;" class="buttons-row">
+      <div style="margin-top: 5px" class="buttons-row">
         <button  [disabled]="decisionForm.invalid" class="pr-3" type="submit" mat-flat-button>Save</button>
       </div>
       </div>

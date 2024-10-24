@@ -22,11 +22,12 @@
   margin-top: 25px;
   display: flex;
   flex-direction: row;
-  gap: 130px;
+  gap: 150px;
+  margin-bottom: 10px;
 
 }
 .text-container {
-  font-size: 15px ;
+  font-size: 13.5px ;
  font-family: Verdana, Geneva, Tahoma, sans-serif;
  padding-top: 5px;
 }
@@ -36,7 +37,7 @@
   margin-bottom: 15px;
 }
 .title {
-  font-size: 18px ;
+  font-size: 20px ;
 }
 .container-flex-combination{
   margin-top: 20px;
@@ -55,6 +56,9 @@
   display: flex;
   flex-direction: column;
 
+}
+combination-title-container{
+  margin-top: 30px;
 }
 
 .container-flex-combination > *:first-child {
