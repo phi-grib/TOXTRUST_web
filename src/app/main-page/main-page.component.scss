@@ -16,11 +16,19 @@
   }
 
   .text-container {
+    text-align: center;
     border-radius: 0px 0px 10px 10px;
-
+    width: 100%;
+    padding-top: 20px;
     background-color: white !important;
     height: 40vh;
-    div{
-        padding: 20px;
+    div {
+      text-align: justify !important;
+      padding: 25px;
+      margin-top: 10px;
     }
+    
+  }
+  .text {
+    font-size: 20px;
   }

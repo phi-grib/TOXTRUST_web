@@ -1,5 +1,5 @@
 <div class="container">
-<button style="margin-bottom: 10px;" class="btnAddEvidence" (click)="openNewEvidence()" mat-flat-button>Add Evidence</button>
+<button style="margin-bottom: 10px;" class="btnAddEvidence" (click)="openNewEvidence()" mat-flat-button>Add evidence</button>
 
       <table [hidden]="this.listEvidences.length <= 0" mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
         <!-- Position Column -->
@@ -84,7 +84,7 @@
         <tr><button>Delete</button>
         </tr>
       </table>
-      <button [disabled]="this.listCombineEvidences.length <= 1" mat-flat-button (click)="runCombine()">
+      <button [hidden]="this.listEvidences.length <= 0" [disabled]="this.listCombineEvidences.length <= 1" mat-flat-button (click)="runCombine()">
         Combine
       </button>
 </div>
