@@ -96,7 +96,6 @@ export class ListEvidencesComponent  implements OnInit {
               }; 
           })
           }else{
-            console.log("Es aqui el error")
             this.toastr.error(result['message'],'');
           }
         })

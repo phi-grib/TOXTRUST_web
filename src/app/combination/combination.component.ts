@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Endpoint } from '../globals';
+import { FlaskService } from '../flask.service';
 
 @Component({
   selector: 'app-combination',
@@ -9,11 +10,20 @@ import { Endpoint } from '../globals';
   styleUrl: './combination.component.scss'
 })
 export class CombinationComponent implements OnInit {
-  constructor(public endpoint: Endpoint){
+  constructor(public endpoint: Endpoint, private flaskService: FlaskService) {
 
   }
   ngOnInit(): void {
-    
+    this.flaskService.getCombinationImagePath().subscribe((result: any) => {
+      const blob = new Blob([result], { type: 'application/octet-stream' });
+      const reader = new FileReader();
+      reader.readAsDataURL(blob);
+      reader.onloadend = () => {
+        this.endpoint.combinationPath = reader.result as string;
+      };
+    }, (e) =>
+      console.log(e))
+
   }
 
 }
