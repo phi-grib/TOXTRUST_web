@@ -1,14 +1,17 @@
 
 .container {
   display: block;
-  width: 90vh !important;
-  height: 80vh !important;
+    height: 80vh;
+    width: 99vh;
+    overflow: hidden;
   background-color: #FDFBFF;
   border-radius: 10px 10px 10px 10px !important;
 }
+
 .demo-table{
 
 }
+
 .container-table{
   display: flex;
   flex-direction: column;
@@ -60,7 +63,7 @@ img {
  border-radius: 0px 0px 3px 3px !important;
  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
-
+ 
 }
 
 .mat-mdc-cell{
