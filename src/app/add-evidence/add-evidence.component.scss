@@ -8,8 +8,9 @@
 }
 
 .buttons-row {
-    display: table-cell;
-    max-width: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
   .space {
     padding-right: 50px !important;
