@@ -12,10 +12,11 @@ import { ControlInterface, Endpoint } from './globals';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { CodeComponent } from './code/code.component';
+import { ReferencesComponent } from './references/references.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MatCardModule,ModalCreateProjectComponent,NewEndpointFormComponent,MatIconModule,CommonModule,MatInputModule,MatFormFieldModule,MatButtonModule,MainPageComponent,ManageEndpointsComponent,NavbarComponent,CodeComponent],
+  imports: [MatCardModule,ModalCreateProjectComponent,NewEndpointFormComponent,MatIconModule,CommonModule,MatInputModule,MatFormFieldModule,MatButtonModule,MainPageComponent,ManageEndpointsComponent,NavbarComponent,CodeComponent,ReferencesComponent],
   changeDetection: ChangeDetectionStrategy.Default,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

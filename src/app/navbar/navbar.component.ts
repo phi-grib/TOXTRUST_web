@@ -56,12 +56,24 @@ export class NavbarComponent {
     this.endpoint.name = ""
     this.controlInterface.displayManageEndpoints = true;
     this.controlInterface.displayCode = false;
+    this.controlInterface.displayReferences = false;
+
 
   }
   openCode(){
     this.endpoint.name = ""
     this.controlInterface.displayManageEndpoints = false;
+    this.controlInterface.displayReferences = false;
     this.controlInterface.displayCode = true;
+  }
+  openReferences(){
+
+    this.endpoint.name = ""
+    this.controlInterface.displayManageEndpoints = false;
+    this.controlInterface.displayCode = false;
+    this.controlInterface.displayReferences = true;
+
+
   }
 
 }

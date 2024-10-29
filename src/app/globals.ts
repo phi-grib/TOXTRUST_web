@@ -17,5 +17,5 @@ export class Endpoint {
 export class ControlInterface {
     displayManageEndpoints = false;
     displayCode = false;
-
+    displayReferences = false;
 }
