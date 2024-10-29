@@ -1,5 +1,5 @@
-<h2 mat-dialog-title>Add evidence</h2>
 
+<h2 mat-dialog-title>Add evidence</h2>
 <mat-dialog-content>
   <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="example-form">
     <div class="title-container">
@@ -17,33 +17,33 @@
       </div>
       <div class="container-right">
         <mat-form-field appearance="outline">
-          <mat-label>Weight</mat-label>
-          <input
-            min="1"
-            max="5"
-            name="weight"
-            type="number"
-            placeholder="1-5"
-            ngModel
-            matInput
-          />
+          <mat-label>Source</mat-label>
+          <mat-select required ngModel name="source">
+            <mat-option value="qsar">QSAR</mat-option>
+            <mat-option value="expert">Expert</mat-option>
+            <mat-option value="in vitro">in vitro</mat-option>
+            <mat-option value="positive alert">Positive alert</mat-option>
+            <mat-option value="negative alert">Negative alert</mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
     </div>
     <div class="title-container">
-      <span>You can additionally provide a relevance metric and weight to grade the relationship between this evidence piece and the endpoint.</span>
+      <span>You can additionally provide weight and relevance metric to grade the relationship between this evidence piece and the endpoint.</span>
       </div>
       <div class="containerColumns">
         <div class="container-left">
           <mat-form-field appearance="outline">
-            <mat-label>Source</mat-label>
-            <mat-select required ngModel name="source">
-              <mat-option value="qsar">QSAR</mat-option>
-              <mat-option value="expert">Expert</mat-option>
-              <mat-option value="in vitro">in vitro</mat-option>
-              <mat-option value="positive alert">Positive alert</mat-option>
-              <mat-option value="negative alert">Negative alert</mat-option>
-            </mat-select>
+            <mat-label>Weight</mat-label>
+            <input
+              min="1"
+              max="5"
+              name="weight"
+              type="number"
+              placeholder="1-5"
+              ngModel
+              matInput
+            />
           </mat-form-field>
         </div>
         <div class="container-right">
@@ -131,7 +131,6 @@
       >
         <mat-label>Probability</mat-label>
         <input
-          required
           [disabled]="!form.value.positive"
           placeholder="0-1"
           min="0"
