@@ -1,5 +1,13 @@
 <div class="container">
-<button style="margin-bottom: 10px;" class="btnAddEvidence" (click)="openNewEvidence()" mat-flat-button>Add evidence</button>
+  <br>
+<button style="margin-bottom: 10px;" class="btnAddEvidence" (click)="openNewEvidence()" mat-flat-button
+matTooltip="Add a new evidence piece to start the computation of probabilities. "
+aria-label="Button that displays a tooltip when focused or hovered over"
+matTooltipPosition="right"
+>
+Add evidence</button>
+
+
 
       <table [hidden]="this.listEvidences.length <= 0" mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
         <!-- Position Column -->

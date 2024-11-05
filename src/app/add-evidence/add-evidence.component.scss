@@ -1,13 +1,16 @@
-.margin {
-    margin: 5px;
-}
+
 .full-width {
     width: 100%;
 }
+.title-container {
+  padding-bottom: 5px;
+  padding-left: 20px;
+}
 
 .buttons-row {
-    display: table-cell;
-    max-width: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
   .space {
     padding-right: 50px !important;
@@ -18,29 +21,26 @@
   }
 
   .positiveContainer {
-
     display: flex;
     flex-direction: column;
-    width: 50%;
-    margin-right: 10px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-    border: 1px solid rgb(147, 219, 147);
-    border-radius: 5px;
-
   }
   .negativeContainer {
-    margin-left: 10px;
     display: flex;
     flex-direction: column;
-    width: 50%;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-    border: 1px solid rgb(251, 78, 78);
-    border-radius: 5px;
-
   }
-.containerNegativePositive{
+.containerColumns{
+  margin-top: 5px;
   display: flex;
   flex-direction: row;
- 
+  justify-content: space-around;
+}
 
+::ng-deep #negCheckbox  .mdc-label {
+  color: green !important;
+
+}
+
+::ng-deep #posCheckbox  .mdc-label {
+  color: rgb(226, 0, 0) !important;
+  
 }

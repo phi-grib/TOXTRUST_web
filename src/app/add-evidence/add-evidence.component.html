@@ -1,56 +1,73 @@
-<h2 mat-dialog-title>Add evidence</h2>
 
+<h2 mat-dialog-title>Add evidence</h2>
 <mat-dialog-content>
   <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="example-form">
-    <mat-form-field
-      appearance="outline"
-      class="margin space"
-    >
-      <mat-label>Name</mat-label>
-      <input required ngModel name="name" matInput />
-    </mat-form-field>
-    <mat-form-field appearance="outline" class="margin">
-      <mat-label>Source</mat-label>
-      <mat-select required ngModel name="source">
-        <mat-option value="qsar">QSAR</mat-option>
-        <mat-option value="expert">Expert</mat-option>
-        <mat-option value="in vitro">in vitro</mat-option>
-        <mat-option value="positive alert">Positive alert</mat-option>
-        <mat-option value="negative alert">Negative alert</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <br />
-    <mat-form-field
-      appearance="outline"
-      class="margin space"
-    >
-      <mat-label>Relevance</mat-label>
-      <mat-select  ngModel name="relevance">
-        <mat-option value="certain">Certain</mat-option>
-        <mat-option value="probable">Probable</mat-option>
-        <mat-option value="plausible">Plausible</mat-option>
-        <mat-option value="equivocal">Equivocal</mat-option>
-        <mat-option value="doubted">Doubted</mat-option>
-        <mat-option value="improbable">Improbable</mat-option>
-        <mat-option value="impossible">Impossible</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field appearance="outline" class="margin">
-      <mat-label>Weight</mat-label>
-      <input
-        min="1"
-        max="5"
-        name="weight"
-        type="number"
-        placeholder="1-5"
-        ngModel
-        matInput
-      />
-    </mat-form-field>
-    <br />
-    <br />
-    <div class="containerNegativePositive">
-
+    <div class="title-container">
+    <span>Provide the name and source of your evidence.</span>
+    </div>
+    <div class="containerColumns">
+      <div class="container-left">
+        <mat-form-field
+        appearance="outline"
+        class=""
+      >
+        <mat-label>Name</mat-label>
+        <input required ngModel name="name" matInput />
+      </mat-form-field>
+      </div>
+      <div class="container-right">
+        <mat-form-field appearance="outline">
+          <mat-label>Source</mat-label>
+          <mat-select required ngModel name="source">
+            <mat-option value="qsar">QSAR</mat-option>
+            <mat-option value="expert">Expert</mat-option>
+            <mat-option value="in vitro">in vitro</mat-option>
+            <mat-option value="positive alert">Positive alert</mat-option>
+            <mat-option value="negative alert">Negative alert</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="title-container">
+      <span>You can additionally provide weight and relevance metric to grade the relationship between this evidence piece and the endpoint.</span>
+      </div>
+      <div class="containerColumns">
+        <div class="container-left">
+          <mat-form-field appearance="outline">
+            <mat-label>Weight</mat-label>
+            <input
+              min="1"
+              max="5"
+              name="weight"
+              type="number"
+              placeholder="1-5"
+              ngModel
+              matInput
+            />
+          </mat-form-field>
+        </div>
+        <div class="container-right">
+          <mat-form-field
+          appearance="outline"
+          class=""
+        >
+          <mat-label>Relevance</mat-label>
+          <mat-select  ngModel name="relevance">
+            <mat-option value="certain">Certain</mat-option>
+            <mat-option value="probable">Probable</mat-option>
+            <mat-option value="plausible">Plausible</mat-option>
+            <mat-option value="equivocal">Equivocal</mat-option>
+            <mat-option value="doubted">Doubted</mat-option>
+            <mat-option value="improbable">Improbable</mat-option>
+            <mat-option value="impossible">Impossible</mat-option>
+          </mat-select>
+        </mat-form-field>
+        </div>
+      </div>
+    <div class="title-container">
+      <span>As for the results, probability specification is optional, unless both outcomes are selected. Specify the reliability metric that describes the performance of your evidence source, and provide the score.</span>
+      </div>
+    <div class="containerColumns">
     <div class="positiveContainer">
       <mat-checkbox
       ngModel
@@ -60,7 +77,7 @@
       class="example-margin"
       >Negative</mat-checkbox
     >
-      <mat-form-field appearance="outline" class="margin">
+      <mat-form-field appearance="outline">
         <mat-label>Probability</mat-label>
         <input
           [disabled]="!form.value.negative"
@@ -101,7 +118,6 @@
     
     <div class="negativeContainer">
       <mat-checkbox
-      style="margin-right: 180px"
       ngModel
       (change)="displayFieldPositive(form)"
       name="positive"
@@ -115,7 +131,6 @@
       >
         <mat-label>Probability</mat-label>
         <input
-          required
           [disabled]="!form.value.positive"
           placeholder="0-1"
           min="0"
@@ -127,7 +142,7 @@
           matInput
         />
       </mat-form-field>
-      <mat-form-field appearance="outline" class="margin">
+      <mat-form-field appearance="outline">
         <mat-label>Reliability metric</mat-label>
         <input
           [disabled]="!form.value.positive"
@@ -137,7 +152,7 @@
           matInput
         />
       </mat-form-field>
-      <mat-form-field appearance="outline" class="margin">
+      <mat-form-field appearance="outline">
         <mat-label>Reliability score</mat-label>
         <input
           [disabled]="!form.value.positive"
@@ -161,10 +176,8 @@
       >
         Save
       </button>
+      <button id="closeBtn" mat-button mat-dialog-close>Close</button>
     </div>
   </form>
 </mat-dialog-content>
-<mat-dialog-actions>
-  <button id="closeBtn" mat-button mat-dialog-close>Close</button>
-</mat-dialog-actions>
 

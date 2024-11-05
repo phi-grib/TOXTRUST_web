@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Endpoint } from '../globals';
 import { FlaskService } from '../flask.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-combination',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './combination.component.html',
   styleUrl: './combination.component.scss'
 })

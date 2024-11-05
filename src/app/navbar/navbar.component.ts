@@ -55,9 +55,25 @@ export class NavbarComponent {
   openManageEndpoints(){
     this.endpoint.name = ""
     this.controlInterface.displayManageEndpoints = true;
+    this.controlInterface.displayCode = false;
+    this.controlInterface.displayReferences = false;
+
+
   }
-  openLink(){
-    window.open('https://github.com/phi-grib/toxtrust')
+  openCode(){
+    this.endpoint.name = ""
+    this.controlInterface.displayManageEndpoints = false;
+    this.controlInterface.displayReferences = false;
+    this.controlInterface.displayCode = true;
+  }
+  openReferences(){
+
+    this.endpoint.name = ""
+    this.controlInterface.displayManageEndpoints = false;
+    this.controlInterface.displayCode = false;
+    this.controlInterface.displayReferences = true;
+
+
   }
 
 }

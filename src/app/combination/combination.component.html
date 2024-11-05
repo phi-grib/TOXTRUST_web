@@ -1,3 +1,12 @@
-<div class="container">
-    <img [src]="this.endpoint.combinationPath" width="850" height="400" alt="">
+
+<div  class="container">
+    <div *ngIf="!this.endpoint.combinationPath">
+        Add and combine evidence to display the result!
+     </div>
+    <div *ngIf="this.endpoint.combinationPath" class="container-img">
+        <!-- <span>
+            All bars shown above the broken line represent the probability masses assigned to the possible outcomes, calculated based on the selected pieces of evidence. The combined result is displayed at the bottom of the graphic.
+        </span> -->
+        <img [src]="this.endpoint.combinationPath" width="850" height="400" alt="">
+    </div>
 </div>

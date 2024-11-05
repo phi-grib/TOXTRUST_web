@@ -5,6 +5,7 @@ import { Endpoint } from '../globals';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { AddEvidenceComponent } from '../add-evidence/add-evidence.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import {
   MatDialog,
 } from '@angular/material/dialog';
@@ -14,7 +15,7 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-list-evidences',
   standalone: true,
-  imports: [MatTableModule,MatButtonModule,AddEvidenceComponent,MatIconModule,MatCheckboxModule],
+  imports: [MatTableModule,MatButtonModule,AddEvidenceComponent,MatIconModule,MatCheckboxModule,MatTooltipModule],
   templateUrl: './list-evidences.component.html',
   styleUrl: './list-evidences.component.scss'
 })
