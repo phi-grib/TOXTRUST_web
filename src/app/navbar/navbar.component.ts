@@ -6,9 +6,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { ControlInterface, Endpoint } from '../globals';
 import { CommonModule } from '@angular/common';
-import {
-  MatDialog,
-} from '@angular/material/dialog';
+import {MatDialog } from '@angular/material/dialog';
 import { ModalCreateProjectComponent } from '../modal-create-project/modal-create-project.component';
 @Component({
   selector: 'app-navbar',
@@ -37,6 +35,13 @@ export class NavbarComponent {
       this.hidden = false;
     }
   }
+  
+
+  onMouseLeaveMenu() {
+    this.menu_options = false;
+    this.hidden = true;
+  }
+
     @HostListener('document:click', ['$event'])
     clickOut(event: Event) {
       if (!this.eRef.nativeElement.contains(event.target)) {

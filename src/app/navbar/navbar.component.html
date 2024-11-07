@@ -14,7 +14,7 @@
     'slide-down-leave': menu_options,
     'slide-down-enter-active': !menu_options && !hidden,
     'slide-down-leave-active': menu_options && !hidden
-  }" class="MenuOptions">
+  }" class="MenuOptions"  (mouseleave)="onMouseLeaveMenu()">
 <button mat-raised-button (click)="openNewProject()">New project</button>
 <button mat-raised-button (click)="openManageEndpoints()">Existing projects</button>
 <button mat-raised-button>Documentation</button>
