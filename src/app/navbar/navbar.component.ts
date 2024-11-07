@@ -42,12 +42,6 @@ export class NavbarComponent {
     this.hidden = true;
   }
 
-    @HostListener('document:click', ['$event'])
-    clickOut(event: Event) {
-      if (!this.eRef.nativeElement.contains(event.target)) {
-        this.menu_options = true;
-      }
-    }
 
   openNewProject() {
     this.endpoint.name = ""
