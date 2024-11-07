@@ -51,6 +51,11 @@ export class FlaskService {
   });
   }
 
+  getDataCombinationGraph(){
+    const url: string = environment.baseUrl+"combination_data/"+this.endpoint.name
+    return this.http.get(url)
+  }
+
   selectRule(data:any){
     const url: string = environment.baseUrl + "select_rule/"+this.endpoint.name;
     return this.http.post(url, data, {
@@ -74,10 +79,6 @@ export class FlaskService {
     return this.http.get(url,{ responseType: 'blob' })
   }
 
-  getCombinationImagePath(){
-    const url: string = environment.baseUrl + "combination_image_path/"+this.endpoint.name
-    return this.http.get(url,{ responseType: 'blob' })
-  }
 
 
   private updateEvidenceList = new Subject<any>();

@@ -17,16 +17,5 @@ export class CombinationComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.flaskService.getCombinationImagePath().subscribe((result: any) => {
-      const blob = new Blob([result], { type: 'application/octet-stream' });
-      const reader = new FileReader();
-      reader.readAsDataURL(blob);
-      reader.onloadend = () => {
-        this.endpoint.combinationPath = reader.result as string;
-      };
-    }, (e) =>
-      console.log(e))
-
   }
-
 }
