@@ -25,6 +25,7 @@
     "angular-plotly.js": "^6.0.0",
     "jquery": "^3.7.1",
     "ngx-toastr": "^19.0.0",
+    "plotly.js-dist-min": "^2.35.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
