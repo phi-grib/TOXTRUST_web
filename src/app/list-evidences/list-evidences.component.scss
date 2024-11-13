@@ -1,7 +1,7 @@
 
 .container {
   height: 90vh;
-  overflow: auto;
+  overflow: auto
 }
 .demo-table {
     margin-bottom: 20px;
@@ -26,4 +26,9 @@
     background-color: whitesmoke  !important;
     border-bottom: 0.5px solid gray;
     text-align: center;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
 }

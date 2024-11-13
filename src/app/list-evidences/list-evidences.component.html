@@ -8,7 +8,7 @@ matTooltipPosition="right"
 Add evidence</button>
 
 
-
+  <div class="table-container">
       <table [hidden]="this.listEvidences.length <= 0" mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
         <!-- Position Column -->
         <ng-container matColumnDef="position">
@@ -92,6 +92,7 @@ Add evidence</button>
         <tr><button>Delete</button>
         </tr>
       </table>
+    </div>
       <button [hidden]="this.listEvidences.length <= 0" [disabled]="this.listCombineEvidences.length <= 1" mat-flat-button (click)="runCombine()">
         Combine
       </button>
