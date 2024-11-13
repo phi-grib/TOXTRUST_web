@@ -87,15 +87,6 @@ export class ListEvidencesComponent  implements OnInit {
         this.flaskService.runCombine().subscribe((result:any)=>{
           if(result['success']){
         this.toastr.success(result['message'],'');
-
-            this.flaskService.getCombinationImagePath().subscribe((result:any)=>{
-              const blob = new Blob([result], { type: 'application/octet-stream' });
-              const reader = new FileReader();
-              reader.readAsDataURL(blob);
-              reader.onloadend = () => {
-                this.endpoint.combinationPath = reader.result as string;
-              }; 
-          })
           }else{
             this.toastr.error(result['message'],'');
           }
