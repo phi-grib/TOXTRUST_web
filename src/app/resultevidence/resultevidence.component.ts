@@ -10,10 +10,11 @@ import {
 import { Endpoint } from '../globals';
 import { FlaskService } from '../flask.service';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { PlotlyGraphDecisionComponent } from '../plotly-graph-decision/plotly-graph-decision.component';
 @Component({
   selector: 'app-resultevidence',
   standalone: true,
-  imports: [  MatDialogActions,
+  imports: [  MatDialogActions,PlotlyGraphDecisionComponent,
   MatDialogClose,
   MatDialogContent,
   MatDialogTitle,MatButtonModule,MatTableModule],
