@@ -15,21 +15,24 @@ graph:any
 
 ngOnInit(): void {
   this.graph = {
-      data:  {
-    x: [1, 2, 3, 4],
-    y: [2, 1, 3, 4],
-    error_y: {
-      type: 'data',
-      symmetric: false,
-      array: [0.1, 0.2, 0.1, 0.1],
-      arrayminus: [0.2, 0.4, 1, 0.2]
-    },
-  },
-  layout:{width: 400, height: 100, title: 'Testing Plot', barmode: 'scatter'}
-
-  }
-
+    data: [
+      {
+        x: [1, 2, 3, 4],
+        y: [2, 1, 3, 4],
+        error_y: {
+          type: 'data',
+          symmetric: false,
+          array: [0.1, 0.2, 0.1, 0.1],
+          arrayminus: [0.2, 0.4, 1, 0.2]
+        },
+        type: 'scatter'
+      }
+    ],
+    layout: {
+      title: 'Gráfica de ejemplo',
+      xaxis: { title: 'X Axis' },
+      yaxis: { title: 'Y Axis' }
+    }
+  };
 }
-
-
 }
