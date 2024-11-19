@@ -35,16 +35,5 @@ export class ResultevidenceComponent implements OnInit {
         this.evidenceResult = result['data'];
       }
     })
-    this.flaskService.getEvidenceImagePath(this.endpoint.name,this.evidence_name).subscribe((result:any)=>{
-        const blob = new Blob([result], { type: 'application/octet-stream' });
-        const reader = new FileReader();
-        reader.readAsDataURL(blob);
-        reader.onloadend = () => {
-          this.image = reader.result as string;
-        }; 
-
-      
-    })
-
   }
 }

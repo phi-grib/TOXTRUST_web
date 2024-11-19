@@ -73,13 +73,6 @@ export class FlaskService {
     return this.http.delete(url);
   }
 
-    
-  getEvidenceImagePath(endpoint_name:string,evidence_name:string){
-    const url: string = environment.baseUrl + "evidence_image_path/"+endpoint_name+"/"+evidence_name
-    return this.http.get(url,{ responseType: 'blob' })
-  }
-
-
 
   private updateEvidenceList = new Subject<any>();
   updateEvidenceList$ = this.updateEvidenceList.asObservable()
