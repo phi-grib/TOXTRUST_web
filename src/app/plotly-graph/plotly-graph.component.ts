@@ -20,7 +20,7 @@ export class PlotlyGraphComponent implements OnInit {
 
   }
   resultData: any = undefined;
-  graph: any
+  graph: any = undefined;
 traces: any
   formatData(){
     console.log("formatData")

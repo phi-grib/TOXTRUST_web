@@ -17,22 +17,31 @@ ngOnInit(): void {
   this.graph = {
     data: [
       {
-        x: [1, 2, 3, 4],
-        y: [2, 1, 3, 4],
+        x: ["Negative"],
+        y: [0.88],
         error_y: {
           type: 'data',
-          symmetric: false,
-          array: [0.1, 0.2, 0.1, 0.1],
-          arrayminus: [0.2, 0.4, 1, 0.2]
+          symmetric: true,
+          array: [0.125],
+          // arrayminus: [0.2, 0.4, 1, 0.2]
         },
-        type: 'scatter'
+      type: 'scatter',
+      mode: "lines",
+      fill:"toself",
+      line: { color: "black" },
       }
     ],
     layout: {
-      title: 'Gráfica de ejemplo',
-      xaxis: { title: 'X Axis' },
-      yaxis: { title: 'Y Axis' }
-    }
+      title: {
+        text: 'Bounded probability',
+        font: {
+          size:22
+        }
+      },
+      yaxis: { title: 'Probability',range: [-0.15,1.15]},
+      xaxis: {showgrid:false}
+
+    },
   };
 }
 }
