@@ -42,9 +42,9 @@ traces: any
       this.resultData = result['data']
       var reversedData = this.resultData[1].reverse()
       const colors = [
-        'rgba(55,128,191,0.6)', 
-        'rgba(255,153,51,0.6)',  
-        'rgba(255,200,51,0.6)'  
+        'rgb(202, 235, 238)', 
+        'rgb(20, 161, 224)',  
+        'rgb(25, 91, 160)'  
       ];
       const names = ['Negative', 'Uncertain', 'Positive'];
       this.traces = [];
@@ -66,7 +66,7 @@ traces: any
       console.log(this.traces)
        this.graph = {
         data: this.traces,
-        layout: {width: 700, height: 400, title: 'Testing Plot', barmode: 'stack',legend : {'traceorder':"normal"},xaxis:{'visible':false}, plot_bgcolor:"transparent", paper_bgcolor:"transparent",margin:{pad:5}}
+        layout: {width: 700, height: 400, title:{text:'Combination result',font:{size:14,color:"black",family:"Roboto, sans-serif"}}, barmode: 'stack',legend : {'traceorder':"normal"},xaxis:{'visible':false}, plot_bgcolor:"transparent", paper_bgcolor:"transparent",margin:{pad:5}}
     };
 
     })

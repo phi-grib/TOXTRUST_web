@@ -35,10 +35,13 @@ export class ResultevidenceComponent implements OnInit {
         this.evidenceResult = result['data'];
       }
     })
+<<<<<<< HEAD
     this.flaskService.getDataErroPlot(this.evidence_name).subscribe((result:any)=> {
       console.info("DATA ERROR PLOT")
       console.log(result)
     })
 
+=======
+>>>>>>> combination
   }
 }
