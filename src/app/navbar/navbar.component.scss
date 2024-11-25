@@ -1,6 +1,7 @@
 .navbar{
     background-color: white !important;
     height: 44px !important;
+    padding-left: 40px;
 }
 .mat-icon {
     color: black;
@@ -29,7 +30,7 @@ img {
   .MenuOptions {
     position: absolute;
     top: 44px;
-    left: 0; 
+    left: 43px; 
     display: flex;
     flex-direction: column;
     background-color: white;

@@ -42,7 +42,6 @@ export class NavbarComponent {
     this.hidden = true;
   }
 
-
   openNewProject() {
     this.endpoint.name = ""
     this.controlInterface.displayManageEndpoints = false;
@@ -71,8 +70,12 @@ export class NavbarComponent {
     this.controlInterface.displayManageEndpoints = false;
     this.controlInterface.displayCode = false;
     this.controlInterface.displayReferences = true;
-
-
   }
+
+  openDocumentation(){
+    
+  }
+
+  
 
 }

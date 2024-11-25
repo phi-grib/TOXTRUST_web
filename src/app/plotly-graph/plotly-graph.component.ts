@@ -66,7 +66,7 @@ traces: any
       console.log(this.traces)
        this.graph = {
         data: this.traces,
-        layout: {width: 700, height: 400, title:{text:'Combination result',font:{size:14,color:"black",family:"Roboto, sans-serif"}}, barmode: 'stack',legend : {'traceorder':"normal"},xaxis:{'visible':false}, plot_bgcolor:"transparent", paper_bgcolor:"transparent",margin:{pad:5}}
+        layout: {width: 700, height: 400, title:{text:'Combination result',font:{size:20,color:"black",family:"Roboto, sans-serif"}}, barmode: 'stack',legend : {'traceorder':"normal"},xaxis:{'visible':false}, plot_bgcolor:"transparent", paper_bgcolor:"transparent",margin:{pad:5}}
     };
 
     })
