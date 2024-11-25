@@ -18,4 +18,5 @@ export class ControlInterface {
     displayManageEndpoints = false;
     displayCode = false;
     displayReferences = false;
+    displayDocumentation = false;
 }
