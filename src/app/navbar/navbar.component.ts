@@ -54,6 +54,7 @@ export class NavbarComponent {
     this.endpoint.name = ""
     this.controlInterface.displayManageEndpoints = true;
     this.controlInterface.displayCode = false;
+    this.controlInterface.displayDocumentation = false;
     this.controlInterface.displayReferences = false;
 
 
@@ -62,6 +63,7 @@ export class NavbarComponent {
     this.endpoint.name = ""
     this.controlInterface.displayManageEndpoints = false;
     this.controlInterface.displayReferences = false;
+    this.controlInterface.displayDocumentation = false;
     this.controlInterface.displayCode = true;
   }
   openReferences(){
@@ -69,11 +71,16 @@ export class NavbarComponent {
     this.endpoint.name = ""
     this.controlInterface.displayManageEndpoints = false;
     this.controlInterface.displayCode = false;
+    this.controlInterface.displayDocumentation = false;
     this.controlInterface.displayReferences = true;
   }
 
   openDocumentation(){
-    
+    this.endpoint.name = ""
+    this.controlInterface.displayManageEndpoints = false;
+    this.controlInterface.displayCode = false;
+    this.controlInterface.displayReferences = false;
+    this.controlInterface.displayDocumentation = true;
   }
 
   
