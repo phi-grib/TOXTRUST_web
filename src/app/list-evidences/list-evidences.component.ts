@@ -12,10 +12,11 @@ import {
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ResultevidenceComponent } from '../resultevidence/resultevidence.component';
 import { ToastrService } from 'ngx-toastr';
+import { CapitalizePipe } from '../capitalize.pipe';
 @Component({
   selector: 'app-list-evidences',
   standalone: true,
-  imports: [MatTableModule,MatButtonModule,AddEvidenceComponent,MatIconModule,MatCheckboxModule,MatTooltipModule],
+  imports: [CapitalizePipe,MatTableModule,MatButtonModule,AddEvidenceComponent,MatIconModule,MatCheckboxModule,MatTooltipModule],
   templateUrl: './list-evidences.component.html',
   styleUrl: './list-evidences.component.scss'
 })

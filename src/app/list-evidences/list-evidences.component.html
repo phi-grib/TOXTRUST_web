@@ -60,13 +60,13 @@ Add evidence</button>
                                 matTooltip="Inspect"
                                 matTooltipPosition="right"
                                 >
-                                  {{element.result.outcome}}
+                                  {{element.result.outcome[0] | capitalize }}
                                 </button>
                               </td>
                             </ng-container>
                             <!-- checkbox-->
                             <ng-container matColumnDef="combine">
-                              <th mat-header-cell *matHeaderCellDef>Should combine </th>
+                              <th mat-header-cell *matHeaderCellDef>Combine </th>
                               <td mat-cell *matCellDef="let element; let i = index">
                                 <mat-checkbox
                                 ngModel
@@ -74,7 +74,7 @@ Add evidence</button>
                                 name="include"
                                 id="includeCheckbox"
                                 class="example-margin"
-                                >Include</mat-checkbox
+                                ></mat-checkbox
                               >
                               </td>
                             </ng-container>
