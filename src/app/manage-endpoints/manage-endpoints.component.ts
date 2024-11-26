@@ -17,7 +17,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./manage-endpoints.component.scss']
 })
 export class ManageEndpointsComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['position', 'name','delete'];
+  displayedColumns: string[] = [ 'name','framework','project permissions','delete'];
   dataSource = new MatTableDataSource<string>();
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -27,6 +27,7 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.flaskService.getListEndpoints().subscribe(
       (result: string[]) => {
+        console.log("list endpoints details")
         this.endpoint.listEndpoints = result;
         this.dataSource.data = this.endpoint.listEndpoints; 
       },

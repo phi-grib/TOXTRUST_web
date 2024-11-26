@@ -1,21 +1,28 @@
 <div  class="container">
   <img   src="assets/image.png" alt="image">
   <div class="container-table">
-    <h1>Existing projects</h1>
+    <div class="text-container">
+      <h1>Existing projects</h1>
+    </div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
-      <!-- Position Column -->
-      <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </td>
-      </ng-container>
       <!-- Name Column -->
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let element"> {{element}} </td>
+        <td mat-cell id="name-rows" *matCellDef="let element"> {{element}} </td>
       </ng-container>
+         <!-- Framework Column -->
+         <ng-container matColumnDef="framework">
+          <th mat-header-cell *matHeaderCellDef> Framework </th>
+          <td mat-cell *matCellDef="let element"> framework </td>
+        </ng-container>
+                 <!-- Project Permissions Column -->
+                 <ng-container matColumnDef="project permissions">
+                  <th mat-header-cell *matHeaderCellDef> Project permissions </th>
+                  <td mat-cell *matCellDef="let element"> permissions... </td>
+                </ng-container>
          <!-- Delete Button Column -->
     <ng-container matColumnDef="delete">
-      <th mat-header-cell *matHeaderCellDef>  </th>
+      <th mat-header-cell *matHeaderCellDef>Delete</th>
       <td mat-cell *matCellDef="let element">
         <button mat-icon-button color="warn" (click)="deleteEndpoint(element,$event)">
           <mat-icon class="delete-icon">delete</mat-icon>

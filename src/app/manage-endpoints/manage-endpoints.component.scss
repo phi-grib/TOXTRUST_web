@@ -9,9 +9,9 @@
 }
 
 .demo-table{
+  box-shadow: none !important;
 
 }
-
 .container-table{
   display: flex;
   flex-direction: column;
@@ -33,6 +33,12 @@ img {
   
 }
 
+th:first-child {
+  text-align: left !important;
+}
+#name-rows {
+  text-align: left !important;
+}
 
 .mat-elevation-z8{
 
@@ -62,9 +68,10 @@ img {
  display: flex;
  margin-top: 2px;
  border-radius: 0px 0px 3px 3px !important;
- box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
- 
+  
+}
+.text-container {
+   padding-top: 30px;
 }
 
 .mat-mdc-cell{

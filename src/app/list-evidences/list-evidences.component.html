@@ -10,11 +10,6 @@ Add evidence</button>
 
   <div class="table-container">
       <table [hidden]="this.listEvidences.length <= 0" mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
-        <!-- Position Column -->
-        <ng-container matColumnDef="position">
-          <th mat-header-cell *matHeaderCellDef> No. </th>
-          <td mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </td>
-        </ng-container>
         <!-- Name Column -->
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef> Name </th>
@@ -23,7 +18,7 @@ Add evidence</button>
         <!-- Type Column -->
         <ng-container matColumnDef="type">
           <th mat-header-cell *matHeaderCellDef> Type </th>
-          <td mat-cell *matCellDef="let element"> {{element.source}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.source | capitalize}} </td>
         </ng-container>
                <!-- weight Column -->
                <ng-container matColumnDef="weight">
@@ -33,7 +28,7 @@ Add evidence</button>
                              <!-- Relevance Column -->
                              <ng-container matColumnDef="relevance">
                               <th mat-header-cell *matHeaderCellDef> Relevance </th>
-                              <td mat-cell *matCellDef="let element"> {{element.relevance}} </td>
+                              <td mat-cell *matCellDef="let element"> {{element.relevance | capitalize}} </td>
                             </ng-container>
                                                          <!-- negative Column -->
                                                          <ng-container matColumnDef="negative">
@@ -83,7 +78,7 @@ Add evidence</button>
 
 
     <ng-container matColumnDef="delete">
-      <th mat-header-cell *matHeaderCellDef>  </th>
+      <th mat-header-cell *matHeaderCellDef>Delete</th>
       <td mat-cell *matCellDef="let element">
         <button mat-icon-button color="warn" (click)="deleteEvidence(element,$event)">
           <mat-icon class="delete-icon">delete</mat-icon>
