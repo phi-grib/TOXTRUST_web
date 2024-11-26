@@ -46,8 +46,8 @@ ngOnInit(): void {
     this.data['reliability'] = {metric:[],value: []}
     this.data['name'] = form.value.name
     this.data['source'] = form.value.source
-    this.data['weight'] = form.value.weight
-    this.data['relevance'] = form.value.relevance
+    this.data['weight'] = form.value.weight ? form.value.weight.length == 0 : null
+    this.data['relevance'] = form.value.relevance ? form.value.relevance == "" : null 
     this.data['result']['proba'] = false;
     if(form.value.positive == true){
       this.data['result']['outcome'].push('positive')
@@ -72,6 +72,8 @@ ngOnInit(): void {
       this.data['reliability']['value'].push(form.value.reliability_score_negative)
 
     }
+    console.log("form completo")
+    console.log(this.data)
     this.flaskService.evidenceInput(this.endpoint.name,this.data).subscribe((result: any) => {
       console.log(result)
       if(result['success']){
