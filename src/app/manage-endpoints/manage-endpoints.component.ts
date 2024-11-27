@@ -17,7 +17,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./manage-endpoints.component.scss']
 })
 export class ManageEndpointsComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = [ 'name','framework','project permissions','delete'];
+  displayedColumns: string[] = [ 'name','compound','framework','project permissions','delete'];
   dataSource = new MatTableDataSource<string>();
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
