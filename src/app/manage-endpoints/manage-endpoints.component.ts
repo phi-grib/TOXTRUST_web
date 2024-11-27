@@ -42,9 +42,9 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  deleteEndpoint(name:any,event: MouseEvent){
+  deleteEndpoint(endpoint:any,event: MouseEvent){
     event.stopPropagation();
-    this.flaskService.deleteEndpoint(name).subscribe((result:any) => {
+    this.flaskService.deleteEndpoint(endpoint.name).subscribe((result:any) => {
        if(result['success']){
         this.toastr.success(result['data'],'')
            this.flaskService.getListEndpoints().subscribe(
