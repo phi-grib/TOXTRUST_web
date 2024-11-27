@@ -26,6 +26,8 @@ export class ModalCreateProjectComponent {
 
   }
 onSubmit(name:string){
+  console.log("new project")
+  console.log(name)
   this.flaskService.createEndpoint(name).subscribe(result => {
     this.endpoint.name = name;
    

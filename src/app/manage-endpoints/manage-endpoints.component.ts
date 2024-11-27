@@ -73,12 +73,14 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
     this.endpoint.description = data.description;
     this.endpoint.framework = data.framework;
   }
-  selectEndpoint(endpoint_name:any){
-     this.flaskService.getEndpoint(endpoint_name).subscribe(
+  selectEndpoint(endpoint:any){
+    console.log("selectEndpoint")
+    console.log(endpoint.name)
+     this.flaskService.getEndpoint(endpoint.name).subscribe(
       (result:any) => {
         if(result["success"]){
           this.controlInterface.displayManageEndpoints = false;
-          this.endpoint.name = endpoint_name
+          this.endpoint.name = (endpoint.name)
           console.log("endpoint seleccionado")
           console.log(result['data'])
           this.mapEndpointData(result["data"]["endpoint"]);
