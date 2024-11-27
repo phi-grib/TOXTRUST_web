@@ -8,17 +8,17 @@
       <!-- Name Column -->
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell id="name-rows" *matCellDef="let element"> {{element}} </td>
+        <td mat-cell id="name-rows" *matCellDef="let element"> {{element.name}} </td>
       </ng-container>
          <!-- Framework Column -->
          <ng-container matColumnDef="framework">
           <th mat-header-cell *matHeaderCellDef> Framework </th>
-          <td mat-cell *matCellDef="let element"> framework </td>
+          <td mat-cell *matCellDef="let element"> {{element.framework}} </td>
         </ng-container>
                  <!-- Project Permissions Column -->
                  <ng-container matColumnDef="project permissions">
                   <th mat-header-cell *matHeaderCellDef> Project permissions </th>
-                  <td mat-cell *matCellDef="let element"> permissions... </td>
+                  <td mat-cell *matCellDef="let element"> {{element.confidentiality}} </td>
                 </ng-container>
          <!-- Delete Button Column -->
     <ng-container matColumnDef="delete">

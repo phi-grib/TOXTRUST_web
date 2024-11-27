@@ -28,6 +28,7 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
     this.flaskService.getListEndpoints().subscribe(
       (result: string[]) => {
         console.log("list endpoints details")
+        console.log(result)
         this.endpoint.listEndpoints = result;
         this.dataSource.data = this.endpoint.listEndpoints; 
       },
