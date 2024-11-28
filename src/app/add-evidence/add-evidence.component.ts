@@ -46,8 +46,12 @@ ngOnInit(): void {
     this.data['reliability'] = {metric:[],value: []}
     this.data['name'] = form.value.name
     this.data['source'] = form.value.source
-    this.data['weight'] = form.value.weight ? form.value.weight.length == 0 : null
-    this.data['relevance'] = form.value.relevance ? form.value.relevance == "" : null 
+    this.data['weight'] = form.value.weight != "" ? form.value.weight : null
+    this.data['relevance'] = form.value.relevance != "" ? form.value.relevance : null
+    console.log("weight")
+    console.log(this.data['weight'])
+    console.log("relevance:")
+    console.log(this.data['relevance']) 
     this.data['result']['proba'] = false;
     if(form.value.positive == true){
       this.data['result']['outcome'].push('positive')
