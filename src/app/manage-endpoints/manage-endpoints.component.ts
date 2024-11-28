@@ -8,11 +8,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ControlInterface, Endpoint } from '../globals';
 import { ToastrService } from 'ngx-toastr';
+import { CapitalizePipe } from '../capitalize.pipe';
 
 @Component({
   selector: 'app-manage-endpoints',
   standalone: true,
-  imports: [MatInputModule,MatPaginatorModule, MatTableModule,MatIconModule,MatButtonModule,MatFormFieldModule],
+  imports: [CapitalizePipe,MatInputModule,MatPaginatorModule, MatTableModule,MatIconModule,MatButtonModule,MatFormFieldModule],
   templateUrl: './manage-endpoints.component.html',
   styleUrls: ['./manage-endpoints.component.scss']
 })

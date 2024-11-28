@@ -8,22 +8,22 @@
       <!-- Name Column -->
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell id="name-rows" *matCellDef="let element"> {{element.name}} </td>
+        <td mat-cell id="name-rows" *matCellDef="let element"> {{element.name | capitalize}} </td>
       </ng-container>
             <!-- Compound Column -->
             <ng-container matColumnDef="compound">
               <th mat-header-cell *matHeaderCellDef> Compound </th>
-              <td mat-cell  *matCellDef="let element"> {{element.compound}} </td>
+              <td mat-cell  *matCellDef="let element"> {{element.compound | capitalize}} </td>
             </ng-container>
          <!-- Framework Column -->
          <ng-container matColumnDef="framework">
           <th mat-header-cell *matHeaderCellDef> Framework </th>
-          <td mat-cell *matCellDef="let element"> {{element.framework}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.framework | capitalize}} </td>
         </ng-container>
                  <!-- Project Permissions Column -->
                  <ng-container matColumnDef="project permissions">
                   <th mat-header-cell *matHeaderCellDef> Project permissions </th>
-                  <td mat-cell *matCellDef="let element"> {{element.confidentiality}} </td>
+                  <td mat-cell *matCellDef="let element"> {{element.confidentiality | capitalize}} </td>
                 </ng-container>
          <!-- Delete Button Column -->
     <ng-container matColumnDef="delete">
