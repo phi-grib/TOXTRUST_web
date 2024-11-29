@@ -12,6 +12,7 @@ export class Endpoint {
     maxUncertainty: number = 0;
     minBelief: number = 0;
     combinationPath: any;
+    options:any;
 }
 
 export class ControlInterface {

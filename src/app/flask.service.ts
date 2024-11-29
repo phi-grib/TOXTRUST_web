@@ -72,8 +72,10 @@ export class FlaskService {
     const url: string = environment.baseUrl + "delete_evidence/" +endpoint_name+"/"+evidence_name
     return this.http.delete(url);
   }
-
-    
+  deleteCombination(){
+    const url: string = environment.baseUrl + "delete_combination/" +this.endpoint.name
+    return this.http.delete(url);
+  }
   getEvidenceImagePath(endpoint_name:string,evidence_name:string){
     const url: string = environment.baseUrl + "evidence_image_path/"+endpoint_name+"/"+evidence_name
     return this.http.get(url,{ responseType: 'blob' })

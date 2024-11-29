@@ -86,7 +86,6 @@ export class ListEvidencesComponent  implements OnInit {
     this.flaskService.shouldCombine(this.listCombineEvidences).subscribe((result:any)=>{
       if(result['success']){
         this.toastr.success(result['message'],'');
-
         this.flaskService.runCombine().subscribe((result:any)=>{
           if(result['success']){
         this.toastr.success(result['message'],'');

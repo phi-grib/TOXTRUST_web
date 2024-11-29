@@ -68,6 +68,11 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
     this.endpoint.maxUncertainty = data.options.maxUncertainty;
     
   }
+  mapOptionsData(data:any){
+    console.log("mapOptionsData")
+    this.endpoint.options = data
+    console.log(this.endpoint.options)
+  }
   mapEndpointData(data:any){
     this.endpoint.compound = data.compound;
     this.endpoint.confidentiality = data.confidentiality;
@@ -82,6 +87,7 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
         if(result["success"]){
           this.controlInterface.displayManageEndpoints = false;
           this.endpoint.name = (endpoint.name)
+          this.mapOptionsData(result['data']['options'])
           console.log("endpoint seleccionado")
           console.log(result['data'])
           this.mapEndpointData(result["data"]["endpoint"]);

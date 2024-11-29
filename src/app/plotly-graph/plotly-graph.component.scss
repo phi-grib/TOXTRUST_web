@@ -1,0 +1,46 @@
+
+.container {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+}
+th{
+    font-weight: bold;
+  }
+    table {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      background-color: white !important;
+  
+    }
+  
+    .mat-mdc-dialog-content, .mdc-dialog__content,.mat-mdc-dialog-surface,.mdc-dialog__surface,.mat-mdc-dialog-actions, .mdc-dialog__actions{
+      background-color: white !important;
+    }
+    .title-table {
+      font-size: 18px;
+  
+    }
+    td {
+  padding: 10px !important;
+    }
+  
+    th {
+      background-color: whitesmoke  !important;
+      border-bottom: 0.5px solid gray;
+      padding: 10px;
+      text-align: center;
+  
+    }
+  
+    tr:nth-child(1) {
+      border-bottom: 0.3px solid rgb(214, 214, 214);
+    }
+
+    .delete-icon {
+      color: purple;
+    }
+    

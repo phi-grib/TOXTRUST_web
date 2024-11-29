@@ -3,20 +3,21 @@ import * as PlotlyJS from 'plotly.js-dist-min';
 import { PlotlyModule } from 'angular-plotly.js';
 import { CommonModule } from '@angular/common';
 import { FlaskService } from '../flask.service';
-
+import { Endpoint } from '../globals';
+import {MatIconModule} from '@angular/material/icon';
 PlotlyModule.plotlyjs = PlotlyJS;
 
 @Component({
   selector: 'app-plotly-graph',
   standalone: true,
-  imports: [CommonModule, PlotlyModule],
+  imports: [MatIconModule,CommonModule, PlotlyModule],
   templateUrl: './plotly-graph.component.html',
   styleUrl: './plotly-graph.component.scss'
 })
 
 
 export class PlotlyGraphComponent implements OnInit {
-  constructor(private flaskSerice:FlaskService){
+  constructor(private flaskSerice:FlaskService, public endpoint:Endpoint){
 
   }
   resultData: any = undefined;
@@ -36,7 +37,9 @@ traces: any
 
     }
   }
-
+  deleteCombination(){
+    console.log("delete")
+  }
   ngOnInit(): void {
     this.flaskSerice.getDataCombinationGraph().subscribe((result:any) => {
       this.resultData = result['data']
