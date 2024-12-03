@@ -13,6 +13,7 @@ export class Endpoint {
     minBelief: number = 0;
     combinationPath: any;
     options:any;
+    probabilities: any;
 }
 
 export class ControlInterface {

@@ -35,17 +35,18 @@ Add evidence</button>
                                                           <th mat-header-cell *matHeaderCellDef> Negative </th>
                                                           <td mat-cell *matCellDef="let element"> {{element.probabilities.negative}} </td>
                                                         </ng-container>
+                                                                                                                                              <!-- Uncertain Column -->
+                                                                                                                                              <ng-container matColumnDef="uncertain">
+                                                                                                                                                <th mat-header-cell *matHeaderCellDef> Uncertain </th>
+                                                                                                                                                <td mat-cell *matCellDef="let element"> {{element.probabilities.uncertain}} </td>
+                                                                                                                                              </ng-container>
+                                                        
                                                                               <!-- negative Column -->
                                                                               <ng-container matColumnDef="positive">
                                                                                 <th mat-header-cell *matHeaderCellDef> Positive </th>
                                                                                 <td mat-cell *matCellDef="let element"> {{element.probabilities.positive}} </td>
                                                                               </ng-container>
 
-                                                                                      <!-- Uncertain Column -->
-                                                                                      <ng-container matColumnDef="uncertain">
-                                                                                        <th mat-header-cell *matHeaderCellDef> Uncertain </th>
-                                                                                        <td mat-cell *matCellDef="let element"> {{element.probabilities.uncertain}} </td>
-                                                                                      </ng-container>
 
                             <!-- visualize button column -->
                             <ng-container matColumnDef="decision">

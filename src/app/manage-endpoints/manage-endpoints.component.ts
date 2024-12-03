@@ -90,6 +90,7 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
           this.mapOptionsData(result['data']['options'])
           console.log("endpoint seleccionado")
           console.log(result['data'])
+          this.endpoint.probabilities = result['data']['results'][this.endpoint.name]['probabilities']
           this.mapEndpointData(result["data"]["endpoint"]);
         }
       },

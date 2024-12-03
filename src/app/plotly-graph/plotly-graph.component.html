@@ -1,8 +1,12 @@
-<table style="margin-top: 30px;"  ><thead>
+<table *ngIf="this.resultData" style="margin-top: 30px;"  ><thead>
     <tr>
       <th>Name</th>
       <th>Combined</th>
       <th>Rule</th>
+      <th>Negative</th>
+      <th>Uncertain</th>
+      <th>Positive</th>
+      <th>Decision</th>
       <th>Delete</th>
     </tr></thead>
   <tbody>
@@ -10,6 +14,10 @@
       <td>{{this.endpoint.name}}</td> 
       <td> <span *ngFor="let evidence of this.endpoint.options.combination.shouldCombine"> {{evidence}} </span> </td>
       <td>{{this.endpoint.options.combination.rule}}</td>
+      <td>{{this.endpoint.probabilities.negative}}</td>
+      <td>{{this.endpoint.probabilities.uncertain}}</td>
+      <td>{{this.endpoint.probabilities.positive}}</td>
+      <td><button mat-flat-button>{{this.endpoint.name}}</button></td>
       <td>
         <button (click)="deleteCombination()">
         <mat-icon class="delete-icon">delete</mat-icon>

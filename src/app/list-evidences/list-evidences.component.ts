@@ -26,7 +26,7 @@ export class ListEvidencesComponent  implements OnInit {
   constructor(private toastr:ToastrService,private flaskService:FlaskService,private endpoint:Endpoint){
 
   }
-  displayedColumns: string[] = ['name','type','weight','relevance','negative','positive','uncertain','decision','combine','delete'];
+  displayedColumns: string[] = ['name','type','weight','relevance','negative','uncertain','positive','decision','combine','delete'];
   dataSource = new MatTableDataSource<string>();
   listEvidences:any[] = [];
   listCombineEvidences:any[] = [];
@@ -40,7 +40,7 @@ export class ListEvidencesComponent  implements OnInit {
     this.listEvidences = [];
     this.flaskService.getEvidences(this.endpoint.name).subscribe((result:any) => {
       if(result['success']){
-        console.log("datos:")
+        console.log("list evidences:")
         console.log(result['data'])
         Object.keys(result['data']).forEach(key => {
           const evidence = result['data'][key];
@@ -64,8 +64,13 @@ export class ListEvidencesComponent  implements OnInit {
 
   }
   deleteEvidence(evidence:any,event: MouseEvent){
+    console.log("endpoint name"+this.endpoint.name)
+    console.log("evidence name"+evidence.name)
     event.stopPropagation();
+
+
     this.flaskService.deleteEvidence(this.endpoint.name,evidence.name).subscribe((result:any)=>{
+      console.log(result)
       if(result['success']){
        this.getEvidences();
         this.toastr.success(result['data'],'');
