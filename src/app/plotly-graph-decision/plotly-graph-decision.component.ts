@@ -39,7 +39,21 @@ ngOnInit(): void {
         }
       },
       yaxis: { title: 'Probability',range: [-0.15,1.15]},
-      xaxis: {showgrid:false}
+      xaxis: {showgrid:false},
+      shapes: [
+        {
+          type: 'line',
+          x0: -0.5, 
+          x1: 1.5, 
+          y0: 0.5, 
+          y1: 0.5, 
+          line: {
+            color: 'red',
+            width: 2,
+            dash: 'solid',
+          }
+        }
+      ]
 
     },
   };
