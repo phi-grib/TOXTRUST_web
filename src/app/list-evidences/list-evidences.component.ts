@@ -89,6 +89,7 @@ export class ListEvidencesComponent  implements OnInit {
         this.flaskService.runCombine().subscribe((result:any)=>{
           if(result['success']){
         this.toastr.success(result['message'],'');
+        this.flaskService.updateCombinationPlot();
           }else{
             this.toastr.error(result['message'],'');
           }

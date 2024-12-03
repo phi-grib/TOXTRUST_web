@@ -6,6 +6,7 @@ import { FlaskService } from '../flask.service';
 import { Endpoint } from '../globals';
 import {MatIconModule} from '@angular/material/icon';
 PlotlyModule.plotlyjs = PlotlyJS;
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-plotly-graph',
@@ -17,7 +18,7 @@ PlotlyModule.plotlyjs = PlotlyJS;
 
 
 export class PlotlyGraphComponent implements OnInit {
-  constructor(private flaskSerice:FlaskService, public endpoint:Endpoint){
+  constructor(private flaskSerice:FlaskService, public endpoint:Endpoint,private toastr:ToastrService){
 
   }
   resultData: any = undefined;
@@ -38,9 +39,26 @@ traces: any
     }
   }
   deleteCombination(){
-    console.log("delete")
+    this.flaskSerice.deleteCombination().subscribe((result:any)=> {
+      console.log("Delete combination")
+      console.log(result)
+      if(result['success']){
+        this.toastr.success(result['data'],'')
+        this.resultData = undefined
+      }else{
+        this.toastr.error(result['data'],'')
+      }
+    })
   }
   ngOnInit(): void {
+    this.generatePlot()
+    this.flaskSerice.generateCombinationPlot$.subscribe(()=> {
+    this.generatePlot()
+    })
+  }
+
+
+  generatePlot(){
     this.flaskSerice.getDataCombinationGraph().subscribe((result:any) => {
       this.resultData = result['data']
       var reversedData = this.resultData[1].reverse()
@@ -74,7 +92,6 @@ traces: any
 
     })
   }
-
 
   
 

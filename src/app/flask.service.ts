@@ -82,6 +82,12 @@ export class FlaskService {
   }
 
 
+  private generateCombinationPlot = new Subject<any>();
+  generateCombinationPlot$ = this.generateCombinationPlot.asObservable();
+
+  updateCombinationPlot(){
+    this.generateCombinationPlot.next('')
+  }
 
   private updateEvidenceList = new Subject<any>();
   updateEvidenceList$ = this.updateEvidenceList.asObservable()
