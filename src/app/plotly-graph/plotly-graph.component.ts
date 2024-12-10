@@ -82,8 +82,8 @@ traces: any
       console.log(result['success'])
       if(result['success']){
         this.resultData = result['data']
-        console.log("endpoint!!")
-        console.log(this.endpoint)
+        console.log("COMBINATION DATA!!")
+        console.log(this.resultData)
     
       }else {
         this.resultData = undefined
@@ -99,8 +99,8 @@ traces: any
       
       for (let i = 0; i < names.length; i++) {
         const trace = {
-          x: this.resultData[0].reverse().map((dataPoint:any) => dataPoint[i]),
-          y: this.resultData[1].reverse(),                                  
+          x: this.resultData[0].map((dataPoint:any) => dataPoint[i]),
+          y: this.resultData[1],                                  
           name: names[i],
           orientation: 'h',
           type: 'bar',
