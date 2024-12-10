@@ -12,13 +12,13 @@
   <tbody>
     <tr>
       <td>{{this.endpoint.name}}</td> 
-      <td> <span *ngFor="let evidence of this.endpoint.options.combination.shouldCombine"> {{evidence}} </span> </td>
+      <td> <div *ngFor="let evidence of this.endpoint.options.combination.shouldCombine"> {{evidence}} </div></td>
       <td>{{this.endpoint.options.combination.rule}}</td>
       <td>{{this.endpoint.probabilities.negative}}</td>
       <td>{{this.endpoint.probabilities.uncertain}}</td>
       <td>{{this.endpoint.probabilities.positive}}</td>
       <td>   
-        <button (click)="selectEvidence()"  mat-flat-button>{{this.endpoint.decision}}</button></td>
+        <button (click)="selectEvidence()"  mat-flat-button>{{this.endpoint.decision | capitalize}}</button></td>
       <td>
         <button  mat-icon-button color="warn"   (click)="deleteCombination()">
         <mat-icon class="delete-icon">delete</mat-icon>

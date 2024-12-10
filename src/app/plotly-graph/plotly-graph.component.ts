@@ -12,11 +12,12 @@ import {
   MatDialog,
 } from '@angular/material/dialog';
 import { ResultevidenceComponent } from '../resultevidence/resultevidence.component';
+import { CapitalizePipe } from "../capitalize.pipe";
 
 @Component({
   selector: 'app-plotly-graph',
   standalone: true,
-  imports: [MatIconModule,CommonModule, PlotlyModule,MatButtonModule],
+  imports: [MatIconModule, CommonModule, PlotlyModule, MatButtonModule, CapitalizePipe],
   templateUrl: './plotly-graph.component.html',
   styleUrl: './plotly-graph.component.scss'
 })
