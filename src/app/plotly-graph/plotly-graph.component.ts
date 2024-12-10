@@ -60,8 +60,15 @@ traces: any
 
   generatePlot(){
     this.flaskSerice.getDataCombinationGraph().subscribe((result:any) => {
-      this.resultData = result['data']
-      var reversedData = this.resultData[1].reverse()
+      console.log("primero")
+      console.log(result['success'])
+      if(result['success']){
+        this.resultData = result['data']
+          var reversedData = this.resultData[1].reverse()
+      }else {
+        this.resultData = undefined
+        
+      }
       const colors = [
         'rgb(202, 235, 238)', 
         'rgb(20, 161, 224)',  

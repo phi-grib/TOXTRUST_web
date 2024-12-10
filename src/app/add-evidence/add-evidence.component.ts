@@ -48,18 +48,10 @@ ngOnInit(): void {
     this.data['source'] = form.value.source
     this.data['weight'] = form.value.weight != "" ? form.value.weight : null
     this.data['relevance'] = form.value.relevance != "" ? form.value.relevance : null
-    console.log("weight")
-    console.log(this.data['weight'])
-    console.log("relevance:")
-    console.log(this.data['relevance']) 
+    console.log("FORM")
+    console.log(form.value)
+
     this.data['result']['proba'] = false;
-    if(form.value.positive == true){
-      this.data['result']['outcome'].push('positive')
-      if(form.value.positive_value){
-        this.data['result']['value'].push(form.value.positive_value)
-        this.data['result']['proba'] = true
-      }
-    }
     if(form.value.negative != ''){
       this.data['result']['outcome'].push('negative')
       if(form.value.negative_value){
@@ -67,6 +59,14 @@ ngOnInit(): void {
         this.data['result']['proba'] = true;
       }
     }
+    if(form.value.positive == true){
+      this.data['result']['outcome'].push('positive')
+      if(form.value.positive_value){
+        this.data['result']['value'].push(form.value.positive_value)
+        this.data['result']['proba'] = true
+      }
+    }
+
     if(form.value.reliability_positive !='' && form.value.reliability_positive != undefined ){
       this.data['reliability']['metric'].push(form.value.reliability_positive)
       this.data['reliability']['value'].push(form.value.reliability_score_positive)
