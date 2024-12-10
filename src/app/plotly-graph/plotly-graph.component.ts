@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit,inject } from '@angular/core';
 import * as PlotlyJS from 'plotly.js-dist-min';
 import { PlotlyModule } from 'angular-plotly.js';
 import { CommonModule } from '@angular/common';
@@ -7,17 +7,23 @@ import { Endpoint } from '../globals';
 import {MatIconModule} from '@angular/material/icon';
 PlotlyModule.plotlyjs = PlotlyJS;
 import { ToastrService } from 'ngx-toastr';
+import {MatButtonModule} from '@angular/material/button';
+import {
+  MatDialog,
+} from '@angular/material/dialog';
+import { ResultevidenceComponent } from '../resultevidence/resultevidence.component';
 
 @Component({
   selector: 'app-plotly-graph',
   standalone: true,
-  imports: [MatIconModule,CommonModule, PlotlyModule],
+  imports: [MatIconModule,CommonModule, PlotlyModule,MatButtonModule],
   templateUrl: './plotly-graph.component.html',
   styleUrl: './plotly-graph.component.scss'
 })
 
 
 export class PlotlyGraphComponent implements OnInit {
+  readonly dialog = inject(MatDialog);
   constructor(private flaskSerice:FlaskService, public endpoint:Endpoint,private toastr:ToastrService){
 
   }
@@ -56,15 +62,28 @@ traces: any
     this.generatePlot()
     })
   }
+  selectEvidence(){
 
+    this.dialog.open(ResultevidenceComponent, {
+      height: '700px',
+      width: '1000px',
+      data: {
+       name: this.endpoint.name
+      }
+    })
 
+ }
+
+//  karo
   generatePlot(){
     this.flaskSerice.getDataCombinationGraph().subscribe((result:any) => {
       console.log("primero")
       console.log(result['success'])
       if(result['success']){
         this.resultData = result['data']
-          var reversedData = this.resultData[1].reverse()
+        console.log("endpoint!!")
+        console.log(this.endpoint)
+    
       }else {
         this.resultData = undefined
         
@@ -79,8 +98,8 @@ traces: any
       
       for (let i = 0; i < names.length; i++) {
         const trace = {
-          x: this.resultData[0].map((dataPoint:any) => dataPoint[i]),
-          y: reversedData,                                  
+          x: this.resultData[0].reverse().map((dataPoint:any) => dataPoint[i]),
+          y: this.resultData[1].reverse(),                                  
           name: names[i],
           orientation: 'h',
           type: 'bar',

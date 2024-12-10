@@ -17,9 +17,10 @@
       <td>{{this.endpoint.probabilities.negative}}</td>
       <td>{{this.endpoint.probabilities.uncertain}}</td>
       <td>{{this.endpoint.probabilities.positive}}</td>
-      <td><button mat-flat-button>{{this.endpoint.name}}</button></td>
+      <td>   
+        <button (click)="selectEvidence()"  mat-flat-button>{{this.endpoint.decision}}</button></td>
       <td>
-        <button (click)="deleteCombination()">
+        <button  mat-icon-button color="warn"   (click)="deleteCombination()">
         <mat-icon class="delete-icon">delete</mat-icon>
       </button></td>
     </tr>

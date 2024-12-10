@@ -14,6 +14,7 @@ export class Endpoint {
     combinationPath: any;
     options:any;
     probabilities: any;
+    decision: any;
 }
 
 export class ControlInterface {

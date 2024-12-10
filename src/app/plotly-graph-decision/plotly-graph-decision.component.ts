@@ -12,7 +12,7 @@ export class PlotlyGraphDecisionComponent {
 
 graph:any
 
-
+// karo
 ngOnInit(): void {
   this.graph = {
     data: [

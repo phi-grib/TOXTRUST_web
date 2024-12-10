@@ -87,9 +87,11 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
         if(result["success"]){
           this.controlInterface.displayManageEndpoints = false;
           this.endpoint.name = (endpoint.name)
-          this.mapOptionsData(result['data']['options'])
-          console.log("endpoint seleccionado")
+          console.log("ENDPOINT INFORMATION:")
           console.log(result['data'])
+
+          this.endpoint.decision = result['data']['decisions'][this.endpoint.name]
+          this.mapOptionsData(result['data']['options'])
           this.endpoint.probabilities = result['data']['results'][this.endpoint.name]['probabilities']
           this.mapEndpointData(result["data"]["endpoint"]);
         }

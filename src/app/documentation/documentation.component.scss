@@ -12,16 +12,19 @@
     display: block;
     border-radius: 10px 10px 0px 0px !important;
   }
-
+// karo
   .text-container {
     border-radius: 0px 0px 10px 10px;
     width: 100%;
-    padding-top: 60px;
+    padding-top: 30px;
     background-color: white !important;
     height: 70vh;
     overflow-y: auto; 
     overflow-x: hidden;
-    justify-content: left;
+    div {
+      padding: 20px;
+      text-align: justify;
+    }
 
   }
   .text {
