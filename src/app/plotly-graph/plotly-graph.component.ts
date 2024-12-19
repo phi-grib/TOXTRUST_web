@@ -74,6 +74,15 @@ export class PlotlyGraphComponent implements OnInit {
   }
 
   generatePlot() {
+    this.flaskSerice.getEndpoint(this.endpoint.name).subscribe(
+      (result:any) => {
+        if(result["success"]){
+          this.endpoint.decision = result['data']['decisions'][this.endpoint.name]
+          this.endpoint.probabilities = result.data?.results[this.endpoint.name]['probabilities']
+        }
+      }
+    )
+
     this.flaskSerice.getDataCombinationGraph().subscribe((result: any) => {
       console.log("Fetching graph data...");
       if (result['success']) {

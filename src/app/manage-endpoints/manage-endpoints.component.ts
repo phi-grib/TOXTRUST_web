@@ -70,6 +70,7 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
     this.endpoint.rule = data.combination.rule
     this.endpoint.autorule = data.combination.autoRule
     this.endpoint.woe = data.combination.woe
+    this.endpoint.inagakiScale = String(data.combination.inagakiScale)
   }
   mapOptionsData(data:any){
     console.log("mapOptionsData")
@@ -95,7 +96,7 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
           this.mapSettingData(result["data"]['options'])
           this.endpoint.decision = result['data']['decisions'][this.endpoint.name]
           this.mapOptionsData(result['data']['options'])
-          this.endpoint.probabilities = result['data']['results'][this.endpoint.name]['probabilities']
+          this.endpoint.probabilities = result.data?.results[this.endpoint.name]['probabilities']
           this.mapEndpointData(result["data"]["endpoint"]);
         }
       },
