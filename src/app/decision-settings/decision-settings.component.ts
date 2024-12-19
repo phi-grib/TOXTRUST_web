@@ -73,6 +73,7 @@ export class DecisionSettingsComponent {
       this.inagakiSelected = false;
     }else {
       this.inagakiSelected = true;
+      this.endpoint.inagakiScale = undefined
     }
   }
 }

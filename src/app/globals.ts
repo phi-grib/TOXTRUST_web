@@ -18,7 +18,7 @@ export class Endpoint {
     rule: any;
     autorule: any
     woe: any;
-
+    inagakiScale: any
 }
 
 export class ControlInterface {
