@@ -137,6 +137,7 @@ export class PlotlyGraphComponent implements OnInit {
           },
           xaxis: { visible: false },
           yaxis: {
+            automargin: true,
             tickfont: { family: "Roboto, sans-serif", size: 14 }
           },
           bargap: 0.1,

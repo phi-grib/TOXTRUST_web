@@ -1,3 +1,4 @@
+ 
 <table *ngIf="this.resultData" style="margin-top: 30px;"  ><thead>
     <tr>
       <th>Name</th>
@@ -26,6 +27,11 @@
     </tr>
   </tbody>
   </table>
+  <div class="text-container">
+    <span>
+      Evidence combined correctly! Individual evidence pieces and combination results are displayed below.
+   </span> 
+  </div> 
   <div *ngIf="this.resultData" class="container">
     <plotly-plot *ngIf="this.graph" [data]="graph.data" [layout]="graph.layout"></plotly-plot>
   </div>
