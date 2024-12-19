@@ -80,6 +80,10 @@ export class PlotlyGraphComponent implements OnInit {
         this.resultData = result['data'];
         console.log("Combination Data:");
         console.log(this.resultData);
+        console.log("datos")
+        console.log(this.resultData[0])
+        this.resultData[0] = this.resultData[0].reverse()
+        this.resultData[0] = this.resultData[0].map((subarray: any[]) => subarray.reverse());
       } else {
         this.resultData = undefined;
         return;
@@ -94,7 +98,7 @@ export class PlotlyGraphComponent implements OnInit {
       for (let i = 0; i < names.length; i++) {
         const trace = {
           x: this.resultData[0].map((dataPoint: any) => dataPoint[i]), // X-values (data)
-          y: this.resultData[1],                                      // Y-values (labels)
+          y: this.resultData[1].reverse(),                                      // Y-values (labels)
           text: this.resultData[0].map((dataPoint: any) => dataPoint[i]), // Add raw integer values as text
           textposition: 'middle center',                              // Force text into the middle of the bar
           textfont: { 

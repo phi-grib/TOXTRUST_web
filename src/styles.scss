@@ -1,6 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-
-
+body{
+    .mat-mdc-tooltip-surface {
+        width: auto !important; 
+        height: auto !important;  
+        max-width: 300px !important; 
+        padding: 10px;
+        font-size: 14px !important; 
+      }
+  }
 html, body { height: 100%;
     background: linear-gradient(to bottom, #EE7ABE, #5C5FF2) !important;
 }

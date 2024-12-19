@@ -15,6 +15,10 @@ export class Endpoint {
     options:any;
     probabilities: any;
     decision: any;
+    rule: any;
+    autorule: any
+    woe: any;
+
 }
 
 export class ControlInterface {

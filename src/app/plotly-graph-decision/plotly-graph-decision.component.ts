@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import * as PlotlyJS from 'plotly.js-dist-min';
 import { PlotlyModule } from 'angular-plotly.js';
 import { FlaskService } from '../flask.service';
@@ -11,7 +11,7 @@ import { Endpoint } from '../globals';
   styleUrl: './plotly-graph-decision.component.scss'
 })
 export class PlotlyGraphDecisionComponent {
-
+  @Input() name: string = ""; 
   constructor(private flaskService: FlaskService, private endpoint: Endpoint){
 
   }
@@ -21,10 +21,14 @@ resultData:any = undefined
 // karo
 ngOnInit(): void {
                                   //change name here
-  this.flaskService.getDataErroPlot("nuevo1").subscribe((result:any)=> {
+  this.flaskService.getDataErroPlot(this.name).subscribe((result:any)=> {
     console.info("DATA ERROR PLOT")
     this.resultData = result['data']
     console.log(this.resultData)
+    // if(this.resultData[0].length == 1 ){ how modify label settings X asis
+
+    // }
+
     this.graph = {
       data: [
         {

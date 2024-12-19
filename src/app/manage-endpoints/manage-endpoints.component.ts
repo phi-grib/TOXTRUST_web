@@ -65,8 +65,11 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
     })
   }
   mapSettingData(data:any){
-    this.endpoint.maxUncertainty = data.options.maxUncertainty;
-    
+    this.endpoint.maxUncertainty = data.decision.maxUncertainty
+    this.endpoint.minBelief = data.decision.minBelief
+    this.endpoint.rule = data.combination.rule
+    this.endpoint.autorule = data.combination.autoRule
+    this.endpoint.woe = data.combination.woe
   }
   mapOptionsData(data:any){
     console.log("mapOptionsData")
@@ -87,9 +90,9 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
         if(result["success"]){
           this.controlInterface.displayManageEndpoints = false;
           this.endpoint.name = (endpoint.name)
-          console.log("ENDPOINT INFORMATION:")
-          console.log(result['data'])
-
+          console.log("ENDPOINT OPTIONS INFORMATION:")
+          console.log(result["data"])
+          this.mapSettingData(result["data"]['options'])
           this.endpoint.decision = result['data']['decisions'][this.endpoint.name]
           this.mapOptionsData(result['data']['options'])
           this.endpoint.probabilities = result['data']['results'][this.endpoint.name]['probabilities']

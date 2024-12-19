@@ -22,14 +22,12 @@ export class DecisionSettingsComponent {
   }
   ruleDisabled: boolean = false;
   inagakiSelected: boolean = true;
-  maxUncertainty: number = 0.3;
-  minBelief: number = 0.5;
-
   onSubmit(form:any){
-
+ 
+    form.value.factor = Number(form.value.factor)
     if(form.value.auto){
       form.value.rule = 'auto'
-      form.value.factor = 'balance'
+      form.value.factor = 0.5
     }
     this.flaskService.selectRule(form.value).subscribe((result:any)=>{
       if(result['success']){
@@ -39,7 +37,7 @@ export class DecisionSettingsComponent {
         }
     })
     var DecisionForm = {}
-    DecisionForm  = {'maxUncertainty':this.maxUncertainty,'minBelief':this.minBelief }
+    DecisionForm  = {'maxUncertainty':this.endpoint.maxUncertainty,'minBelief':this.endpoint.minBelief }
 
     this.flaskService.callDecisionInput(DecisionForm).subscribe((result:any)=>{
       if(result['success']){
@@ -66,6 +64,8 @@ export class DecisionSettingsComponent {
   }
 
   AutoRuleSelection(form:any){
+    console.log("auto rule selection")
+    console.log(form.value.auto)
     this.ruleDisabled = form.value.auto;
   }
   selectRule(event:MatSelectChange){
@@ -73,7 +73,6 @@ export class DecisionSettingsComponent {
       this.inagakiSelected = false;
     }else {
       this.inagakiSelected = true;
-  
     }
   }
 }

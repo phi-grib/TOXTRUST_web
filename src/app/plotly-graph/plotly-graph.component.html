@@ -1,5 +1,5 @@
  
-<table *ngIf="this.resultData" style="margin-top: 30px;"  ><thead>
+<table *ngIf="this.resultData" style="margin-top: 10px;"  ><thead>
     <tr>
       <th>Name</th>
       <th>Combined</th>
@@ -27,7 +27,7 @@
     </tr>
   </tbody>
   </table>
-  <div class="text-container">
+  <div *ngIf="this.resultData" class="text-container">
     <span>
       Evidence combined correctly! Individual evidence pieces and combination results are displayed below.
    </span> 
