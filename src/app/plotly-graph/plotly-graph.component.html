@@ -13,7 +13,7 @@
   <tbody>
     <tr>
       <td>{{this.endpoint.name}}</td> 
-      <td> <div *ngFor="let evidence of this.endpoint.options.combination.shouldCombine"> {{evidence}} </div></td>
+      <td> <div *ngFor="let evidence of this.endpoint.shouldCombine"> {{evidence}} </div></td>
       <td>{{this.endpoint.options.combination.rule}}</td>
       <td>{{this.endpoint.probabilities?.negative}}</td>
       <td>{{this.endpoint.probabilities?.uncertain}}</td>

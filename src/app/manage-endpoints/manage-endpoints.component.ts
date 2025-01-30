@@ -77,6 +77,9 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
     this.endpoint.options = data
     console.log(this.endpoint.options)
   }
+  mapShouldCombine(data:any){
+    this.endpoint.shouldCombine = data;
+  }
   mapEndpointData(data:any){
     this.endpoint.compound = data.compound;
     this.endpoint.confidentiality = data.confidentiality;
@@ -98,6 +101,7 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
           this.mapOptionsData(result['data']['options'])
           this.endpoint.probabilities = result.data?.results[this.endpoint.name]['probabilities']
           this.mapEndpointData(result["data"]["endpoint"]);
+          this.mapShouldCombine(result["data"]['options']['combination']['shouldCombine'])
         }
       },
       (error:any)=> {
