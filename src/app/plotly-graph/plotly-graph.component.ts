@@ -132,8 +132,8 @@ export class PlotlyGraphComponent implements OnInit {
       this.graph = {
         data: this.traces,
         layout: {
-          width: 700,
-          height: 400,
+          width: 600,
+          height: 300,
           title: {
             text: 'Combination of evidence',
             font: { size: 22, color: "black", family: "Roboto, sans-serif"},
