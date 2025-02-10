@@ -13,3 +13,25 @@
   align-items: center;
   margin-top: 20px !important;
 }
+
+
+.button-home {
+  cursor: pointer;
+  position: absolute;
+  left: 17%;
+  top: 10%;
+  border-radius: 20px;
+  background:linear-gradient(to bottom,#E579C2,#5E5FF1,) !important;
+  border: 1px solid #5E5FF1;
+  &:hover {
+    background: #5E5FF1 !important;
+  }
+}
+
+.float-home-icon {
+  width: 45px;
+  height: 45px;
+  color: white;
+  font-size: 45px !important;
+}
+
