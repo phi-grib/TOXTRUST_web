@@ -1,9 +1,10 @@
 
 <app-navbar></app-navbar>
 
-<button (click)="goHome()"  type="button" class="button-home">
+<!--<button (click)="goHome()"  type="button" class="button-home">
       <mat-icon class="float-home-icon" aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-</button>
+</button>-->
+
 <div class="container">
       <app-main-page *ngIf="!this.endpoint.name && !this.controlInterface.displayManageEndpoints && !this.controlInterface.displayCode && !this.controlInterface.displayReferences && !this.controlInterface.displayDocumentation"></app-main-page>
       <app-new-endpoint-form *ngIf="this.endpoint.name"></app-new-endpoint-form>

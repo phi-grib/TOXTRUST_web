@@ -30,13 +30,13 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  goHome(){
-    this.endpoint.name = "";
-    this.controlInterface.displayManageEndpoints = false;
-    this.controlInterface.displayCode = false;
-    this.controlInterface.displayReferences = false;
-    this.controlInterface.displayDocumentation = false
-  }
+//  goHome(){
+//    this.endpoint.name = "";
+//    this.controlInterface.displayManageEndpoints = false;
+//    this.controlInterface.displayCode = false;
+//    this.controlInterface.displayReferences = false;
+//    this.controlInterface.displayDocumentation = false
+//  }
 
   title = 'toxtrust_web';
 }
