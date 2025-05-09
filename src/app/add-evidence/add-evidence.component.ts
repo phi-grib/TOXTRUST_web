@@ -91,7 +91,6 @@ ngOnInit(): void {
   }
   displayFieldPositive(form: any){
   if(!form.value.positive){
-    console.log("aqui hay un fallo?")
     form.controls['positive_value'].reset();
     form.controls['reliability_positive'].reset();
     form.controls['reliability_score_positive'].reset();
