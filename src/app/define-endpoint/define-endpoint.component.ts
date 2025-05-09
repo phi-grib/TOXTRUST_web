@@ -19,10 +19,8 @@ export class DefineEndpointComponent {
 
   }
   onSubmit(generalForm: any) {
-  console.info("General form")
-  console.info(generalForm.value)
+    
     this.flaskService.defineEndpoint(generalForm.value).subscribe(
-
       (result: any) => {
         if (result["success"]) {
           this.toastr.success(result["message"], '');

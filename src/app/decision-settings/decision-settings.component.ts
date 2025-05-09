@@ -20,7 +20,7 @@ export class DecisionSettingsComponent {
   constructor(private flaskService:FlaskService,private toastr:ToastrService,public endpoint:Endpoint){
 
   }
-  ruleDisabled: boolean = false;
+  ruleDisabled: boolean = true;
   inagakiSelected: boolean = true;
   onSubmit(form:any){
  
@@ -64,8 +64,6 @@ export class DecisionSettingsComponent {
   }
 
   AutoRuleSelection(form:any){
-    console.log("auto rule selection")
-    console.log(form.value.auto)
     this.ruleDisabled = form.value.auto;
   }
   selectRule(event:MatSelectChange){
