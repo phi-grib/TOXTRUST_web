@@ -28,8 +28,6 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.flaskService.getListEndpoints().subscribe(
       (result: string[]) => {
-        console.log("list endpoints details")
-        console.log(result)
         this.endpoint.listEndpoints = result;
         this.dataSource.data = this.endpoint.listEndpoints; 
       },
@@ -73,9 +71,9 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
     this.endpoint.inagakiScale = String(data.combination.inagakiScale)
   }
   mapOptionsData(data:any){
-    console.log("mapOptionsData")
+
     this.endpoint.options = data
-    console.log(this.endpoint.options)
+
   }
   mapShouldCombine(data:any){
     this.endpoint.shouldCombine = data;
@@ -96,15 +94,13 @@ export class ManageEndpointsComponent implements OnInit, AfterViewInit {
 
   selectEndpoint(endpoint:any){
     this.refreshData();
-    console.log("selectEndpoint")
-    console.log(endpoint.name)
      this.flaskService.getEndpoint(endpoint.name).subscribe(
       (result:any) => {
         if(result["success"]){
           this.controlInterface.displayManageEndpoints = false;
           this.endpoint.name = (endpoint.name)
           this.mapSettingData(result["data"]['options'])
-          this.endpoint.decision = result['data']['decisions'][this.endpoint.name]
+          this.endpoint.decisions = result['data']['decisions']
           this.mapOptionsData(result['data']['options'])
           this.endpoint.probabilities = result.data?.results[this.endpoint.name]['probabilities']
           this.mapEndpointData(result["data"]["endpoint"]);

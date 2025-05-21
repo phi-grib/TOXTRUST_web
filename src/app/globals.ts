@@ -14,7 +14,7 @@ export class Endpoint {
     combinationPath: any;
     options:any;
     probabilities: any;
-    decision: any;
+    decisions: any;
     rule: any;
     autorule: any
     woe: any;

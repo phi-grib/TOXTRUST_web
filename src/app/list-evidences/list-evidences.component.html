@@ -57,7 +57,7 @@ Add evidence</button>
                                 matTooltip="Inspect"
                                 matTooltipPosition="right"
                                 >
-                                  {{element.result.outcome[0] | capitalize }}
+                                  {{this.endpoint.decisions[element.name] | capitalize }}
                                 </button>
                               </td>
                             </ng-container>

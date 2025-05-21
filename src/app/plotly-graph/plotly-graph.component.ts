@@ -77,7 +77,6 @@ export class PlotlyGraphComponent implements OnInit {
     this.flaskSerice.getEndpoint(this.endpoint.name).subscribe(
       (result:any) => {
         if(result["success"]){
-          this.endpoint.decision = result['data']['decisions'][this.endpoint.name]
           this.endpoint.probabilities = result.data?.results[this.endpoint.name]['probabilities']
         }
       }

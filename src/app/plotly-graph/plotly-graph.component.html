@@ -1,4 +1,6 @@
  
+
+
 <table *ngIf="this.resultData" style="margin-top: 10px;"  ><thead>
     <tr>
       <th>Name</th>
@@ -19,7 +21,7 @@
       <td>{{this.endpoint.probabilities?.uncertain}}</td>
       <td>{{this.endpoint.probabilities?.positive}}</td>
       <td>   
-        <button (click)="selectEvidence()"  mat-flat-button>{{this.endpoint.decision | capitalize}}</button></td>
+        <button (click)="selectEvidence()"  mat-flat-button>{{this.endpoint.decisions[this.endpoint.name] | capitalize}}</button></td>
       <td>
         <button  mat-icon-button color="warn"   (click)="deleteCombination()">
         <mat-icon class="delete-icon">delete</mat-icon>

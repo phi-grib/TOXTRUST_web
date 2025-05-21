@@ -23,7 +23,7 @@ import { CapitalizePipe } from '../capitalize.pipe';
 export class ListEvidencesComponent implements OnInit {
   readonly dialog = inject(MatDialog);
 
-  constructor(private toastr: ToastrService, private flaskService: FlaskService, private endpoint: Endpoint) {
+  constructor(private toastr: ToastrService, private flaskService: FlaskService, public endpoint: Endpoint) {
 
   }
   displayedColumns: string[] = ['name', 'type', 'weight', 'relevance', 'negative', 'uncertain', 'positive', 'decision', 'combine', 'delete'];
@@ -98,6 +98,8 @@ export class ListEvidencesComponent implements OnInit {
             this.endpoint.shouldCombine = this.listCombineEvidences
             this.toastr.success(result['message'], '');
             this.flaskService.updateCombinationPlot();
+            var nextStep = document.getElementsByTagName("mat-step-header")[3] as HTMLElement
+            nextStep.click();
           } else {
             this.toastr.error(result['message'], '');
           }
